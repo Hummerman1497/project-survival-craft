@@ -4,6 +4,7 @@ class_name State_Run extends State
 
 @onready var idle: State = $"../Idle"
 @onready var walk: State = $"../Walk"
+@onready var attack: State = $"../Attack"
 
 
 ## What happens when the Player enters this State?

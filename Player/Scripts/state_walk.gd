@@ -4,6 +4,7 @@ class_name State_Walk extends State
 
 @onready var idle: State = $"../Idle"
 @onready var run: State = $"../Run"
+@onready var attack: State = $"../Attack"
 
 
 
