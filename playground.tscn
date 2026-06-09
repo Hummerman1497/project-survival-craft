@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cnxayiwhvu31r"]
+
+[ext_resource type="PackedScene" uid="uid://c8643wdqehg8m" path="res://Player/player.tscn" id="1_rupst"]
+[ext_resource type="Texture2D" uid="uid://dsup8lx7uiuub" path="res://Assets/Terrain/Tilemap_color1.png" id="1_wt17y"]
+
+[node name="Playground" type="Node2D" unique_id=2109808178]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1605932689]
+visible = false
+position = Vector2(325, 189)
+texture = ExtResource("1_wt17y")
+
+[node name="Player" parent="." unique_id=2146033593 instance=ExtResource("1_rupst")]
+position = Vector2(352, 200)
