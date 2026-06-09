@@ -9,7 +9,7 @@ class_name State_Run extends State
 ## What happens when the Player enters this State?
 func Enter() -> void:
 	player.UpdateAnimation("run")
-	pass
+	
 
 
 ## What happens when the Player exits this State?
@@ -21,7 +21,8 @@ func Exit() -> void:
 func Process(_delta : float) -> State:
 	if player.direction == Vector2.ZERO:
 		return idle
-	if player.direction != Vector2.ZERO:
+		
+	if not Input.is_action_pressed("run"):
 		return walk
 	player.velocity = player.direction * run_speed
 	

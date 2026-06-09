@@ -1,6 +1,7 @@
 class_name State_Idle extends State
 
 @onready var walk: State = $"../Walk"
+@onready var run: State = $"../Run"
 
 
 
@@ -18,7 +19,10 @@ func Exit() -> void:
 ## What happens during the _process update in this State ?
 func Process(_delta : float) -> State:
 	if player.direction != Vector2.ZERO:
+		if Input.is_action_pressed("run"):
+			return run
 		return walk
+		
 	player.velocity = Vector2.ZERO
 	return null
 

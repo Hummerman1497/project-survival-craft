@@ -3,6 +3,7 @@ class_name State_Walk extends State
 @export var walk_speed : float = 60.00
 
 @onready var idle: State = $"../Idle"
+@onready var run: State = $"../Run"
 
 
 
@@ -21,7 +22,10 @@ func Exit() -> void:
 func Process(_delta : float) -> State:
 	if player.direction == Vector2.ZERO:
 		return idle
-	
+		
+	if Input.is_action_pressed("run"):
+		return run
+		
 	player.velocity = player.direction * walk_speed
 	
 	if player.SetDirection():

@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cyverr6spcijn" path="res://Player/Scripts/player_state_machine.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://c4jbk46vipaho" path="res://Player/Scripts/state_idle.gd" id="6_fhl08"]
 [ext_resource type="Script" uid="uid://b4r4dx3ma1425" path="res://Player/Scripts/state_walk.gd" id="7_vtle1"]
+[ext_resource type="Script" uid="uid://ci5hrjrqmdej6" path="res://Player/Scripts/state_run.gd" id="8_od3ui"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_edjgo"]
 
@@ -2465,3 +2466,4 @@ script = ExtResource("6_fhl08")
 script = ExtResource("7_vtle1")
 
 [node name="Run" type="Node" parent="StateMachine" unique_id=1474910307]
+script = ExtResource("8_od3ui")
