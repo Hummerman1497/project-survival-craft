@@ -78,7 +78,7 @@ func SetState() -> bool:
 		return false
 	state = new_state
 	return true
-	aa
+	
 	
 	
 func UpdateAnimation() -> void:
