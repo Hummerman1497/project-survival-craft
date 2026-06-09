@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cw0rubhkjwll1" path="res://Assets/Character/idle/idle full sprite sheet (transparent BG).png" id="1_l8h54"]
 [ext_resource type="Texture2D" uid="uid://dhf51aceywawf" path="res://Assets/Character/run/run complete sprite sheet (transparent BG).png" id="3_gwnis"]
 [ext_resource type="Script" uid="uid://cyverr6spcijn" path="res://Player/Scripts/player_state_machine.gd" id="5_k53q1"]
+[ext_resource type="Script" uid="uid://c4jbk46vipaho" path="res://Player/Scripts/state_idle.gd" id="6_fhl08"]
+[ext_resource type="Script" uid="uid://b4r4dx3ma1425" path="res://Player/Scripts/state_walk.gd" id="7_vtle1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_edjgo"]
 
@@ -2457,5 +2459,9 @@ libraries/ = SubResource("AnimationLibrary_pfstq")
 script = ExtResource("5_k53q1")
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=78992320]
+script = ExtResource("6_fhl08")
 
 [node name="Walk" type="Node" parent="StateMachine" unique_id=84940262]
+script = ExtResource("7_vtle1")
+
+[node name="Run" type="Node" parent="StateMachine" unique_id=1474910307]
