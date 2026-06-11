@@ -2,6 +2,7 @@ class_name State_Idle extends State
 
 @onready var walk: State = $"../Walk"
 @onready var run: State = $"../Run"
+@onready var attack: State= $"../Attack"
 
 
 
@@ -33,4 +34,6 @@ func Physics(_delta : float) -> State:
 
 ## What happens with the input events in this State?	
 func HandleInput(_event: InputEvent) -> State:
+	if _event.is_action("attack"):
+		return attack
 	return null

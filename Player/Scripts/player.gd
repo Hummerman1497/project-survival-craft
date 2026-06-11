@@ -3,7 +3,7 @@ class_name Player extends CharacterBody2D
 
 var cardinal_direction : Vector2 = Vector2.DOWN
 var direction : Vector2 = Vector2.ZERO
-
+var mouse_position : Vector2 = Vector2.ZERO
 
 @onready var state_machine: PlayerStateMachine = $StateMachine
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -75,6 +75,24 @@ func AnimDirection() -> String:
 	elif cardinal_direction == Vector2(1,-1):
 		return "NO"	
 	else:
-		return "SW"
-		
+		return "SW"	
+
 	
+
+
+func getSnappedDirectionToMouse() -> void:
+	# Schritt 1: Vektor vom Spieler zur Maus berechnen und normalisieren
+	mouse_position = get_global_mouse_position()
+	var direction_to_mouse: Vector2 = (mouse_position - global_position).normalized()
+	
+	# Schritt 2: Winkel im Bogenmaß (Radiant) holen
+	var angle: float = direction_to_mouse.angle()
+	
+	# Winkel in 45-Grad-Schritten (TAU / 8) einrasten lassen
+	var snapped_angle: float = snapped(angle, TAU / 8.0)
+	
+	# Den eingerasteten Winkel zurück in einen sauberen Richtungs-Vektor umwandeln
+	var new_dir: Vector2 = Vector2.from_angle(snapped_angle)
+	
+	# Vektor-Werte runden, um ungenaue Kommastellen (wie 0.7071) exakt auf 1 oder -1 zu bringen
+	cardinal_direction = new_dir.round()
