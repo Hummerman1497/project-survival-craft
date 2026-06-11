@@ -43,9 +43,6 @@ func ChangeState(new_state : State)-> void:
 	if current_state:	
 		current_state.Exit()
 		
-
-	
-	
 	prev_state = current_state
 	current_state = new_state
 	current_state.Enter()

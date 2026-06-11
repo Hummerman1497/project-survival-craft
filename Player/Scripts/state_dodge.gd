@@ -19,8 +19,6 @@ var start_direction: Vector2 = Vector2.ZERO
 func Enter() -> void:
 	player.UpdateAnimation("dodge")
 	start_direction = player.direction
-	print("[start_direction]"  + str(start_direction)) 
-	print("[cardinal]"+ str(player.cardinal_direction))
 	is_dodging = true
 	dodge_finished = false
 	
@@ -53,7 +51,6 @@ func Process(_delta : float) -> State:
 		player.velocity = player.cardinal_direction * dodge_speed	
 	
 	return null
-
 
 ## What happens during the _physics_process update in this State ?
 func Physics(_delta : float) -> State:

@@ -2,7 +2,7 @@ class_name State_Attack extends State
 
 var attacking : bool = false
 
-@export var attack_walk_speed : float = 10.0
+@export var attack_walk_speed : float = 20.0
 
 @onready var idle: State = $"../Idle"
 @onready var walk: State = $"../Walk"
@@ -14,7 +14,7 @@ var attacking : bool = false
 func Enter() -> void:
 	player.getSnappedDirectionToMouse()	
 	player.UpdateAnimation("attack")
-	anim_sprite.speed_scale = 2.5
+	anim_sprite.speed_scale = 3
 	anim_sprite.animation_finished.connect(EndAttack)
 	attacking = true
 	
