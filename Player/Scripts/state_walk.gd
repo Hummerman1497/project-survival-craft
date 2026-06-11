@@ -1,6 +1,6 @@
 class_name State_Walk extends State
 
-@export var walk_speed : float = 60.00
+@export var walk_speed : float = 100.00
 
 @onready var idle: State = $"../Idle"
 @onready var run: State = $"../Run"

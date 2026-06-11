@@ -25,7 +25,7 @@ func Exit() -> void:
 	anim_sprite.speed_scale = 1.0
 	if anim_sprite.animation_finished.is_connected(EndAttack):
 		anim_sprite.animation_finished.disconnect(EndAttack)
-		print("anim finish disconnected")
+		
 	
 
 

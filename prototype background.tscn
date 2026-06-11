@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bfxoo6og8bgeg"]
+
+[ext_resource type="Texture2D" uid="uid://bjuukd8es2hbc" path="res://Assets/Terrain/texture_08.png" id="1_m65c3"]
+
+[node name="Node2D" type="Node2D" unique_id=171935928]
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1888428280]
+position = Vector2(40, 48)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m65c3")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1671684923]
+position = Vector2(136, 48)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m65c3")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1204215735]
+position = Vector2(40, 144)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m65c3")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=763818333]
+position = Vector2(136, 144)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m65c3")
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=320550599]
+position = Vector2(232, 48)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m65c3")
+
+[node name="Sprite2D7" type="Sprite2D" parent="." unique_id=470207718]
+position = Vector2(328, 48)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m65c3")
+
+[node name="Sprite2D8" type="Sprite2D" parent="." unique_id=1868231231]
+position = Vector2(232, 144.00002)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m65c3")
+
+[node name="Sprite2D9" type="Sprite2D" parent="." unique_id=651150003]
+position = Vector2(328, 144.00002)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m65c3")
+
+[node name="Sprite2D10" type="Sprite2D" parent="." unique_id=1484940944]
+position = Vector2(40, 239.99998)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m65c3")
+
+[node name="Sprite2D11" type="Sprite2D" parent="." unique_id=1295740494]
+position = Vector2(136, 239.99998)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m65c3")
+
+[node name="Sprite2D12" type="Sprite2D" parent="." unique_id=1692450561]
+position = Vector2(232, 240)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m65c3")
+
+[node name="Sprite2D13" type="Sprite2D" parent="." unique_id=1810771571]
+position = Vector2(328, 240)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m65c3")
+
+[node name="Sprite2D14" type="Sprite2D" parent="." unique_id=220496684]
+position = Vector2(424, 48)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m65c3")
+
+[node name="Sprite2D15" type="Sprite2D" parent="." unique_id=1922614290]
+position = Vector2(424, 144)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m65c3")
+
+[node name="Sprite2D16" type="Sprite2D" parent="." unique_id=868948739]
+position = Vector2(424, 240)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m65c3")
