@@ -5,6 +5,7 @@ class_name State_Run extends State
 @onready var idle: State = $"../Idle"
 @onready var walk: State = $"../Walk"
 @onready var attack: State = $"../Attack"
+@onready var dodge: State = $"../Dodge"
 
 
 ## What happens when the Player enters this State?
@@ -41,4 +42,6 @@ func Physics(_delta : float) -> State:
 func HandleInput(_event: InputEvent) -> State:
 	if _event.is_action("attack"):
 		return attack
+	if _event.is_action_pressed("dodge"):
+		return dodge	
 	return null

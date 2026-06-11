@@ -3,12 +3,14 @@ class_name State_Idle extends State
 @onready var walk: State = $"../Walk"
 @onready var run: State = $"../Run"
 @onready var attack: State= $"../Attack"
+@onready var dodge: State = $"../Dodge"
 
 
 
 ## What happens when the Player enters this State?
 func Enter() -> void:
 	player.UpdateAnimation("idle")
+	print(player.cardinal_direction)
 	pass
 
 
@@ -36,4 +38,6 @@ func Physics(_delta : float) -> State:
 func HandleInput(_event: InputEvent) -> State:
 	if _event.is_action("attack"):
 		return attack
+	if _event.is_action_pressed("dodge"):
+		return dodge
 	return null

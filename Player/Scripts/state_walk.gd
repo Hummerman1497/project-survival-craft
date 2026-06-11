@@ -5,6 +5,7 @@ class_name State_Walk extends State
 @onready var idle: State = $"../Idle"
 @onready var run: State = $"../Run"
 @onready var attack: State = $"../Attack"
+@onready var dodge: State = $"../Dodge"
 
 
 
@@ -43,4 +44,6 @@ func Physics(_delta : float) -> State:
 func HandleInput(_event: InputEvent) -> State:
 	if _event.is_action("attack"):
 		return attack
+	if _event.is_action_pressed("dodge"):
+		return dodge	
 	return null
