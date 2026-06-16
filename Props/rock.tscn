@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://m8co8hsv45rs"]
+
+[ext_resource type="Script" uid="uid://didb5ovostrcy" path="res://Props/rock.gd" id="1_7f1l5"]
+[ext_resource type="Texture2D" uid="uid://c2kryc8glm3go" path="res://Assets/Terrain/Rocks/Rock2.png" id="1_877du"]
+[ext_resource type="PackedScene" uid="uid://b3suwmlq15frx" path="res://Enteties/HitBox/hit_box.tscn" id="2_7f1l5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_877du"]
+size = Vector2(32, 20)
+
+[node name="Rock" type="Node2D" unique_id=2022090193]
+script = ExtResource("1_7f1l5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2039819491]
+position = Vector2(0, -8)
+texture = ExtResource("1_877du")
+
+[node name="HitBox" parent="." unique_id=1960128030 instance=ExtResource("2_7f1l5")]
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=600411732]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_877du")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=279133299]
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1253666604]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_877du")

@@ -42,7 +42,7 @@ func Physics(_delta : float) -> State:
 
 ## What happens with the input events in this State?	
 func HandleInput(_event: InputEvent) -> State:
-	if _event.is_action("attack"):
+	if _event.is_action_pressed("attack"):
 		return attack
 	if _event.is_action_pressed("dodge"):
 		return dodge	

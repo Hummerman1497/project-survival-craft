@@ -9,6 +9,7 @@ var mouse_position : Vector2 = Vector2.ZERO
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+signal DirectionChanged(new_direction : Vector2)
 
 func _ready():
 	state_machine.Initialize(self)
@@ -50,6 +51,7 @@ func SetDirection() -> bool:
 		return false
 		
 	cardinal_direction = new_dir	
+	DirectionChanged.emit(new_dir)
 	
 	return	true
 
@@ -96,3 +98,4 @@ func getSnappedDirectionToMouse() -> void:
 	
 	# Vektor-Werte runden, um ungenaue Kommastellen (wie 0.7071) exakt auf 1 oder -1 zu bringen
 	cardinal_direction = new_dir.round()
+	DirectionChanged.emit(cardinal_direction)

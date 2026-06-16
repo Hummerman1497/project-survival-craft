@@ -8,6 +8,8 @@ var attacking : bool = false
 @onready var walk: State = $"../Walk"
 @onready var run: State= $"../Run"
 @onready var anim_sprite: AnimatedSprite2D = $"../../AnimatedSprite2D"
+@onready var hurt_box: HurtBox = $"../../Interactions/HurtBox"
+
 
 
 ## What happens when the Player enters this State?
@@ -16,13 +18,18 @@ func Enter() -> void:
 	player.UpdateAnimation("attack")
 	anim_sprite.speed_scale = 3
 	anim_sprite.animation_finished.connect(EndAttack)
+	
+	
 	attacking = true
+	await get_tree().create_timer(0.075).timeout
+	hurt_box.monitoring = true
 	
 
 
 ## What happens when the Player exits this State?
 func Exit() -> void:
 	anim_sprite.speed_scale = 1.0
+	hurt_box.monitoring = false
 	if anim_sprite.animation_finished.is_connected(EndAttack):
 		anim_sprite.animation_finished.disconnect(EndAttack)
 		

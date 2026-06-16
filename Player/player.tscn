@@ -11,8 +11,12 @@
 [ext_resource type="Script" uid="uid://ci5hrjrqmdej6" path="res://Player/Scripts/state_run.gd" id="8_od3ui"]
 [ext_resource type="Script" uid="uid://d0apl5dyeqcjm" path="res://Player/Scripts/state_attack.gd" id="10_x3vf3"]
 [ext_resource type="Script" uid="uid://boe1c0f44a641" path="res://Player/Scripts/state_dodge.gd" id="11_apopc"]
+[ext_resource type="PackedScene" uid="uid://bewmjsgaoista" path="res://Enteties/HurtBox/hurt_box.tscn" id="12_5htga"]
+[ext_resource type="Script" uid="uid://1ei1lrffb61o" path="res://Player/Scripts/player_interactions_host.gd" id="12_p5o4e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_edjgo"]
+radius = 7.0
+height = 24.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ak0ms"]
 atlas = ExtResource("2_00tjw")
@@ -1652,7 +1656,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p7odc")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle_W",
 "speed": 5.0
 }, {
@@ -3341,6 +3345,9 @@ _data = {
 &"walk_W": SubResource("Animation_pisgm")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_p5o4e"]
+radius = 13.0
+
 [node name="Player" type="CharacterBody2D" unique_id=2146033593]
 script = ExtResource("1_4ntmi")
 
@@ -3371,3 +3378,15 @@ script = ExtResource("10_x3vf3")
 
 [node name="Dodge" type="Node" parent="StateMachine" unique_id=190191654]
 script = ExtResource("11_apopc")
+
+[node name="Interactions" type="Node2D" parent="." unique_id=1281977131]
+script = ExtResource("12_p5o4e")
+
+[node name="HurtBox" parent="Interactions" unique_id=1252437464 instance=ExtResource("12_5htga")]
+position = Vector2(0, 16)
+collision_mask = 256
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HurtBox" unique_id=96925068]
+shape = SubResource("CircleShape2D_p5o4e")
+debug_color = Color(1, 0, 0.15686275, 0.21176471)
