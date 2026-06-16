@@ -4,6 +4,6 @@ signal Damaged( damage: int )
 
 
 func TakeDamage( damage: int ) -> void:
-	print("TakeDamage: ", damage )
+	print("[", get_parent().name, "] TakeDamage: ", damage )
 	Damaged.emit( damage )
 	
