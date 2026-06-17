@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://cs4gggx30lbl2" path="res://Assets/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees/Tree2.png" id="1_fwqhp"]
 [ext_resource type="Script" uid="uid://b2u35nq22jhxd" path="res://Props/tree_1.gd" id="1_wfwj7"]
 [ext_resource type="PackedScene" uid="uid://b3suwmlq15frx" path="res://Enteties/HitBox/hit_box.tscn" id="1_witdd"]
+[ext_resource type="PackedScene" uid="uid://cipfdk5sb4ssr" path="res://Enteties/ItemSpawner/item_spawner.tscn" id="4_w46cf"]
+[ext_resource type="PackedScene" uid="uid://nu8qd2p41bvr" path="res://Enteties/Items/Wood/wood_item.tscn" id="5_01trl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fwqhp"]
 size = Vector2(34, 106)
@@ -26,3 +28,6 @@ shape = SubResource("RectangleShape2D_fwqhp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1382345769]
 position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_fwqhp")
+
+[node name="ItemSpawner" parent="." unique_id=1316549970 instance=ExtResource("4_w46cf")]
+item_scene = ExtResource("5_01trl")

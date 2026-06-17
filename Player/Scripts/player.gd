@@ -103,3 +103,7 @@ func getSnappedDirectionToMouse() -> void:
 	# Vektor-Werte runden, um ungenaue Kommastellen (wie 0.7071) exakt auf 1 oder -1 zu bringen
 	cardinal_direction = new_dir.round()
 	DirectionChanged.emit(cardinal_direction)
+
+
+func pick_up_item(item_stats: Array):
+	print(item_stats)

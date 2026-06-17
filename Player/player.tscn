@@ -3350,7 +3350,7 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_p5o4e"]
 radius = 13.0
 
-[node name="Player" type="CharacterBody2D" unique_id=2146033593]
+[node name="Player" type="CharacterBody2D" unique_id=2146033593 groups=["player"]]
 script = ExtResource("1_4ntmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2104557104]
