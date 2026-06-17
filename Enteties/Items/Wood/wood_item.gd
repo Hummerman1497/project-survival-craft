@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var pick_up_area: Area2D = $PickUpArea
 var target: CharacterBody2D = null
-var fly_speed: float = 120.0
+var fly_speed: float = 150.0
 var stats: Array = ["Holz", "1 Item"]
 
 func _ready() -> void:

@@ -1,6 +1,6 @@
 class_name Wooden_Tree extends Node2D
 
-@export var health : int = 5
+@export var health : int = 1
 @export var resource_drop : int = 3
 
 @onready var hit_box: HitBox = $HitBox
