@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bewmjsgaoista" path="res://Enteties/HurtBox/hurt_box.tscn" id="12_5htga"]
 [ext_resource type="Script" uid="uid://1ei1lrffb61o" path="res://Player/Scripts/player_interactions_host.gd" id="12_p5o4e"]
 [ext_resource type="Script" uid="uid://d1e2dfvpe6iyb" path="res://Player/ui_looking_at_mouse.gd" id="14_dkpta"]
-[ext_resource type="Texture2D" uid="uid://bpuwiwd2ku6u2" path="res://Assets/Tiny Swords (Free Pack)/UI Elements/UI Elements/Icons/Icon_08.png" id="14_gu6f8"]
+[ext_resource type="Texture2D" uid="uid://d2ar11suam2tu" path="res://Assets/Direction Arrow.png" id="15_dkpta"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_edjgo"]
 radius = 7.0
@@ -3398,6 +3398,7 @@ debug_color = Color(1, 0, 0.15686275, 0.101960786)
 script = ExtResource("14_dkpta")
 
 [node name="Sprite2D" type="Sprite2D" parent="Direction_Indicator" unique_id=1328440811]
-position = Vector2(-24, 0)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("14_gu6f8")
+modulate = Color(0.066658884, 0.03318707, 0.301564, 0.25882354)
+position = Vector2(-17, 0)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("15_dkpta")

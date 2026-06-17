@@ -3539,7 +3539,6 @@ position = Vector2(336, 288)
 
 [node name="Tree1" parent="." unique_id=1953817160 instance=ExtResource("11_pio1y")]
 position = Vector2(264, 176)
-scale = Vector2(0.5, 0.5)
 
 [node name="wood_item" parent="." unique_id=248599883 instance=ExtResource("12_te8jg")]
 position = Vector2(200, 296)
@@ -3564,3 +3563,15 @@ position = Vector2(200, 279)
 
 [node name="wood_item8" parent="." unique_id=1517372668 instance=ExtResource("12_te8jg")]
 position = Vector2(196, 287)
+
+[node name="Tree2" parent="." unique_id=1383955980 instance=ExtResource("11_pio1y")]
+position = Vector2(126, 146)
+
+[node name="Tree3" parent="." unique_id=1344579872 instance=ExtResource("11_pio1y")]
+position = Vector2(212, 122)
+
+[node name="Tree4" parent="." unique_id=2062837188 instance=ExtResource("11_pio1y")]
+position = Vector2(183, 140)
+
+[node name="Tree5" parent="." unique_id=1549565855 instance=ExtResource("11_pio1y")]
+position = Vector2(218, 196)
