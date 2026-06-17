@@ -3388,5 +3388,6 @@ collision_mask = 256
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HurtBox" unique_id=96925068]
+position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_p5o4e")
-debug_color = Color(1, 0, 0.15686275, 0.21176471)
+debug_color = Color(1, 0, 0.15686275, 0.101960786)

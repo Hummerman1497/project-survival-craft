@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://cnxayiwhvu31r"]
 
+[ext_resource type="Script" uid="uid://bol8guxjt085n" path="res://playground.gd" id="1_h1jm5"]
 [ext_resource type="PackedScene" uid="uid://c8643wdqehg8m" path="res://Player/player.tscn" id="1_rupst"]
 [ext_resource type="PackedScene" uid="uid://bfxoo6og8bgeg" path="res://prototype background.tscn" id="1_v7dth"]
 [ext_resource type="Texture2D" uid="uid://dsup8lx7uiuub" path="res://Assets/Terrain/Tilemap_color1.png" id="1_wt17y"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bjptwtstdsqxq" path="res://Assets/Terrain/Tilemap_color4.png" id="6_pi42a"]
 [ext_resource type="Texture2D" uid="uid://e2jhug47we2u" path="res://Assets/Terrain/Tilemap_color5.png" id="7_h1jm5"]
 [ext_resource type="PackedScene" uid="uid://m8co8hsv45rs" path="res://Props/rock.tscn" id="9_pi42a"]
+[ext_resource type="PackedScene" uid="uid://c8kxnac3hnwm5" path="res://Props/tree1.tscn" id="11_pio1y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pio1y"]
 texture = ExtResource("1_wt17y")
@@ -3499,6 +3501,7 @@ sources/4 = SubResource("TileSetAtlasSource_jgc46")
 
 [node name="Playground" type="Node2D" unique_id=2109808178]
 y_sort_enabled = true
+script = ExtResource("1_h1jm5")
 
 [node name="Node2D" parent="." unique_id=171935928 instance=ExtResource("1_v7dth")]
 position = Vector2(88, 32)
@@ -3532,3 +3535,7 @@ position = Vector2(448, 136)
 
 [node name="Rock7" parent="." unique_id=1195733329 instance=ExtResource("9_pi42a")]
 position = Vector2(336, 288)
+
+[node name="Tree1" parent="." unique_id=1953817160 instance=ExtResource("11_pio1y")]
+position = Vector2(264, 176)
+scale = Vector2(0.5, 0.5)
