@@ -58,7 +58,11 @@ func SetDirection() -> bool:
 
 	
 func UpdateAnimation(state:String ) -> void:
-	animation_player.play( state + "_" + AnimDirection() )
+	var anim_name : String = state + "_" + AnimDirection()
+	if animation_player.current_animation == anim_name:
+		animation_player.stop()
+ 
+	animation_player.play( anim_name )
 	pass	
 	
 func AnimDirection() -> String:
