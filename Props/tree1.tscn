@@ -12,6 +12,7 @@ size = Vector2(34, 106)
 [node name="Tree1" type="Node2D" unique_id=1953817160]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_wfwj7")
+health = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1018302856]
 position = Vector2(0, -96)
@@ -19,6 +20,7 @@ texture = ExtResource("1_fwqhp")
 hframes = 8
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1117171817]
+collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1551050959]
 position = Vector2(0, -32)

@@ -18,7 +18,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_edjgo"]
 radius = 7.0
-height = 24.0
+height = 14.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ak0ms"]
 atlas = ExtResource("2_00tjw")
@@ -3351,9 +3351,11 @@ _data = {
 radius = 13.0
 
 [node name="Player" type="CharacterBody2D" unique_id=2146033593 groups=["player"]]
+collision_mask = 16
 script = ExtResource("1_4ntmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2104557104]
+position = Vector2(0, 7)
 shape = SubResource("CapsuleShape2D_edjgo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2100259642]
