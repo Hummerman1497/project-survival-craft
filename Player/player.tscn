@@ -3401,6 +3401,7 @@ script = ExtResource("14_dkpta")
 
 [node name="Sprite2D" type="Sprite2D" parent="Direction_Indicator" unique_id=1328440811]
 modulate = Color(0.066658884, 0.03318707, 0.301564, 0.25882354)
-position = Vector2(-17, 0)
+position = Vector2(17, 0)
+rotation = 3.1415927
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("15_dkpta")

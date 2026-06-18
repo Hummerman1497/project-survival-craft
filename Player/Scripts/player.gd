@@ -93,7 +93,7 @@ func getSnappedDirectionToMouse() -> void:
 	
 	# Schritt 2: Winkel im Bogenmaß (Radiant) holen
 	var angle: float = direction_to_mouse.angle()
-	
+	print("[Player] Angle to mouse: ", angle)
 	# Winkel in 45-Grad-Schritten (TAU / 8) einrasten lassen
 	var snapped_angle: float = snapped(angle, TAU / 8.0)
 	

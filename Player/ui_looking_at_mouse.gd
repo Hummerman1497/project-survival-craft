@@ -11,7 +11,7 @@ func _process(_delta: float) -> void:
 	var angle: float = direction_to_mouse.angle()
 	
 	# Den eingerasteten Winkel zurück in einen sauberen Richtungs-Vektor umwandeln
-	rotation = angle + PI
-	
+	rotation = angle
+	print(rotation)
 	
 	
