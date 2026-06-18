@@ -1,7 +1,7 @@
 class_name State_Dodge extends State
 
-@export var dodge_speed : float = 800.0
-@export var dodge_duration: float = 0.1
+@export var dodge_speed : float = 600.0
+@export var dodge_duration: float = 0.07
 @export var dodge_cooldown: float = 1.5
 
 @onready var idle: State = $"../Idle"

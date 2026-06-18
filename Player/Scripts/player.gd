@@ -17,7 +17,7 @@ func _ready():
 	pass
 	
 
-func _process(delta):		
+func _process(_delta):		
 	direction = Vector2(
 		Input.get_axis("left","right"),
 		Input.get_axis("up","down")
@@ -25,7 +25,7 @@ func _process(delta):
 			
 	
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	move_and_slide()
 	
 func SetDirection() -> bool:
@@ -94,7 +94,7 @@ func getSnappedDirectionToMouse() -> void:
 	
 	# Schritt 2: Winkel im Bogenmaß (Radiant) holen
 	var angle: float = direction_to_mouse.angle()
-	print("[Player] Angle to mouse: ", angle)
+
 	# Winkel in 45-Grad-Schritten (TAU / 8) einrasten lassen
 	var snapped_angle: float = snapped(angle, TAU / 8.0)
 	
