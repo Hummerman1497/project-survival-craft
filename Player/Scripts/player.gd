@@ -10,6 +10,7 @@ var mouse_position : Vector2 = Vector2.ZERO
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 signal DirectionChanged(new_direction : Vector2)
+signal AngleToMouse(angel_to_mouse: float)
 
 func _ready():
 	state_machine.Initialize(self)
@@ -107,3 +108,10 @@ func getSnappedDirectionToMouse() -> void:
 
 func pick_up_item(item_stats: Array):
 	print(item_stats)
+	
+func GetAngleToMouse()-> void:
+	
+	mouse_position = get_global_mouse_position()
+	var direction_to_mouse: Vector2 = (mouse_position - global_position).normalized()
+	var angle: float = direction_to_mouse.angle()	
+	AngleToMouse.emit(angle)

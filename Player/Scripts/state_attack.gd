@@ -31,6 +31,7 @@ func Exit() -> void:
 ## Startet (oder wiederholt) den eigentlichen Angriff
 func StartAttack() -> void:
 	player.getSnappedDirectionToMouse()
+	player.GetAngleToMouse()
 
 	# Sicherheitsnetz: falls der Sprite direkt (statt nur via AnimationPlayer)
 	# beteiligt ist, hier ebenfalls hart auf Frame 0 zurücksetzen.

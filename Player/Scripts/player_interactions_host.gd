@@ -4,6 +4,7 @@ class_name PlayerInteractionsHost extends Node2D
 
 func _ready():
 	player.DirectionChanged.connect(UpdateDirection)
+	#player.AngleToMouse.connect(UpdateAngle)
 
 
 func UpdateDirection( new_direction : Vector2) -> void:
@@ -26,3 +27,7 @@ func UpdateDirection( new_direction : Vector2) -> void:
 			rotation_degrees = 45
 		_:
 			rotation_degrees = 0
+
+func UpdateAngle(angle:float) -> void:
+	print("[InteractionHost]",angle)
+	rotation = angle - PI/2

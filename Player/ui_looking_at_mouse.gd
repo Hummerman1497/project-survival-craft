@@ -12,6 +12,6 @@ func _process(_delta: float) -> void:
 	
 	# Den eingerasteten Winkel zurück in einen sauberen Richtungs-Vektor umwandeln
 	rotation = angle
-	print(rotation)
+	
 	
 	
