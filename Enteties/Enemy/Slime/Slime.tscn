@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dnf0texms50gr"]
 
+[ext_resource type="Script" uid="uid://7kn8b3b7t5m6" path="res://Enteties/Enemy/Scripts/enemy.gd" id="1_2isxd"]
 [ext_resource type="Texture2D" uid="uid://kxt0sabj1ii3" path="res://Assets/Enemys/Shadow.png" id="1_63ss0"]
 [ext_resource type="Texture2D" uid="uid://c6vve31nf5bel" path="res://Assets/Enemys/Slime.png" id="2_2isxd"]
 
@@ -222,6 +223,7 @@ _data = {
 [node name="Slime" type="CharacterBody2D" unique_id=1066116768]
 collision_layer = 256
 collision_mask = 16
+script = ExtResource("1_2isxd")
 
 [node name="Sprite2DSchadow" type="Sprite2D" parent="." unique_id=1434173279]
 modulate = Color(0.7529412, 0.4509804, 0.08235294, 0.76862746)

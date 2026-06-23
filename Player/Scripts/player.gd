@@ -18,12 +18,28 @@ func _ready():
 	
 
 func _process(_delta):		
-	direction = Vector2(
-		Input.get_axis("left","right"),
-		Input.get_axis("up","down")
-	).normalized()
-			
+	var input_dir = Vector2(
+		Input.get_axis("left", "right"),
+		Input.get_axis("up", "down")
+	)
 	
+	if input_dir != Vector2.ZERO:
+		if input_dir.x != 0 and input_dir.y != 0:
+			# Dein funktionierender Code für Diagonal
+			input_dir.y *= 0.414 
+			direction = input_dir.normalized()
+			
+		elif input_dir.x == 0 and input_dir.y != 0:
+			# Neu: Bei reinem Nord/Süd-Lauf die Direction nach dem Normalisieren verkleinern
+			direction = input_dir.normalized()
+			direction.y *= 0.7
+			
+		else:
+			# Bei reinem Ost/West-Lauf ganz normal normalisieren
+			direction = input_dir.normalized()
+			
+	else:
+		direction = Vector2.ZERO	
 	
 func _physics_process(_delta):
 	move_and_slide()
