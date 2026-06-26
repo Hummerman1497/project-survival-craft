@@ -3,8 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://cs4gggx30lbl2" path="res://Assets/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees/Tree2.png" id="1_fwqhp"]
 [ext_resource type="Script" uid="uid://b2u35nq22jhxd" path="res://Props/tree_1.gd" id="1_wfwj7"]
 [ext_resource type="PackedScene" uid="uid://b3suwmlq15frx" path="res://Enteties/HitBox/hit_box.tscn" id="1_witdd"]
+[ext_resource type="AudioStream" uid="uid://b24krgaiaaebg" path="res://Assets/Audio/Sword/Hit/Sword Slash Basic 1.ogg" id="4_hoew6"]
 [ext_resource type="PackedScene" uid="uid://cipfdk5sb4ssr" path="res://Enteties/ItemSpawner/item_spawner.tscn" id="4_w46cf"]
 [ext_resource type="PackedScene" uid="uid://nu8qd2p41bvr" path="res://Enteties/Items/Wood/wood_item.tscn" id="5_01trl"]
+[ext_resource type="AudioStream" uid="uid://c10oj51oqmn5d" path="res://Assets/Audio/Sword/Hit/Sword Slash Basic 2.ogg" id="5_cbqya"]
+[ext_resource type="AudioStream" uid="uid://b0qpurut0uhr0" path="res://Assets/Audio/Sword/Hit/Sword Slash Basic 3.ogg" id="6_5tmhq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lfmf2"]
 radius = 16.25
@@ -12,7 +15,7 @@ radius = 16.25
 [sub_resource type="CircleShape2D" id="CircleShape2D_pisgm"]
 radius = 16.25
 
-[node name="Tree1" type="Node2D" unique_id=1953817160]
+[node name="Tree1" type="Node2D" unique_id=1953817160 groups=["tree"]]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_wfwj7")
 health = 3
@@ -31,6 +34,7 @@ position = Vector2(-0.25, 0)
 shape = SubResource("CircleShape2D_lfmf2")
 
 [node name="HitBox" parent="." unique_id=1960128030 instance=ExtResource("1_witdd")]
+hit_sounds = Array[AudioStream]([ExtResource("4_hoew6"), ExtResource("5_cbqya"), ExtResource("6_5tmhq")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1838824233]
 position = Vector2(-0.25, 0)

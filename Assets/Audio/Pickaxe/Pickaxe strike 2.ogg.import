@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ddugcxl2p3lvn"
+path="res://.godot/imported/Pickaxe strike 2.ogg-d813b8a340fc40b9922610ede1918d51.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Pickaxe/Pickaxe strike 2.ogg"
+dest_files=["res://.godot/imported/Pickaxe strike 2.ogg-d813b8a340fc40b9922610ede1918d51.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

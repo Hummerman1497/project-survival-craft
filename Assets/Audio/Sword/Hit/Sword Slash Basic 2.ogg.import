@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c10oj51oqmn5d"
+path="res://.godot/imported/Sword Slash Basic 2.ogg-ab010845a10b6124cf05ea4873bfc304.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Sword/Hit/Sword Slash Basic 2.ogg"
+dest_files=["res://.godot/imported/Sword Slash Basic 2.ogg-ab010845a10b6124cf05ea4873bfc304.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

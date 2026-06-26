@@ -11,8 +11,11 @@
 [ext_resource type="Script" uid="uid://ci5hrjrqmdej6" path="res://Player/Scripts/state_run.gd" id="8_od3ui"]
 [ext_resource type="Script" uid="uid://d0apl5dyeqcjm" path="res://Player/Scripts/state_attack.gd" id="10_x3vf3"]
 [ext_resource type="Script" uid="uid://boe1c0f44a641" path="res://Player/Scripts/state_dodge.gd" id="11_apopc"]
+[ext_resource type="AudioStream" uid="uid://t23qmpvmklm0" path="res://Assets/Audio/Sword/Whoosh or Swing 1.ogg" id="11_b1ygp"]
 [ext_resource type="PackedScene" uid="uid://bewmjsgaoista" path="res://Enteties/HurtBox/hurt_box.tscn" id="12_5htga"]
+[ext_resource type="AudioStream" uid="uid://bt0bwdf22tebt" path="res://Assets/Audio/Sword/Whoosh or Swing 2.ogg" id="12_o28un"]
 [ext_resource type="Script" uid="uid://1ei1lrffb61o" path="res://Player/Scripts/player_interactions_host.gd" id="12_p5o4e"]
+[ext_resource type="AudioStream" uid="uid://dpj6bfymka2ix" path="res://Assets/Audio/Sword/Whoosh or Swing 3.ogg" id="13_n471f"]
 [ext_resource type="Script" uid="uid://d1e2dfvpe6iyb" path="res://Player/ui_looking_at_mouse.gd" id="14_dkpta"]
 [ext_resource type="Texture2D" uid="uid://d2ar11suam2tu" path="res://Assets/Direction Arrow.png" id="15_dkpta"]
 
@@ -3378,6 +3381,7 @@ script = ExtResource("8_od3ui")
 
 [node name="Attack" type="Node" parent="StateMachine" unique_id=280353273]
 script = ExtResource("10_x3vf3")
+attack_sounds = Array[AudioStream]([ExtResource("11_b1ygp"), ExtResource("12_o28un"), ExtResource("13_n471f")])
 
 [node name="Dodge" type="Node" parent="StateMachine" unique_id=190191654]
 script = ExtResource("11_apopc")
@@ -3404,3 +3408,11 @@ position = Vector2(17, 0)
 rotation = 3.1415927
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("15_dkpta")
+
+[node name="Audio" type="Node2D" parent="." unique_id=392947477]
+
+[node name="Swing_Whosh" type="AudioStreamPlayer2D" parent="Audio" unique_id=303813675]
+max_polyphony = 4
+
+[node name="Audio_Hit" type="AudioStreamPlayer2D" parent="Audio" unique_id=712307544]
+max_polyphony = 4

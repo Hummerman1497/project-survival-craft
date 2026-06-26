@@ -2,6 +2,7 @@ class_name HitBox extends Area2D
 
 signal Damaged( damage: int )
 
+@export var hit_sounds: Array[AudioStream] = []
 
 func TakeDamage( damage: int ) -> void:
 	print("[HitBox ", get_parent().name, "] TakeDamage: ", damage )

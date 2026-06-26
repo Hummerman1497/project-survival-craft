@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bt0bwdf22tebt"
+path="res://.godot/imported/Whoosh or Swing 2.ogg-354b96273290c33c523b02c82bc8955e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Sword/Whoosh or Swing 2.ogg"
+dest_files=["res://.godot/imported/Whoosh or Swing 2.ogg-354b96273290c33c523b02c82bc8955e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

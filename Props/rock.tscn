@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://didb5ovostrcy" path="res://Props/rock.gd" id="1_7f1l5"]
 [ext_resource type="Texture2D" uid="uid://c2kryc8glm3go" path="res://Assets/Terrain/Rocks/Rock2.png" id="1_877du"]
 [ext_resource type="PackedScene" uid="uid://b3suwmlq15frx" path="res://Enteties/HitBox/hit_box.tscn" id="2_7f1l5"]
+[ext_resource type="AudioStream" uid="uid://b41a7cw0251xs" path="res://Assets/Audio/Pickaxe/Pickaxe strike 1.ogg" id="4_y1wc0"]
+[ext_resource type="AudioStream" uid="uid://ddugcxl2p3lvn" path="res://Assets/Audio/Pickaxe/Pickaxe strike 2.ogg" id="5_pilut"]
+[ext_resource type="AudioStream" uid="uid://boas6gbwjj5o1" path="res://Assets/Audio/Pickaxe/Pickaxe strike 3.ogg" id="6_suvgh"]
+[ext_resource type="AudioStream" uid="uid://m5rlr4ibjnl6" path="res://Assets/Audio/Pickaxe/Pickaxe strike 4.ogg" id="7_4hcpj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_877du"]
 size = Vector2(32, 20)
@@ -16,6 +20,7 @@ texture = ExtResource("1_877du")
 
 [node name="HitBox" parent="." unique_id=1960128030 instance=ExtResource("2_7f1l5")]
 position = Vector2(0, -8)
+hit_sounds = Array[AudioStream]([ExtResource("4_y1wc0"), ExtResource("5_pilut"), ExtResource("6_suvgh"), ExtResource("7_4hcpj")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=600411732]
 position = Vector2(0, 4)

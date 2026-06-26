@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://u6mee0xdhkkq"
+path="res://.godot/imported/Axe Chop 2.ogg-bfa90be728b996664a8eed3dc2889115.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Axe/Axe Chop 2.ogg"
+dest_files=["res://.godot/imported/Axe Chop 2.ogg-bfa90be728b996664a8eed3dc2889115.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

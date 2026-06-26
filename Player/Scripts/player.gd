@@ -32,7 +32,7 @@ func _process(_delta):
 		elif input_dir.x == 0 and input_dir.y != 0:
 			# Neu: Bei reinem Nord/Süd-Lauf die Direction nach dem Normalisieren verkleinern
 			direction = input_dir.normalized()
-			direction.y *= 0.7
+			direction.y *= 0.75
 			
 		else:
 			# Bei reinem Ost/West-Lauf ganz normal normalisieren
