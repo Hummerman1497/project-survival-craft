@@ -3,10 +3,13 @@ class_name State_Dodge extends State
 @export var dodge_speed : float = 600.0
 @export var dodge_duration: float = 0.07
 @export var dodge_cooldown: float = 1.5
+@export var dodge_sound: Array[AudioStream] = []
+
 
 @onready var idle: State = $"../Idle"
 @onready var walk: State = $"../Walk"
 @onready var attack: State = $"../Attack"
+@onready var audio: AudioStreamPlayer2D = $"../../Audio/Audio_Hit"
 
 var is_dodging: bool = false
 var dodge_finished : bool = false
@@ -21,6 +24,8 @@ func Enter() -> void:
 	start_direction = player.direction
 	is_dodging = true
 	dodge_finished = false
+	audio.stream = GetRanSound()		
+	audio.play()
 	
 	
 	await get_tree().create_timer(dodge_duration).timeout	
@@ -63,3 +68,7 @@ func HandleInput(_event: InputEvent) -> State:
 		return attack	
 	return null
  
+func GetRanSound() -> AudioStream:
+	if dodge_sound.is_empty():
+		return null
+	return dodge_sound.pick_random()

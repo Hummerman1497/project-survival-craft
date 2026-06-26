@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://nu8qd2p41bvr"]
 
-[ext_resource type="Script" uid="uid://bwmq6c7l3gh31" path="res://Enteties/Items/Wood/wood_item.gd" id="1_d6qim"]
-[ext_resource type="Texture2D" uid="uid://depaujyouacjg" path="res://Assets/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Wood Resource/Wood Resource.png" id="1_glbdv"]
+[ext_resource type="Script" uid="uid://bwmq6c7l3gh31" path="res://Enteties/Items/Wood/item_wood.gd" id="1_lb05q"]
+[ext_resource type="Texture2D" uid="uid://depaujyouacjg" path="res://Assets/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Wood Resource/Wood Resource.png" id="2_utkwb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_glbdv"]
 radius = 24.0
 
-[node name="wood_item" type="Node2D" unique_id=248599883]
-script = ExtResource("1_d6qim")
+[node name="item_wood" type="Node2D" unique_id=248599883]
+script = ExtResource("1_lb05q")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1149355465]
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_glbdv")
+texture = ExtResource("2_utkwb")
 
 [node name="PickUpArea" type="Area2D" parent="." unique_id=1073299291]
 

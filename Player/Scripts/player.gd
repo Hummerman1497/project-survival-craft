@@ -123,7 +123,7 @@ func getSnappedDirectionToMouse() -> void:
 
 
 func pick_up_item(item_stats: Array):
-	print(item_stats)
+	print("[Player] ",item_stats)
 	
 func GetAngleToMouse()-> void:
 	

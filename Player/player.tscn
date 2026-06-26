@@ -18,6 +18,8 @@
 [ext_resource type="AudioStream" uid="uid://dpj6bfymka2ix" path="res://Assets/Audio/Sword/Whoosh or Swing 3.ogg" id="13_n471f"]
 [ext_resource type="Script" uid="uid://d1e2dfvpe6iyb" path="res://Player/ui_looking_at_mouse.gd" id="14_dkpta"]
 [ext_resource type="Texture2D" uid="uid://d2ar11suam2tu" path="res://Assets/Direction Arrow.png" id="15_dkpta"]
+[ext_resource type="AudioStream" uid="uid://byh5b7wyy78k5" path="res://Assets/Audio/Dash 1.mp3" id="16_n471f"]
+[ext_resource type="Texture2D" uid="uid://kxt0sabj1ii3" path="res://Assets/Enemys/Shadow.png" id="19_o28un"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_01trl"]
 radius = 5.0
@@ -3360,6 +3362,12 @@ script = ExtResource("1_4ntmi")
 position = Vector2(0, 10)
 shape = SubResource("CircleShape2D_01trl")
 
+[node name="Sprite2DSchadow" type="Sprite2D" parent="CollisionShape2D" unique_id=1897032438]
+modulate = Color(0.11914834, 0.1128676, 0.095971026, 0.5686275)
+position = Vector2(0, 1)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("19_o28un")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2100259642]
 sprite_frames = SubResource("SpriteFrames_beqdq")
 animation = &"idle_W"
@@ -3385,6 +3393,7 @@ attack_sounds = Array[AudioStream]([ExtResource("11_b1ygp"), ExtResource("12_o28
 
 [node name="Dodge" type="Node" parent="StateMachine" unique_id=190191654]
 script = ExtResource("11_apopc")
+dodge_sound = Array[AudioStream]([ExtResource("16_n471f")])
 
 [node name="Interactions" type="Node2D" parent="." unique_id=1281977131]
 script = ExtResource("12_p5o4e")
