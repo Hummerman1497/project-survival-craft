@@ -1,5 +1,8 @@
 extends Node2D
 
+@export var audio_pick_up: Array[AudioStream] = []
+
+
 @onready var pick_up_area: Area2D = $PickUpArea
 var target: CharacterBody2D = null
 var fly_speed: float = 150.0
@@ -19,5 +22,5 @@ func _physics_process(delta: float) -> void:
 		
 		if global_position.distance_to(target.global_position) < 5.0:
 			if target.has_method("pick_up_item"):
-				target.pick_up_item(stats)
+				target.pick_up_item(stats, audio_pick_up)
 			queue_free()

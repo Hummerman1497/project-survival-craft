@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dnf0texms50gr" path="res://Enteties/Enemy/Slime/Slime.tscn" id="8_v7dth"]
 [ext_resource type="PackedScene" uid="uid://m8co8hsv45rs" path="res://Props/rock.tscn" id="9_pi42a"]
 [ext_resource type="PackedScene" uid="uid://c8kxnac3hnwm5" path="res://Props/tree1.tscn" id="11_pio1y"]
+[ext_resource type="PackedScene" uid="uid://nu8qd2p41bvr" path="res://Enteties/Items/Wood/item_wood.tscn" id="12_te8jg"]
 
 [node name="Playground" type="Node2D" unique_id=2109808178]
 y_sort_enabled = true
@@ -64,3 +65,33 @@ position = Vector2(263, 99)
 
 [node name="Tree8" parent="." unique_id=283687061 instance=ExtResource("11_pio1y")]
 position = Vector2(336, 125)
+
+[node name="item_wood" parent="." unique_id=248599883 instance=ExtResource("12_te8jg")]
+position = Vector2(153, 233)
+
+[node name="item_wood2" parent="." unique_id=113771476 instance=ExtResource("12_te8jg")]
+position = Vector2(158, 245)
+
+[node name="item_wood3" parent="." unique_id=1534339089 instance=ExtResource("12_te8jg")]
+position = Vector2(189, 253)
+
+[node name="item_wood4" parent="." unique_id=439787006 instance=ExtResource("12_te8jg")]
+position = Vector2(209, 260)
+
+[node name="item_wood5" parent="." unique_id=1116486008 instance=ExtResource("12_te8jg")]
+position = Vector2(235, 270)
+
+[node name="item_wood6" parent="." unique_id=288072649 instance=ExtResource("12_te8jg")]
+position = Vector2(253, 274)
+
+[node name="item_wood7" parent="." unique_id=1903519617 instance=ExtResource("12_te8jg")]
+position = Vector2(264, 284)
+
+[node name="item_wood8" parent="." unique_id=1045837772 instance=ExtResource("12_te8jg")]
+position = Vector2(246, 298)
+
+[node name="item_wood9" parent="." unique_id=1726403224 instance=ExtResource("12_te8jg")]
+position = Vector2(218, 300)
+
+[node name="item_wood10" parent="." unique_id=1354514186 instance=ExtResource("12_te8jg")]
+position = Vector2(218, 300)

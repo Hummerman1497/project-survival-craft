@@ -8,6 +8,7 @@ var mouse_position : Vector2 = Vector2.ZERO
 @onready var state_machine: PlayerStateMachine = $StateMachine
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio_player: AudioStreamPlayer2D = $Audio/Swing_Whosh
 
 signal DirectionChanged(new_direction : Vector2)
 signal AngleToMouse(angel_to_mouse: float)
@@ -122,8 +123,12 @@ func getSnappedDirectionToMouse() -> void:
 	DirectionChanged.emit(cardinal_direction)
 
 
-func pick_up_item(item_stats: Array):
+func pick_up_item(item_stats: Array, audio_pick_up : Array):
 	print("[Player] ",item_stats)
+	if not audio_pick_up.is_empty():
+		audio_player.stream = audio_pick_up.pick_random()
+		audio_player.pitch_scale = randf_range(0.8 ,1.2)
+		audio_player.play()
 	
 func GetAngleToMouse()-> void:
 	

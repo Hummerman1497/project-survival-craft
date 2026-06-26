@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bxwiavx3nt536"]
 
 [ext_resource type="Script" uid="uid://wai60sk22wno" path="res://Enteties/Items/Rock/item_rock.gd" id="1_rnxs5"]
+[ext_resource type="AudioStream" uid="uid://bis56l20bvd35" path="res://Assets/Audio/minecraft pick up sound.mp3" id="2_gaq40"]
 [ext_resource type="Texture2D" uid="uid://m55boqiyduf3" path="res://Assets/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Resource/Rock_Resource.png" id="2_rnxs5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_glbdv"]
@@ -8,6 +9,7 @@ radius = 24.0
 
 [node name="item_rock" type="Node2D" unique_id=248599883]
 script = ExtResource("1_rnxs5")
+audio_pick_up = Array[AudioStream]([ExtResource("2_gaq40")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1149355465]
 scale = Vector2(0.4, 0.4)

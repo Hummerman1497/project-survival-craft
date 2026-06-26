@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bis56l20bvd35"
+path="res://.godot/imported/minecraft pick up sound.mp3-5e119b564681bc0472bdc7e1d46b3f1f.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/minecraft pick up sound.mp3"
+dest_files=["res://.godot/imported/minecraft pick up sound.mp3-5e119b564681bc0472bdc7e1d46b3f1f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
