@@ -14,6 +14,13 @@ var invulnerable : bool = false
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var state_machine: EnemyStateMachine = $EnemyStateMachine
+
+
+func _ready():
+	state_machine.initialize(self)
+	player = PlayerManager.player
+
 
 
 func _physics_process(_delta: float):

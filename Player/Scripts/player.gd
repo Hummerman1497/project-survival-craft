@@ -14,6 +14,7 @@ signal DirectionChanged(new_direction : Vector2)
 signal AngleToMouse(angel_to_mouse: float)
 
 func _ready():
+	PlayerManager.player = self
 	state_machine.Initialize(self)
 	pass
 	
@@ -124,7 +125,7 @@ func getSnappedDirectionToMouse() -> void:
 
 
 func pick_up_item(item_stats: Array, audio_pick_up : Array):
-	print("[Player] ",item_stats)
+	print("[P] Picked Up: ",item_stats)
 	if not audio_pick_up.is_empty():
 		audio_player.stream = audio_pick_up.pick_random()
 		audio_player.pitch_scale = randf_range(0.8 ,1.2)
