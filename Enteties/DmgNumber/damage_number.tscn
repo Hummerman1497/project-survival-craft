@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ba6m4lmhoiyof"]
+
+[ext_resource type="Script" uid="uid://dpavplisx1xei" path="res://Enteties/DmgNumber/damage_number.gd" id="1_qj0d8"]
+[ext_resource type="FontFile" uid="uid://cp57nbe0eigom" path="res://Assets/Fonts/dogicapixel.otf" id="2_8uj3w"]
+
+[node name="DamageNumber" type="Node2D" unique_id=699191427]
+script = ExtResource("1_qj0d8")
+
+[node name="Label" type="Label" parent="." unique_id=805040733]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.7343565, 0, 0.15712672, 1)
+theme_override_fonts/font = ExtResource("2_8uj3w")
+theme_override_font_sizes/font_size = 8

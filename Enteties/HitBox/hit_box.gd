@@ -3,9 +3,12 @@ class_name HitBox extends Area2D
 signal Damaged( damage: int )
 
 @export var hit_sounds: Array[AudioStream] = []
+const DAMAGE_NUMBER = preload("uid://ba6m4lmhoiyof")
+
 
 func TakeDamage( damage: int ) -> void:
 	print("[HitBox ", get_parent().name, "] TakeDamage: ", damage )
+	init_dmg_num(damage)
 	Damaged.emit( damage )
 	
 func play_shake(sprite: Sprite2D, duration:float = 0.2, shake_count:int = 4, max_offset:int = 6):
@@ -37,3 +40,19 @@ func play_shake(sprite: Sprite2D, duration:float = 0.2, shake_count:int = 4, max
 			
 	# Am Ende exakt auf Null zurücksetzen
 	tween.chain().tween_property(sprite, "offset", Vector2.ZERO, 0.05)
+
+func init_dmg_num( amount : int):
+	# 1. Zahl instanziieren
+	var dmg_number_scene = DAMAGE_NUMBER
+	var dmg_num = dmg_number_scene.instantiate()
+	
+	# 2. Text und Startposition (beim Gegner) setzen
+	dmg_num.text = str(amount)
+	var random_offset := Vector2(
+		randf_range(-15.0, 15.0),
+		randf_range(-10.0, 10.0)
+	)
+	dmg_num.global_position = global_position + random_offset
+	
+	# 3. An die Welt anhängen (get_tree().current_scene ist die geladene Map)
+	get_tree().current_scene.add_child(dmg_num)
