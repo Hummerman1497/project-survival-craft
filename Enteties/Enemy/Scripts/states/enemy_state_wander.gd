@@ -14,7 +14,7 @@ var _direction : Vector2
 
 
 ## What happens when we initialize this state?
-func _init() -> void:
+func init() -> void:
 	pass
 	
 	

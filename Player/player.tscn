@@ -19,7 +19,7 @@
 [ext_resource type="Script" uid="uid://d1e2dfvpe6iyb" path="res://Player/ui_looking_at_mouse.gd" id="14_dkpta"]
 [ext_resource type="Texture2D" uid="uid://d2ar11suam2tu" path="res://Assets/Direction Arrow.png" id="15_dkpta"]
 [ext_resource type="AudioStream" uid="uid://byh5b7wyy78k5" path="res://Assets/Audio/Dash 1.mp3" id="16_n471f"]
-[ext_resource type="Texture2D" uid="uid://kxt0sabj1ii3" path="res://Assets/Enemys/Shadow.png" id="19_o28un"]
+[ext_resource type="Texture2D" uid="uid://kxt0sabj1ii3" path="res://Assets/Enemys/Slime/Shadow.png" id="19_o28un"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_01trl"]
 radius = 5.0
@@ -3359,7 +3359,6 @@ collision_mask = 16
 script = ExtResource("1_4ntmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2104557104]
-position = Vector2(0, 10)
 shape = SubResource("CircleShape2D_01trl")
 
 [node name="Sprite2DSchadow" type="Sprite2D" parent="CollisionShape2D" unique_id=1897032438]
@@ -3369,6 +3368,7 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("19_o28un")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2100259642]
+position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_beqdq")
 animation = &"idle_W"
 
@@ -3396,6 +3396,7 @@ script = ExtResource("11_apopc")
 dodge_sound = Array[AudioStream]([ExtResource("16_n471f")])
 
 [node name="Interactions" type="Node2D" parent="." unique_id=1281977131]
+position = Vector2(0, -10)
 script = ExtResource("12_p5o4e")
 
 [node name="HurtBox" parent="Interactions" unique_id=1252437464 instance=ExtResource("12_5htga")]
@@ -3409,6 +3410,7 @@ shape = SubResource("CircleShape2D_p5o4e")
 debug_color = Color(1, 0, 0.15686275, 0.101960786)
 
 [node name="Direction_Indicator" type="Node2D" parent="." unique_id=2126451593]
+position = Vector2(0, -10)
 script = ExtResource("14_dkpta")
 
 [node name="Sprite2D" type="Sprite2D" parent="Direction_Indicator" unique_id=1328440811]

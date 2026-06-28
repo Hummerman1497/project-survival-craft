@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6vve31nf5bel"
-path="res://.godot/imported/Slime.png-e7827413be66f8e0a79b2773c1e9e802.ctex"
+uid="uid://blps8jjhggkw2"
+path="res://.godot/imported/DestroySmoke.png-e7812b49dff4f1354dd3935b7b9d8410.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemys/Slime.png"
-dest_files=["res://.godot/imported/Slime.png-e7827413be66f8e0a79b2773c1e9e802.ctex"]
+source_file="res://Assets/Enemys/Slime/DestroySmoke.png"
+dest_files=["res://.godot/imported/DestroySmoke.png-e7812b49dff4f1354dd3935b7b9d8410.ctex"]
 
 [params]
 

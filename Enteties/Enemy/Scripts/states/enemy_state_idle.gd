@@ -10,7 +10,7 @@ var _timer : float = 0.0
 
 
 ## What happens when we initialize this state?
-func _init() -> void:
+func init() -> void:
 	pass
 	
 	
