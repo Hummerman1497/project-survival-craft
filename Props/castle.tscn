@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://3cfg118usjl8"]
+
+[ext_resource type="Texture2D" uid="uid://d3jjvhbbkitk7" path="res://Assets/Tiny Swords (Free Pack)/Buildings/Black Buildings/Castle.png" id="1_jlvr4"]
+
+[node name="Castle" type="Node2D" unique_id=1461335012]
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1253565936]
+texture = ExtResource("1_jlvr4")

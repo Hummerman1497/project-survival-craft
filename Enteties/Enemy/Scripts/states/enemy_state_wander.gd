@@ -16,8 +16,7 @@ var _direction : Vector2
 ## What happens when we initialize this state?
 func init() -> void:
 	pass
-	
-	
+
 ## What happens when the enemy enters this state?
 func enter() -> void:
 	_timer = randi_range( state_cycles_min, state_cycles_max ) * state_animation_duration
