@@ -1,15 +1,15 @@
 class_name HitBox
 extends Area2D
 
-signal Damaged(damage: int)
+signal damaged(hurt_box: HurtBox)
 
 @export var hit_sounds: Array[AudioStream] = []
 const DAMAGE_NUMBER = preload("uid://ba6m4lmhoiyof")
 
 
-func take_damage(damage: int) -> void:
-	init_dmg_num(damage)
-	Damaged.emit(damage)
+func take_damage(hurt_box: HurtBox) -> void:
+	init_dmg_num(hurt_box.damage)
+	damaged.emit(hurt_box)
 
 
 func play_shake(sprite: Sprite2D, duration: float = 0.2, shake_count: int = 4, max_offset: int = 6):

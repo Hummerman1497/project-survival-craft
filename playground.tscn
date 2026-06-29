@@ -65,11 +65,6 @@ position = Vector2(263, 99)
 [node name="Tree8" parent="." unique_id=283687061 instance=ExtResource("11_pio1y")]
 position = Vector2(336, 125)
 
-[node name="Sprite0001" type="Sprite2D" parent="." unique_id=743717932]
-position = Vector2(414, 180)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_pi42a")
-
 [node name="Sprite0002" type="Sprite2D" parent="." unique_id=935804492]
 position = Vector2(473, 182)
 texture = ExtResource("8_pi42a")

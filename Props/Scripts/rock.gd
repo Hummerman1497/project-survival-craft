@@ -1,21 +1,22 @@
-class_name Rock extends Node2D
+class_name Rock
+extends Node2D
 
-@export var health : int = 1
-@export var resource_drop : int = 3
+@export var health: int = 1
+@export var resource_drop: int = 3
 
 @onready var hit_box: HitBox = $HitBox
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
-func _ready():
-	$HitBox.Damaged.connect(TakeDamage)
 
-func TakeDamage( _damage:int)->void:
-	health	-= _damage	
-	
-	if health >= 1:		
+func _ready():
+	$HitBox.damaged.connect(TakeDamage)
+
+
+func TakeDamage(hurt_box: HurtBox) -> void:
+	health -= hurt_box.damage
+
+	if health >= 1:
 		hit_box.play_shake(sprite_2d)
-	else: 
+	else:
 		queue_free()
 		$ItemSpawner.spawn_item(3)
-			
-	

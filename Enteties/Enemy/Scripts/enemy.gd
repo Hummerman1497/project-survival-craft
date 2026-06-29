@@ -23,7 +23,7 @@ var invulnerable: bool = false
 func _ready():
 	state_machine.initialize(self)
 	player = PlayerManager.player
-	hit_box.Damaged.connect(_take_damage)
+	hit_box.damaged.connect(_take_damage)
 
 
 func _physics_process(_delta: float):
@@ -64,10 +64,10 @@ func anim_direction() -> String:
 		return "O"
 
 
-func _take_damage(damage: int) -> void:
+func _take_damage(hurt_box: HurtBox) -> void:
 	if invulnerable == true:
 		return
-	health -= damage
+	health -= hurt_box.damage
 	if health > 0:
 		enemy_damaged.emit()
 	else:
