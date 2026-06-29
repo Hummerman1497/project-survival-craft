@@ -1,64 +1,67 @@
-class_name Player extends CharacterBody2D
+class_name Player
+extends CharacterBody2D
 
+signal DirectionChanged(new_direction: Vector2)
+signal AngleToMouse(angel_to_mouse: float)
 
-var cardinal_direction : Vector2 = Vector2.DOWN
-var direction : Vector2 = Vector2.ZERO
-var mouse_position : Vector2 = Vector2.ZERO
+var cardinal_direction: Vector2 = Vector2.DOWN
+var direction: Vector2 = Vector2.ZERO
+var mouse_position: Vector2 = Vector2.ZERO
 
 @onready var state_machine: PlayerStateMachine = $StateMachine
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var audio_player: AudioStreamPlayer2D = $Audio/Swing_Whosh
 
-signal DirectionChanged(new_direction : Vector2)
-signal AngleToMouse(angel_to_mouse: float)
 
 func _ready():
 	PlayerManager.player = self
 	state_machine.Initialize(self)
 	pass
-	
 
-func _process(_delta):		
+
+func _process(_delta):
 	var input_dir = Vector2(
 		Input.get_axis("left", "right"),
-		Input.get_axis("up", "down")
+		Input.get_axis("up", "down"),
 	)
-	
+
 	if input_dir != Vector2.ZERO:
 		if input_dir.x != 0 and input_dir.y != 0:
 			# Dein funktionierender Code für Diagonal
-			input_dir.y *= 0.414 
+			input_dir.y *= 0.414
 			direction = input_dir.normalized()
-			
+
 		elif input_dir.x == 0 and input_dir.y != 0:
 			# Neu: Bei reinem Nord/Süd-Lauf die Direction nach dem Normalisieren verkleinern
 			direction = input_dir.normalized()
 			direction.y *= 0.75
-			
+
 		else:
 			# Bei reinem Ost/West-Lauf ganz normal normalisieren
 			direction = input_dir.normalized()
-			
+
 	else:
-		direction = Vector2.ZERO	
-	
+		direction = Vector2.ZERO
+
+
 func _physics_process(_delta):
 	move_and_slide()
-	
+
+
 func SetDirection() -> bool:
 	if direction == Vector2.ZERO:
 		return false
-	
-	var threshold : float = 0.3
-	var x_dir : float = 0.0
-	var y_dir : float = 0.0
+
+	var threshold: float = 0.3
+	var x_dir: float = 0.0
+	var y_dir: float = 0.0
 
 	if direction.x > threshold:
 		x_dir = 1.0
 	elif direction.x < -threshold:
 		x_dir = -1.0
-		
+
 	if direction.y > threshold:
 		y_dir = 1.0
 	elif direction.y < -threshold:
@@ -68,22 +71,22 @@ func SetDirection() -> bool:
 
 	if new_dir == Vector2.ZERO or new_dir == cardinal_direction:
 		return false
-		
-	cardinal_direction = new_dir	
+
+	cardinal_direction = new_dir
 	DirectionChanged.emit(new_dir)
-	
-	return	true
+
+	return true
 
 
-	
-func UpdateAnimation(state:String ) -> void:
-	var anim_name : String = state + "_" + AnimDirection()
+func UpdateAnimation(state: String) -> void:
+	var anim_name: String = state + "_" + AnimDirection()
 	if animation_player.current_animation == anim_name:
 		animation_player.stop()
- 
-	animation_player.play( anim_name )
-	pass	
-	
+
+	animation_player.play(anim_name)
+	pass
+
+
 func AnimDirection() -> String:
 	if cardinal_direction == Vector2.DOWN:
 		return "S"
@@ -93,47 +96,45 @@ func AnimDirection() -> String:
 		return "W"
 	elif cardinal_direction == Vector2.RIGHT:
 		return "O"
-	elif cardinal_direction	== Vector2(-1,-1):
+	elif cardinal_direction == Vector2(-1, -1):
 		return "NW"
-	elif  cardinal_direction == Vector2(1,1):
+	elif cardinal_direction == Vector2(1, 1):
 		return "SO"
-	elif cardinal_direction == Vector2(1,-1):
-		return "NO"	
+	elif cardinal_direction == Vector2(1, -1):
+		return "NO"
 	else:
-		return "SW"	
-
-	
+		return "SW"
 
 
 func getSnappedDirectionToMouse() -> void:
 	# Schritt 1: Vektor vom Spieler zur Maus berechnen und normalisieren
 	mouse_position = get_global_mouse_position()
 	var direction_to_mouse: Vector2 = (mouse_position - global_position).normalized()
-	
+
 	# Schritt 2: Winkel im Bogenmaß (Radiant) holen
 	var angle: float = direction_to_mouse.angle()
 
 	# Winkel in 45-Grad-Schritten (TAU / 8) einrasten lassen
 	var snapped_angle: float = snapped(angle, TAU / 8.0)
-	
+
 	# Den eingerasteten Winkel zurück in einen sauberen Richtungs-Vektor umwandeln
 	var new_dir: Vector2 = Vector2.from_angle(snapped_angle)
-	
+
 	# Vektor-Werte runden, um ungenaue Kommastellen (wie 0.7071) exakt auf 1 oder -1 zu bringen
 	cardinal_direction = new_dir.round()
 	DirectionChanged.emit(cardinal_direction)
 
 
-func pick_up_item(item_stats: Array, audio_pick_up : Array):
-	print("[P] Picked Up: ",item_stats)
+func pick_up_item(item_stats: Array, audio_pick_up: Array):
+	print("[P] Picked Up: ", item_stats)
 	if not audio_pick_up.is_empty():
 		audio_player.stream = audio_pick_up.pick_random()
-		audio_player.pitch_scale = randf_range(0.8 ,1.2)
+		audio_player.pitch_scale = randf_range(0.8, 1.2)
 		audio_player.play()
-	
-func GetAngleToMouse()-> void:
-	
+
+
+func GetAngleToMouse() -> void:
 	mouse_position = get_global_mouse_position()
 	var direction_to_mouse: Vector2 = (mouse_position - global_position).normalized()
-	var angle: float = direction_to_mouse.angle()	
+	var angle: float = direction_to_mouse.angle()
 	AngleToMouse.emit(angle)
