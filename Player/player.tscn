@@ -3358,6 +3358,9 @@ radius = 13.0
 collision_mask = 16
 script = ExtResource("1_4ntmi")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=112158990]
+process_callback = 0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2104557104]
 shape = SubResource("CircleShape2D_01trl")
 

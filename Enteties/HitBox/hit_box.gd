@@ -13,12 +13,7 @@ func TakeDamage( damage: int ) -> void:
 	
 func play_shake(sprite: Sprite2D, duration:float = 0.2, shake_count:int = 4, max_offset:int = 6):
 	var tween = create_tween()
-	
-	# duration = Gesamtdauer des Shakes
-	# shake_count = Wie oft es hin und her zappelt
-	# max_offset =Maximale Pixel-Auslenkung
-	
-	# Setzt den Offset zu Beginn zurück
+		
 	sprite.offset = Vector2.ZERO
 	
 	for i in range(shake_count):
