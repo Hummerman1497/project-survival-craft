@@ -7,8 +7,7 @@ signal Damaged(damage: int)
 const DAMAGE_NUMBER = preload("uid://ba6m4lmhoiyof")
 
 
-func TakeDamage(damage: int) -> void:
-	print("[HitBox ", get_parent().name, "] TakeDamage: ", damage)
+func take_damage(damage: int) -> void:
 	init_dmg_num(damage)
 	Damaged.emit(damage)
 
