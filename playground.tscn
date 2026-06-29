@@ -68,3 +68,6 @@ position = Vector2(336, 125)
 [node name="Sprite0002" type="Sprite2D" parent="." unique_id=935804492]
 position = Vector2(473, 182)
 texture = ExtResource("8_pi42a")
+
+[node name="Slime2" parent="." unique_id=719056448 instance=ExtResource("8_v7dth")]
+position = Vector2(419, 291)

@@ -9,10 +9,10 @@ extends Node2D
 
 
 func _ready():
-	$HitBox.damaged.connect(TakeDamage)
+	$HitBox.damaged.connect(take_damage)
 
 
-func TakeDamage(hurt_box: HurtBox) -> void:
+func take_damage(hurt_box: HurtBox) -> void:
 	health -= hurt_box.damage
 
 	if health >= 1:

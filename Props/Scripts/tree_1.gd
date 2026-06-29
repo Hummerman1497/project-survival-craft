@@ -13,7 +13,7 @@ var is_dead: bool = false
 
 
 func _ready():
-	$HitBox.damaged.connect(TakeDamage)
+	$HitBox.damaged.connect(take_damage)
 
 	# Startet die Wind Animation an einem random punkt damit die Bäume nicht synchron sind
 	animation_player.play("idle_wind")
@@ -23,7 +23,7 @@ func _ready():
 	animation_player.speed_scale = randf_range(0.5, 0.8)
 
 
-func TakeDamage(hurt_box: HurtBox) -> void:
+func take_damage(hurt_box: HurtBox) -> void:
 	health -= hurt_box.damage
 
 	if health >= 1:
