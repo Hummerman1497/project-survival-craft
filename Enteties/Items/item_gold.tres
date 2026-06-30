@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://e07alx7ewyw2"]
+
+[ext_resource type="Script" uid="uid://ffbdvn77h0e" path="res://Enteties/Items/item_data.gd" id="1_c24p4"]
+[ext_resource type="Texture2D" uid="uid://8uau0i6s8kot" path="res://Assets/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Resource/Gold_Resource.png" id="2_cks51"]
+
+[resource]
+script = ExtResource("1_c24p4")
+name = "Gold"
+description = "A valuable peace of gold"
+texture = ExtResource("2_cks51")
+metadata/_custom_type_script = "uid://ffbdvn77h0e"

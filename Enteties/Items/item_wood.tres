@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://kmswasfh6s6j"]
+
+[ext_resource type="Script" uid="uid://ffbdvn77h0e" path="res://Enteties/Items/item_data.gd" id="1_cd22x"]
+[ext_resource type="Texture2D" uid="uid://depaujyouacjg" path="res://Assets/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Wood Resource/Wood Resource.png" id="2_eqojq"]
+
+[resource]
+script = ExtResource("1_cd22x")
+name = "Wood"
+description = "A sturdy chunk of wood"
+texture = ExtResource("2_eqojq")
+metadata/_custom_type_script = "uid://ffbdvn77h0e"
