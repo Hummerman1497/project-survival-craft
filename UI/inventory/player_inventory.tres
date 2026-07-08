@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="InventoryData" format=3 uid="uid://cvfs2km3nf11b"]
+
+[ext_resource type="Script" uid="uid://bxv48thkie362" path="res://UI/inventory/scripts/inventory_data.gd" id="1_dxibt"]
+[ext_resource type="Script" uid="uid://baxt8yen8fn6y" path="res://UI/inventory/scripts/slot_data.gd" id="2_r5tm6"]
+[ext_resource type="Resource" uid="uid://e07alx7ewyw2" path="res://Enteties/Items/item_gold.tres" id="3_5iyap"]
+[ext_resource type="Resource" uid="uid://dk7kovc4vjf50" path="res://Enteties/Items/item_meat.tres" id="4_5iyap"]
+[ext_resource type="Resource" uid="uid://kmswasfh6s6j" path="res://Enteties/Items/item_wood.tres" id="5_ijtnh"]
+
+[sub_resource type="Resource" id="Resource_rkif3"]
+script = ExtResource("2_r5tm6")
+item_data = ExtResource("3_5iyap")
+quantity = 69
+metadata/_custom_type_script = "uid://baxt8yen8fn6y"
+
+[sub_resource type="Resource" id="Resource_y6xgg"]
+script = ExtResource("2_r5tm6")
+item_data = ExtResource("4_5iyap")
+quantity = 44
+metadata/_custom_type_script = "uid://baxt8yen8fn6y"
+
+[sub_resource type="Resource" id="Resource_g4v7s"]
+script = ExtResource("2_r5tm6")
+item_data = ExtResource("5_ijtnh")
+quantity = 12
+metadata/_custom_type_script = "uid://baxt8yen8fn6y"
+
+[sub_resource type="Resource" id="Resource_5iyap"]
+script = ExtResource("2_r5tm6")
+item_data = ExtResource("4_5iyap")
+quantity = 23
+metadata/_custom_type_script = "uid://baxt8yen8fn6y"
+
+[resource]
+script = ExtResource("1_dxibt")
+slots = Array[ExtResource("2_r5tm6")]([SubResource("Resource_rkif3"), SubResource("Resource_y6xgg"), SubResource("Resource_g4v7s"), null, null, SubResource("Resource_5iyap")])
+metadata/_custom_type_script = "uid://bxv48thkie362"

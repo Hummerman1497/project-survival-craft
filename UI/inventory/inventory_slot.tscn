@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cgr0juhq374uj"]
+
+[ext_resource type="Texture2D" uid="uid://8uau0i6s8kot" path="res://Assets/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Resource/Gold_Resource.png" id="1_7jbgp"]
+[ext_resource type="Script" uid="uid://iw8roepgd7pl" path="res://UI/inventory/inventory_slot_ui.gd" id="1_y6xgg"]
+
+[node name="InventorySlot" type="Button" unique_id=70441126]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 32.0
+offset_bottom = 32.0
+script = ExtResource("1_y6xgg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=248552238]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 2)
+texture = ExtResource("1_7jbgp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=50439190]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 8
+text = "99"
+horizontal_alignment = 2
