@@ -3386,6 +3386,7 @@ script = ExtResource("6_fhl08")
 
 [node name="Walk" type="Node" parent="StateMachine" unique_id=84940262]
 script = ExtResource("7_vtle1")
+steering_factor = 20.0
 
 [node name="Run" type="Node" parent="StateMachine" unique_id=1474910307]
 script = ExtResource("8_od3ui")

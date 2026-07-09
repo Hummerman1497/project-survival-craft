@@ -8,7 +8,7 @@ extends State
 @onready var attack: State = $"../Attack"
 @onready var dodge: State = $"../Dodge"
 
-var steering_factor: float = 15.0
+@export var steering_factor: float = 15.0
 
 
 ## What happens when the Player enters this State?
