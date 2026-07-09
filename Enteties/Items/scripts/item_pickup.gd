@@ -1,14 +1,18 @@
+class_name ItemPickup
 extends Node2D
 
 @export var audio_pick_up: Array[AudioStream] = []
-
+@export var item_data: ItemData:
+	set = _set_item_data
 @onready var pick_up_area: Area2D = $PickUpArea
 var target: CharacterBody2D = null
 var fly_speed: float = 150.0
-var stats: Array = ["Stein", "1 Item"]
+@export var stats: Array = []
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 
 func _ready() -> void:
+	update_texture()
 	pick_up_area.body_entered.connect(fly_to_player)
 
 
@@ -26,3 +30,12 @@ func _physics_process(delta: float) -> void:
 			if target.has_method("pick_up_item"):
 				target.pick_up_item(stats, audio_pick_up)
 			queue_free()
+
+
+func _set_item_data(value: ItemData):
+	item_data = value
+	pass
+
+
+func update_texture() -> void:
+	pass
