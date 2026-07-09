@@ -12,7 +12,7 @@ var fly_speed: float = 150.0
 
 
 func _ready() -> void:
-	update_texture()
+	_update_texture()
 	pick_up_area.body_entered.connect(fly_to_player)
 
 
@@ -31,18 +31,23 @@ func _physics_process(delta: float) -> void:
 				if PlayerManager.INVENTORY_DATA.add_item(item_data) == true:
 					item_picked_up()
 			if target.has_method("pick_up_item"):
-				target.pick_up_item(stats, audio_pick_up)
+				target.pick_up_item(item_data, audio_pick_up)
 			queue_free()
 
 
 func item_picked_up():
-	print("[item_pickup] item picked up")
+	#print("[item_pickup] item picked up")
+	pass
 
 
 func _set_item_data(value: ItemData):
+	_update_texture()
 	item_data = value
 	pass
 
 
-func update_texture() -> void:
+func _update_texture() -> void:
+	if item_data and sprite_2d:
+		sprite_2d.texture = item_data.texture
+
 	pass

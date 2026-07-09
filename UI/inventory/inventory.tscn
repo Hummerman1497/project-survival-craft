@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://fdvg5w3bgrql"]
 
 [ext_resource type="Script" uid="uid://la1fywgm1cw2" path="res://UI/inventory/inventory.gd" id="1_8ihku"]
+[ext_resource type="Texture2D" uid="uid://br44wrjm7ytbm" path="res://Assets/Tiny Swords (Free Pack)/UI Elements/UI Elements/Icons/Icon_11.png" id="2_aeo10"]
 [ext_resource type="Texture2D" uid="uid://4c6wgqedbd27" path="res://Assets/items.png" id="2_fo048"]
 [ext_resource type="PackedScene" uid="uid://cgr0juhq374uj" path="res://UI/inventory/inventory_slot.tscn" id="3_23s18"]
 [ext_resource type="Script" uid="uid://cq2g4j1yvqrpq" path="res://UI/inventory/scripts/inventory_ui.gd" id="3_b5g1n"]
@@ -20,9 +21,11 @@ texture_margin_bottom = 10.0
 [node name="Inventory" type="CanvasLayer" unique_id=2110329412]
 script = ExtResource("1_8ihku")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=349664005]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1745542631]
+offset_right = 27.0
+offset_bottom = 27.0
+texture = ExtResource("2_aeo10")
+expand_mode = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1007960775]
 offset_left = 61.0
