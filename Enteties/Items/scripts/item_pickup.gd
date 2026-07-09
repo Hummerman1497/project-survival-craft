@@ -27,9 +27,16 @@ func _physics_process(delta: float) -> void:
 		global_position = global_position.move_toward(target.global_position, fly_speed * delta)
 
 		if global_position.distance_to(target.global_position) < 5.0:
+			if item_data:
+				if PlayerManager.INVENTORY_DATA.add_item(item_data) == true:
+					item_picked_up()
 			if target.has_method("pick_up_item"):
 				target.pick_up_item(stats, audio_pick_up)
 			queue_free()
+
+
+func item_picked_up():
+	print("[item_pickup] item picked up")
 
 
 func _set_item_data(value: ItemData):
