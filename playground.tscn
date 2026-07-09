@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://c8643wdqehg8m" path="res://Player/player.tscn" id="1_rupst"]
 [ext_resource type="PackedScene" uid="uid://1jbq2uawjw6b" path="res://Tilemaps/prototype-tiles.tscn" id="7_v7dth"]
 [ext_resource type="PackedScene" uid="uid://dtv2lxmwv5agp" path="res://Tilemaps/grass-01.tscn" id="7_ynsuh"]
-[ext_resource type="Texture2D" uid="uid://bl7etpk5rqj6c" path="res://Assets/Sprite-0001.png" id="8_pi42a"]
 [ext_resource type="PackedScene" uid="uid://dnf0texms50gr" path="res://Enteties/Enemy/Slime/Slime.tscn" id="8_v7dth"]
 [ext_resource type="PackedScene" uid="uid://m8co8hsv45rs" path="res://Props/rock.tscn" id="9_pi42a"]
 [ext_resource type="PackedScene" uid="uid://c8kxnac3hnwm5" path="res://Props/tree1.tscn" id="11_pio1y"]
@@ -64,10 +63,6 @@ position = Vector2(263, 99)
 
 [node name="Tree8" parent="." unique_id=283687061 instance=ExtResource("11_pio1y")]
 position = Vector2(336, 125)
-
-[node name="Sprite0002" type="Sprite2D" parent="." unique_id=935804492]
-position = Vector2(473, 182)
-texture = ExtResource("8_pi42a")
 
 [node name="Slime2" parent="." unique_id=719056448 instance=ExtResource("8_v7dth")]
 position = Vector2(419, 291)

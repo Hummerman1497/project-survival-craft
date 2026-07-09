@@ -12,6 +12,11 @@ func _ready():
 
 
 func _process(delta: float):
+	for state in states:
+		if state.cooldown_timer > 0.0:
+			state.cooldown_timer -= delta
+			if state == current_state:
+				print(state.name, " Cooldown: ", state.cooldown_timer)
 	ChangeState(current_state.Process(delta))
 
 
@@ -40,8 +45,13 @@ func ChangeState(new_state: State) -> void:
 	if new_state == null || new_state == current_state:
 		return
 
+	if new_state.is_on_cooldown():
+		print("[", new_state.name, "] Cooldown: ", new_state.cooldown_timer)
+		return
+
 	if current_state:
 		current_state.Exit()
+		current_state.start_cooldown()
 
 	prev_state = current_state
 	current_state = new_state

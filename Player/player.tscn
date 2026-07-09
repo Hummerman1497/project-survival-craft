@@ -3397,6 +3397,7 @@ attack_sounds = Array[AudioStream]([ExtResource("11_b1ygp"), ExtResource("12_o28
 [node name="Dodge" type="Node" parent="StateMachine" unique_id=190191654]
 script = ExtResource("11_apopc")
 dodge_sound = Array[AudioStream]([ExtResource("16_n471f")])
+cooldown = 1.0
 
 [node name="Interactions" type="Node2D" parent="." unique_id=1281977131]
 position = Vector2(0, -10)
