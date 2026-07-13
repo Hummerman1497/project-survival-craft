@@ -20,7 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://d2ar11suam2tu" path="res://Assets/Direction Arrow.png" id="15_dkpta"]
 [ext_resource type="AudioStream" uid="uid://byh5b7wyy78k5" path="res://Assets/Audio/Dash 1.mp3" id="16_n471f"]
 [ext_resource type="Texture2D" uid="uid://kxt0sabj1ii3" path="res://Assets/Enemys/Slime/Shadow.png" id="19_o28un"]
-[ext_resource type="PackedScene" uid="uid://c1ecl2upe25p2" path="res://UI/dodge_cooldown.tscn" id="21_7emwf"]
+[ext_resource type="Texture2D" uid="uid://bpuwiwd2ku6u2" path="res://Assets/Tiny Swords (Free Pack)/UI Elements/UI Elements/Icons/Icon_08.png" id="21_7emwf"]
+[ext_resource type="Script" uid="uid://b5sn7n81s8www" path="res://Player/dodge_cooldown.gd" id="21_hshwv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_01trl"]
 radius = 5.0
@@ -3434,6 +3435,18 @@ max_polyphony = 4
 [node name="Audio_Hit" type="AudioStreamPlayer2D" parent="Audio" unique_id=712307544]
 max_polyphony = 4
 
-[node name="Dodge_Cooldown" parent="." unique_id=1761676475 node_paths=PackedStringArray("dodge") instance=ExtResource("21_7emwf")]
-position = Vector2(11, 4)
-dodge = NodePath("../StateMachine/Dodge")
+[node name="Dodge_Cooldown" type="Node2D" parent="." unique_id=728488411]
+script = ExtResource("21_hshwv")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Dodge_Cooldown" unique_id=1391816437]
+offset_left = 56.0
+offset_top = 23.0
+offset_right = 120.0
+offset_bottom = 87.0
+scale = Vector2(-0.2, 0.2)
+value = 50.0
+fill_mode = 1
+texture_under = ExtResource("21_7emwf")
+texture_progress = ExtResource("21_7emwf")
+tint_under = Color(0.30584177, 0.30584177, 0.30584177, 0.41960785)
+tint_progress = Color(1, 1, 1, 0.4745098)

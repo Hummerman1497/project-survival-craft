@@ -1,6 +1,8 @@
 class_name State
 extends Node
 
+signal cooldown_finished
+signal cooldown_started
 ## Stores a reference to the player that this State belongs to
 static var player: Player
 @export var cooldown: float = 0.00
@@ -38,3 +40,4 @@ func is_on_cooldown() -> bool:
 
 func start_cooldown() -> void:
 	cooldown_timer = cooldown
+	cooldown_started.emit(cooldown)
