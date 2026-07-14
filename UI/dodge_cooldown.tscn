@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1ecl2upe25p2"]
 
 [ext_resource type="Script" uid="uid://b5sn7n81s8www" path="res://Player/dodge_cooldown.gd" id="1_0007h"]
+[ext_resource type="Texture2D" uid="uid://lnm1xyq6icjr" path="res://Assets/Tiny Swords (Free Pack)/UI Elements/UI Elements/Icons/Icon_08_BW.png" id="2_ekmjp"]
 [ext_resource type="Texture2D" uid="uid://bpuwiwd2ku6u2" path="res://Assets/Tiny Swords (Free Pack)/UI Elements/UI Elements/Icons/Icon_08.png" id="2_n55t8"]
 
 [node name="Dodge_Cooldown" type="Node2D" unique_id=1761676475]
@@ -15,7 +16,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 value = 100.0
 fill_mode = 1
-texture_under = ExtResource("2_n55t8")
+texture_under = ExtResource("2_ekmjp")
 texture_progress = ExtResource("2_n55t8")
-tint_under = Color(0.30584177, 0.30584177, 0.30584177, 0.41960785)
+tint_under = Color(0.30980393, 0.3019608, 0.3019608, 0.41960785)
 tint_progress = Color(1, 1, 1, 0.4745098)

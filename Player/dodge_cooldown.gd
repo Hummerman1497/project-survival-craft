@@ -1,11 +1,22 @@
+@tool
 extends Node2D
 
 @onready var progress_bar: TextureProgressBar = $TextureProgressBar
-@export var dodge: State_Dodge
+@export var dodge: State_Dodge:
+	set(value):
+		dodge = value
+		update_configuration_warnings()
 
 var is_coolingdown: bool = false
 var cooldown: float
 var current_time: float
+
+
+func _get_configuration_warnings() -> PackedStringArray:
+	var warnings = PackedStringArray()
+	if dodge == null:
+		warnings.append("Es muss eine State_Dodge im Inspektor zugewiesen werden.")
+	return warnings
 
 
 func _ready() -> void:

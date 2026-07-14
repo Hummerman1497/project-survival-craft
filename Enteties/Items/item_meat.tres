@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dk7kovc4vjf50"]
 
-[ext_resource type="Script" uid="uid://ffbdvn77h0e" path="res://Enteties/Items/item_data.gd" id="1_suuhx"]
+[ext_resource type="Script" uid="uid://ffbdvn77h0e" path="res://Enteties/Items/scripts/item_data.gd" id="1_suuhx"]
 [ext_resource type="Texture2D" uid="uid://cvlx6ba0yn547" path="res://Assets/Tiny Swords (Free Pack)/Terrain/Resources/Meat/Meat Resource/Meat Resource.png" id="2_xk5ka"]
 
 [resource]
