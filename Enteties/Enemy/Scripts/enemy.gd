@@ -73,4 +73,4 @@ func _take_damage(hurt_box: HurtBox) -> void:
 		enemy_damaged.emit(hurt_box)
 	else:
 		enemy_destroyed.emit(hurt_box)
-		item_spawner.spawn_item(2)
+		item_spawner.spawn_item(0, 3)

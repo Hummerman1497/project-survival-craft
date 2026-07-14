@@ -21,7 +21,10 @@ func spawn_item(amount: int, rand_deviation: int = 0, radius: float = 30.0) -> v
 		push_error("Keine Item-Szene zugewiesen!")
 		return
 
-	var rand_amount = randi_range(amount - rand_deviation, amount + rand_deviation)
+	var amount_min = amount - rand_deviation
+	if amount_min < 0:
+		amount_min = 0
+	var rand_amount = randi_range(amount_min, amount + rand_deviation)
 
 	if rand_amount > 0:
 		for i in rand_amount:
