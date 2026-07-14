@@ -67,5 +67,5 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	# Holen der InventoryData über den Parent (GridContainer -> Panel -> UI)
 	# Alternativ: Wenn dein UI die Daten hält, suchen wir den InventoryUI Node
 	var inventory_ui = get_parent()
-	if inventory_ui and inventory_ui.data:
-		inventory_ui.data.swap_slots(origin_index, target_index)
+	if inventory_ui and inventory_ui.inv_data:
+		inventory_ui.inv_data.swap_slots(origin_index, target_index)

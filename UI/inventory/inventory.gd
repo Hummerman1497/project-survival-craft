@@ -3,6 +3,8 @@ extends CanvasLayer
 signal shown
 signal hidden
 var inv_open: bool = false
+@export var hot_bar_size: int = 6
+@onready var inv_panel_container: PanelContainer = $Inv_Panel_Container
 
 
 func _ready() -> void:
@@ -21,13 +23,13 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func show_inventory() -> void:
 	get_tree().paused = true #nimmt den ganzen tree und pausiert ihn
-	visible = true
+	inv_panel_container.visible = true
 	inv_open = true
 	shown.emit()
 
 
 func hide_inventory() -> void:
 	get_tree().paused = false #nimmt den ganzen tree und resumed ihn
-	visible = false
+	inv_panel_container.visible = false
 	inv_open = false
 	hidden.emit()
