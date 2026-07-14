@@ -1,7 +1,7 @@
 class_name InventoryUI
 extends Node
 
-const INVENTROY_SLOT = preload("uid://cgr0juhq374uj")
+const INVENTROY_SLOT = preload("uid://cgr0juhq374uj") #Button der die SlotData visualisiert, mit Texture und Label
 @export var data: InventoryData
 
 
@@ -25,13 +25,13 @@ func update_inventory() -> void:
 	if not data:
 		return
 
-	var existing_slots = get_children()
+	var existing_slots = get_children() # Alle InvetorySlot_Ui [Button] die angehängt sind
 
 	# Fall 1: Wir haben noch keine Slots im UI -> Einmalig erstellen!
-	if existing_slots.size() != data.slots.size():
+	if existing_slots.size() != data.slots.size(): # Wenn das Array mit den SlotData nicht gleich dem existierenden Inv ist:
 		clear_inventory()
-		for s in data.slots:
-			var new_slot = INVENTROY_SLOT.instantiate()
+		for s in data.slots: # inv_data.slots Array[SlotData]
+			var new_slot = INVENTROY_SLOT.instantiate() # Button mit SlotData, Texture und Label
 			add_child(new_slot)
 			new_slot.slot_data = s
 
