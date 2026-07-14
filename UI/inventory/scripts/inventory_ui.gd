@@ -37,17 +37,20 @@ func update_inventory() -> void:
 	if not inv_data:
 		return
 
-	var existing_slots = get_children() # Alle InvetorySlot_Ui [Button] die angehängt sind
+	var existing_slots = get_children()
 
-	# Fall 1: Wir haben noch keine Slots im UI -> Einmalig erstellen!
-	if existing_slots.size() != inv_data.slots.size(): # Wenn das Array mit den SlotData nicht gleich dem existierenden Inv ist:
+	if existing_slots.size() != inv_data.slots.size() - Inventory.hot_bar_size:
 		clear_inventory()
-		for s in inv_data.slots: # inv_data.slots Array[SlotData]
-			var new_slot = INVENTROY_SLOT.instantiate() # Button mit SlotData, Texture und Label
+		# Fall 1: Neu erstellen, aber über range iterieren um 'i' zu haben
+		for i in range(Inventory.hot_bar_size, inv_data.slots.size()):
+			var new_slot = INVENTROY_SLOT.instantiate()
 			add_child(new_slot)
-			new_slot.slot_data = s
+			new_slot.slot_index = i # <-- NEU: Echten Index übergeben
+			new_slot.slot_data = inv_data.slots[i]
 
-	# Fall 2: Slots existieren bereits -> Nur die Daten aktualisieren! (Perfekt für Drag & Drop)
 	else:
-		for i in inv_data.slots.size():
-			existing_slots[i].slot_data = inv_data.slots[i]
+		# Fall 2: Updaten
+		for i in range(Inventory.hot_bar_size, inv_data.slots.size()):
+			var ui_slot = existing_slots[i - Inventory.hot_bar_size]
+			ui_slot.slot_index = i # <-- NEU: Index sicherheitshalber setzen
+			ui_slot.slot_data = inv_data.slots[i]

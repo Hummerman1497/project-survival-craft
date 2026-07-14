@@ -13,6 +13,8 @@
 [ext_resource type="Script" uid="uid://d3wmd5b28gkjh" path="res://Enteties/Enemy/Scripts/states/enemy_state_hit.gd" id="10_t56pm"]
 [ext_resource type="Texture2D" uid="uid://blps8jjhggkw2" path="res://Assets/Enemys/Slime/DestroySmoke.png" id="11_hawwb"]
 [ext_resource type="Script" uid="uid://c3cwjbawnw51a" path="res://Enteties/Enemy/Scripts/states/enemy_state_destroy.gd" id="12_t56pm"]
+[ext_resource type="Script" uid="uid://dbx20umg772m4" path="res://Enteties/ItemSpawner/item_spawner.gd" id="14_hawwb"]
+[ext_resource type="PackedScene" uid="uid://cocrw058u7diq" path="res://Enteties/Items/Slime Ball/item_slime_ball.tscn" id="15_uslvh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 13.038404
@@ -748,3 +750,8 @@ hframes = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DestroyEffectSprite" unique_id=1217388495]
 libraries/ = SubResource("AnimationLibrary_w7r72")
+
+[node name="ItemSpawner" type="Node2D" parent="." unique_id=1831296583]
+script = ExtResource("14_hawwb")
+item_scene = ExtResource("15_uslvh")
+metadata/_custom_type_script = "uid://dbx20umg772m4"

@@ -11,6 +11,7 @@ func add_item(item: ItemData, count: int = 1) -> bool:
 		if s:
 			if s.item_data == item:
 				s.quantity += count
+				inventory_updated.emit()
 				return true
 
 	for i in slots.size():
@@ -19,6 +20,7 @@ func add_item(item: ItemData, count: int = 1) -> bool:
 			new_item.item_data = item
 			new_item.quantity = count
 			slots[i] = new_item
+			inventory_updated.emit()
 			return true
 	print("[InvData] Inventory was full")
 	return false

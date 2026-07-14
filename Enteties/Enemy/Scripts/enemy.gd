@@ -18,6 +18,7 @@ var invulnerable: bool = false
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var hit_box: HitBox = $HitBox
 @onready var state_machine: EnemyStateMachine = $EnemyStateMachine
+@onready var item_spawner: ItemSpawner = $ItemSpawner
 
 
 func _ready():
@@ -72,3 +73,4 @@ func _take_damage(hurt_box: HurtBox) -> void:
 		enemy_damaged.emit(hurt_box)
 	else:
 		enemy_destroyed.emit(hurt_box)
+		item_spawner.spawn_item(2)

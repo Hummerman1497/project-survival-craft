@@ -1,6 +1,7 @@
 class_name InventorySlotUI
 extends Button
 
+var slot_index: int = -1
 var slot_data: SlotData:
 	set = set_slot_data
 
@@ -44,10 +45,11 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 	var preview_control = Control.new()
 	preview_control.add_child(preview_texture)
 	preview_texture.position = -0.5 * preview_texture.custom_minimum_size
+	preview_control.z_index = 100
 	set_drag_preview(preview_control)
 
 	# Wir übergeben den aktuellen Slot-Index als Daten
-	return get_index()
+	return slot_index
 
 
 # 2. Prüft, ob man hier ablegen darf
@@ -59,7 +61,7 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 # 3. Führt das Ablegen / Tauschen aus
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	var origin_index = data as int
-	var target_index = get_index()
+	var target_index = slot_index
 
 	if origin_index == target_index:
 		return

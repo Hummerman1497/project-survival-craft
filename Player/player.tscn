@@ -3352,8 +3352,7 @@ _data = {
 &"walk_W": SubResource("Animation_pisgm")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_p5o4e"]
-radius = 13.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7emwf"]
 
 [node name="Player" type="CharacterBody2D" unique_id=2146033593 groups=["player"]]
 collision_mask = 16
@@ -3362,14 +3361,14 @@ script = ExtResource("1_4ntmi")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=112158990]
 process_callback = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2104557104]
-shape = SubResource("CircleShape2D_01trl")
-
-[node name="Sprite2DSchadow" type="Sprite2D" parent="CollisionShape2D" unique_id=1897032438]
+[node name="Sprite2DSchadow" type="Sprite2D" parent="." unique_id=1897032438]
 modulate = Color(0.11914834, 0.1128676, 0.095971026, 0.5686275)
 position = Vector2(0, 1)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("19_o28un")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2104557104]
+shape = SubResource("CircleShape2D_01trl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2100259642]
 position = Vector2(0, -10)
@@ -3402,7 +3401,7 @@ dodge_sound = Array[AudioStream]([ExtResource("16_n471f")])
 cooldown = 1.0
 
 [node name="Interactions" type="Node2D" parent="." unique_id=1281977131]
-position = Vector2(0, -10)
+position = Vector2(0, -6)
 script = ExtResource("12_p5o4e")
 
 [node name="HurtBox" parent="Interactions" unique_id=1252437464 instance=ExtResource("12_5htga")]
@@ -3412,7 +3411,7 @@ monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HurtBox" unique_id=96925068]
 position = Vector2(0, 6)
-shape = SubResource("CircleShape2D_p5o4e")
+shape = SubResource("CapsuleShape2D_7emwf")
 debug_color = Color(1, 0, 0.15686275, 0.101960786)
 
 [node name="Direction_Indicator" type="Node2D" parent="." unique_id=2126451593]
