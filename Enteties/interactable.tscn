@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cekjugbssky3f"]
+
+[ext_resource type="Script" uid="uid://d0od5lfyqbmlg" path="res://Enteties/interactable.gd" id="1_eq51l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+
+[node name="Interactable" type="Node2D" unique_id=921260085]
+script = ExtResource("1_eq51l")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=476606777]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=739419222]
+shape = SubResource("CircleShape2D_g4v7s")

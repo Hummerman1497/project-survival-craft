@@ -3356,6 +3356,9 @@ _data = {
 radius = 12.0
 height = 32.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 16.0
+
 [node name="Player" type="CharacterBody2D" unique_id=2146033593 groups=["player"]]
 collision_mask = 16
 script = ExtResource("1_4ntmi")
@@ -3415,6 +3418,12 @@ monitoring = false
 position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_7emwf")
 debug_color = Color(1, 0, 0.15686275, 0.101960786)
+
+[node name="InteractDetect" type="Area2D" parent="Interactions" unique_id=1834480414]
+position = Vector2(0, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/InteractDetect" unique_id=1295780781]
+shape = SubResource("CircleShape2D_g4v7s")
 
 [node name="Direction_Indicator" type="Node2D" parent="." unique_id=2126451593]
 position = Vector2(0, -10)

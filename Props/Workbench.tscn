@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bnux30y44ru2m"]
+
+[ext_resource type="Texture2D" uid="uid://bcb0ludv8nesn" path="res://Assets/grid 45° 100px-export.png" id="1_1u88c"]
+[ext_resource type="Script" uid="uid://j1xmolvhsmn5" path="res://Props/workbench.gd" id="1_3jfb8"]
+[ext_resource type="PackedScene" uid="uid://cekjugbssky3f" path="res://Enteties/interactable.tscn" id="3_wm8p0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wm8p0"]
+radius = 34.0
+
+[node name="WorkBench" type="Node2D" unique_id=11319435]
+script = ExtResource("1_3jfb8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1568771294]
+y_sort_enabled = true
+scale = Vector2(0.7, 0.7)
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1096928150]
+position = Vector2(0.3999939, 4)
+polygon = PackedVector2Array(13.885719, 23.142855, 38, 13, -5, -6, -31.828564, 4.5714283)
+
+[node name="Grid45°100Px" type="Sprite2D" parent="StaticBody2D" unique_id=102146583]
+position = Vector2(3.399994, 7)
+texture = ExtResource("1_1u88c")
+
+[node name="Interactable" parent="." unique_id=921260085 instance=ExtResource("3_wm8p0")]
+
+[node name="CollisionShape2D" parent="Interactable/Area2D" parent_id_path=PackedInt32Array(921260085, 476606777) index="0" unique_id=739419222]
+shape = SubResource("CircleShape2D_wm8p0")
+
+[editable path="Interactable"]
