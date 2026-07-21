@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cekjugbssky3f"]
 
 [ext_resource type="Script" uid="uid://d0od5lfyqbmlg" path="res://Enteties/interactable.gd" id="1_eq51l"]
+[ext_resource type="Texture2D" uid="uid://dj5f2mhtclvna" path="res://Assets/Keyboard & Mouse/Default/keyboard_e_outline.png" id="2_qvxgu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 
@@ -11,3 +12,18 @@ script = ExtResource("1_eq51l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=739419222]
 shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2026987613]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.5
+offset_top = -8.5
+offset_right = 8.5
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qvxgu")
+expand_mode = 1

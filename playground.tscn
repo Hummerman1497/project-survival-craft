@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://1jbq2uawjw6b" path="res://Tilemaps/prototype-tiles.tscn" id="7_v7dth"]
 [ext_resource type="PackedScene" uid="uid://cocrw058u7diq" path="res://Enteties/Items/Slime Ball/item_slime_ball.tscn" id="8_pi42a"]
 [ext_resource type="PackedScene" uid="uid://dnf0texms50gr" path="res://Enteties/Enemy/Slime/Slime.tscn" id="8_v7dth"]
-[ext_resource type="PackedScene" uid="uid://cekjugbssky3f" path="res://Enteties/interactable.tscn" id="9_h1jm5"]
+[ext_resource type="PackedScene" uid="uid://b07s64fff8ccr" path="res://Props/chest_test.tscn" id="9_h1jm5"]
 [ext_resource type="PackedScene" uid="uid://m8co8hsv45rs" path="res://Props/rock.tscn" id="9_pi42a"]
 [ext_resource type="PackedScene" uid="uid://bnux30y44ru2m" path="res://Props/Workbench.tscn" id="10_h1jm5"]
 [ext_resource type="PackedScene" uid="uid://c8kxnac3hnwm5" path="res://Props/tree1.tscn" id="11_pio1y"]
@@ -77,8 +77,5 @@ position = Vector2(110, 251)
 [node name="WorkBench" parent="." unique_id=11319435 instance=ExtResource("10_h1jm5")]
 position = Vector2(288, 256)
 
-[node name="Interactable" parent="." unique_id=921260085 instance=ExtResource("9_h1jm5")]
-position = Vector2(504, 160)
-
-[node name="Interactable2" parent="." unique_id=154949583 instance=ExtResource("9_h1jm5")]
-position = Vector2(504, 176)
+[node name="Chest" parent="." unique_id=339428354 instance=ExtResource("9_h1jm5")]
+position = Vector2(248, 240)

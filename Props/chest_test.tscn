@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b07s64fff8ccr"]
+
+[ext_resource type="Texture2D" uid="uid://cjavy8xa4i1tf" path="res://Assets/Selbst gemalt/Kiste.png" id="1_0rkuw"]
+[ext_resource type="Script" uid="uid://deqmcxb27n3m2" path="res://Props/chest_test.gd" id="1_j3hek"]
+[ext_resource type="PackedScene" uid="uid://cekjugbssky3f" path="res://Enteties/interactable.tscn" id="2_j3hek"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vvwdj"]
+radius = 24.0
+
+[node name="Chest" type="Node2D" unique_id=339428354]
+script = ExtResource("1_j3hek")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2126345985]
+position = Vector2(-8.000004, 1.9073486e-06)
+scale = Vector2(0.026367184, 0.026367184)
+texture = ExtResource("1_0rkuw")
+
+[node name="Interactable" parent="." unique_id=921260085 instance=ExtResource("2_j3hek")]
+
+[node name="CollisionShape2D" parent="Interactable/Area2D" parent_id_path=PackedInt32Array(921260085, 476606777) index="0" unique_id=739419222]
+shape = SubResource("CircleShape2D_vvwdj")
+
+[editable path="Interactable"]
