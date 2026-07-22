@@ -1,7 +1,7 @@
 class_name InventorySlotUI
 extends Button
 
-var slot_index: int = -1
+var slot_index: int 
 var slot_data: SlotData:
 	set = set_slot_data
 
@@ -29,7 +29,7 @@ func set_slot_data(value: SlotData) -> void:
 
 
 # 1. Startet den Drag-Vorgang
-func _get_drag_data(at_position: Vector2) -> Variant:
+func _get_drag_data(at_position: Vector2) -> Variant: # wird im Quellen-Slot aufgerufen und übergibt daten die mit gedraged werden sollen
 	if slot_data == null:
 		return null # Leere Slots kann man nicht ziehen
 
@@ -53,16 +53,18 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 
 
 # 2. Prüft, ob man hier ablegen darf
-func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+func _can_drop_data(at_position: Vector2, data: Variant) -> bool: # wird im potentiellen Ziel-slot (Mause hover drüber) bei jeder maus bewegung ausgeführt 
 	# Akzeptieren, wenn die Daten eine Zahl (der Slot-Index) sind
+	print("[can drop data] ", data)
 	return typeof(data) == TYPE_INT
 
 
 # 3. Führt das Ablegen / Tauschen aus
-func _drop_data(at_position: Vector2, data: Variant) -> void:
+func _drop_data(at_position: Vector2, data: Variant) -> void: # wird im Ziel-slot ausgeführt
 	var origin_index = data as int
-	var target_index = slot_index
-
+	var target_index = slot_index # wird in inventory/chest_ui.update_inventory() gesetzt
+	print("[drop data] data: ", data, ", target: ", target_index)
+	
 	if origin_index == target_index:
 		return
 
