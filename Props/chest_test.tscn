@@ -3,12 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://cjavy8xa4i1tf" path="res://Assets/Selbst gemalt/Kiste.png" id="1_0rkuw"]
 [ext_resource type="Script" uid="uid://deqmcxb27n3m2" path="res://Props/chest_test.gd" id="1_j3hek"]
 [ext_resource type="PackedScene" uid="uid://cekjugbssky3f" path="res://Enteties/interactable.tscn" id="2_j3hek"]
+[ext_resource type="Resource" uid="uid://d20kxlufjcogl" path="res://UI/inventory/chest_inventory.tres" id="2_vvwdj"]
+[ext_resource type="Resource" uid="uid://e07alx7ewyw2" path="res://Enteties/Items/item_gold.tres" id="4_qmjcs"]
+[ext_resource type="Resource" uid="uid://dk7kovc4vjf50" path="res://Enteties/Items/item_meat.tres" id="5_5f661"]
+[ext_resource type="Resource" uid="uid://kmswasfh6s6j" path="res://Enteties/Items/item_wood.tres" id="6_5f661"]
+[ext_resource type="Script" uid="uid://ffbdvn77h0e" path="res://Enteties/Items/scripts/item_data.gd" id="6_71kcb"]
+[ext_resource type="Resource" uid="uid://ckyyvhdj8hxt6" path="res://Enteties/Items/item_slimeball.tres" id="7_71kcb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vvwdj"]
 radius = 24.0
 
 [node name="Chest" type="Node2D" unique_id=339428354]
 script = ExtResource("1_j3hek")
+chest_inv_data = ExtResource("2_vvwdj")
+is_loot_chest = true
+loot_table = Array[ExtResource("6_71kcb")]([ExtResource("5_5f661"), ExtResource("4_qmjcs"), ExtResource("6_5f661"), ExtResource("7_71kcb")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2126345985]
 position = Vector2(-8.000004, 1.9073486e-06)

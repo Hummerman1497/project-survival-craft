@@ -1,22 +1,11 @@
 @tool
-class_name InventoryUI
+class_name ChestUI
 extends Node
 
 const INVENTORY_SLOT = preload("uid://cgr0juhq374uj") #Button der die SlotData visualisiert, mit Texture und Label
 
-@export var inv_data: InventoryData:
-	set(value):
-		inv_data = value
-		update_configuration_warnings() # Aktualisiert die Warnung im Editor sofort bei Zuweisung
-
-
-func _get_configuration_warnings() -> PackedStringArray:
-	var warnings = PackedStringArray()
-	if not inv_data:
-		warnings.append("Die Variable 'inv_data' (InventoryData) wurde im Inspector nicht zugewiesen!")
-	return warnings
-
-
+@export var inv_data: InventoryData
+	
 func _ready() -> void:
 	Inventory.shown.connect(update_inventory)
 	Inventory.hidden.connect(clear_inventory)

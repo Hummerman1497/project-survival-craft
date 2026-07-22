@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://iocvt1802bs0"]
+
+[ext_resource type="Script" uid="uid://bk2yggfnpcog" path="res://UI/chest_ui.gd" id="1_m3yhl"]
+[ext_resource type="PackedScene" uid="uid://cgr0juhq374uj" path="res://UI/inventory/inventory_slot.tscn" id="2_k2r8k"]
+
+[node name="Chest_UI" type="GridContainer" unique_id=1901302662]
+offset_right = 68.0
+offset_bottom = 40.0
+columns = 6
+script = ExtResource("1_m3yhl")
+
+[node name="InventorySlot" parent="." unique_id=70441126 instance=ExtResource("2_k2r8k")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="." unique_id=629956647 instance=ExtResource("2_k2r8k")]
+layout_mode = 2

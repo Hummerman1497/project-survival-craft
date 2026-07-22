@@ -5,6 +5,7 @@ signal hidden
 var inv_open: bool = false
 @export var hot_bar_size: int = 6
 @onready var inv_panel_container: PanelContainer = $Inv_Panel_Container
+@onready var interactable_container: PanelContainer = $InteractableContainer
 
 
 func _ready() -> void:
@@ -14,22 +15,24 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("inventory"):
-		if inv_open:
-			hide_inventory()
-		else:
-			show_inventory()
-		get_viewport().set_input_as_handled()
+		inventory_open_close()
 
+func inventory_open_close():
+	if inv_open:
+		hide_inventory()
+	else:
+		show_inventory()
+	get_viewport().set_input_as_handled()
 
 func show_inventory() -> void:
-	get_tree().paused = true #nimmt den ganzen tree und pausiert ihn
+	#get_tree().paused = true #nimmt den ganzen tree und pausiert ihn
 	inv_panel_container.visible = true
 	inv_open = true
 	shown.emit()
 
 
 func hide_inventory() -> void:
-	get_tree().paused = false #nimmt den ganzen tree und resumed ihn
+	#get_tree().paused = false #nimmt den ganzen tree und resumed ihn
 	inv_panel_container.visible = false
 	inv_open = false
 	hidden.emit()

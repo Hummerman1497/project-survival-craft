@@ -1,39 +1,22 @@
 [gd_scene format=3 uid="uid://fdvg5w3bgrql"]
 
 [ext_resource type="Script" uid="uid://la1fywgm1cw2" path="res://UI/inventory/inventory.gd" id="1_8ihku"]
-[ext_resource type="Texture2D" uid="uid://br44wrjm7ytbm" path="res://Assets/Tiny Swords (Free Pack)/UI Elements/UI Elements/Icons/Icon_11.png" id="2_aeo10"]
-[ext_resource type="Texture2D" uid="uid://4c6wgqedbd27" path="res://Assets/items.png" id="2_fo048"]
+[ext_resource type="StyleBox" uid="uid://bn15fcotiols4" path="res://UI/inventory/invetory_Container_style.tres" id="2_aeo10"]
 [ext_resource type="PackedScene" uid="uid://cgr0juhq374uj" path="res://UI/inventory/inventory_slot.tscn" id="3_23s18"]
 [ext_resource type="Script" uid="uid://cq2g4j1yvqrpq" path="res://UI/inventory/scripts/inventory_ui.gd" id="3_b5g1n"]
 [ext_resource type="Resource" uid="uid://cvfs2km3nf11b" path="res://UI/inventory/player_inventory.tres" id="5_aeo10"]
+[ext_resource type="Script" uid="uid://ckagu8sib0wqj" path="res://UI/inventory/interactable_container.gd" id="7_8sx6c"]
 [ext_resource type="Script" uid="uid://vwpurkm1h3v6" path="res://UI/inventory/hotbar_ui.gd" id="7_7475t"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aeo10"]
-atlas = ExtResource("2_fo048")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ihku"]
-texture = SubResource("AtlasTexture_aeo10")
-texture_margin_left = 10.0
-texture_margin_top = 10.0
-texture_margin_right = 10.0
-texture_margin_bottom = 10.0
 
 [node name="Inventory" type="CanvasLayer" unique_id=2110329412]
 script = ExtResource("1_8ihku")
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1745542631]
-offset_right = 27.0
-offset_bottom = 27.0
-texture = ExtResource("2_aeo10")
-expand_mode = 1
 
 [node name="Inv_Panel_Container" type="PanelContainer" parent="." unique_id=1007960775]
 offset_left = 61.0
 offset_top = 25.0
 offset_right = 89.0
 offset_bottom = 53.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_8ihku")
+theme_override_styles/panel = ExtResource("2_aeo10")
 
 [node name="Inv_UI" type="GridContainer" parent="Inv_Panel_Container" unique_id=1579163017]
 layout_mode = 2
@@ -71,7 +54,7 @@ offset_right = 98.0
 grow_horizontal = 2
 grow_vertical = 0
 focus_behavior_recursive = 1
-theme_override_styles/panel = SubResource("StyleBoxTexture_8ihku")
+theme_override_styles/panel = ExtResource("2_aeo10")
 
 [node name="Hotbar_UI" type="GridContainer" parent="HotBarContainer" unique_id=98733486]
 layout_mode = 2
@@ -96,3 +79,11 @@ layout_mode = 2
 
 [node name="InventorySlot5" parent="HotBarContainer/Hotbar_UI" unique_id=366671293 instance=ExtResource("3_23s18")]
 layout_mode = 2
+
+[node name="InteractableContainer" type="PanelContainer" parent="." unique_id=711972490]
+offset_left = 356.0
+offset_top = 31.0
+offset_right = 396.0
+offset_bottom = 71.0
+theme_override_styles/panel = ExtResource("2_aeo10")
+script = ExtResource("7_8sx6c")
