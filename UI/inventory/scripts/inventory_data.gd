@@ -25,7 +25,7 @@ func add_item(item: ItemData, count: int = 1) -> bool:
 	print("[InvData] Inventory was full")
 	return false
 
-
+#wird nicht mehr benötigt
 func swap_slots(index_a: int, index_b: int) -> void:
 	# Wenn man ein Item auf den eigenen Slot fallen lässt, nichts tun
 	if index_a == index_b:
@@ -39,6 +39,7 @@ func swap_slots(index_a: int, index_b: int) -> void:
 	# Signal an die UI senden, dass sich die Daten geändert haben
 	inventory_updated.emit()
 
+#wird nicht mehr benötigt
 func swap_inventory(inv_a: InventoryData, inv_b: InventoryData, index_a: int, index_b: int) -> void:
 	# 1. Abbruch, wenn es exakt derselbe Slot im selben Inventar ist
 	if inv_a == inv_b and index_a == index_b:
@@ -60,13 +61,23 @@ func swap_inventory(inv_a: InventoryData, inv_b: InventoryData, index_a: int, in
 		inv_b.inventory_updated.emit()
 
 
-func swap_with(target_inv: InventoryData, origin_index: int, target_index: int) -> void:
+func drop_slot_data(target_inv: InventoryData, origin_index: int, target_index: int) -> void:
 	var slot_a = self.slots[origin_index]
 	var slot_b = target_inv.slots[target_index]
+	
+	# Prüfen, ob beide Slots existieren und das gleiche Item enthalten
+	if slot_a != null and slot_b != null and slot_a.item_data == slot_b.item_data:
+		# Stapeln: Die Menge von Slot A zu Slot B hinzufügen
+		slot_b.quantity += slot_a.quantity
+		
+		# Den Ursprungs-Slot leeren, da das Item komplett verschoben wurde
+		self.slots[origin_index] = null
+	else:
+		# Normales Tauschen, wenn es unterschiedliche Items oder ein leerer Slot sind
+		self.slots[origin_index] = slot_b
+		target_inv.slots[target_index] = slot_a
 
-	self.slots[origin_index] = slot_b
-	target_inv.slots[target_index] = slot_a
-
+	# Signale senden, um die UI zu aktualisieren
 	self.inventory_updated.emit()
 	if self != target_inv:
 		target_inv.inventory_updated.emit()

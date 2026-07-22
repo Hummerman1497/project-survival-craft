@@ -61,7 +61,7 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool: # wird im pote
 	return typeof(data) == TYPE_DICTIONARY and data.has("inventory")
 
 
-# 3. Führt das Ablegen / Tauschen aus
+# 3. Führt das Ablegen / Tauschen / Stapeln aus
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	# 1. Wir holen das Ziel-Inventar (wohin gedraggt wurde)
 	var target_inventory = get_parent().inv_data
@@ -71,7 +71,5 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	var origin_inventory = data["inventory"]
 	var origin_index = data["index"]
 
-	# 3. Jetzt rufen wir die swap_inventory-Funktion auf!
-	# (Da es eine globale/statische Funktion sein kann oder auf einer der Ressourcen liegt):
-	#origin_inventory.swap_inventory(origin_inventory, target_inventory, origin_index, target_index)
-	origin_inventory.swap_with(target_inventory, origin_index, target_index)
+	# 3. Wir rufen die neue drop_slot_data-Funktion auf, die das Stapeln übernimmt
+	origin_inventory.drop_slot_data(target_inventory, origin_index, target_index)
