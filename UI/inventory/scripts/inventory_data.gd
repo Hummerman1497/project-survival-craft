@@ -65,15 +65,26 @@ func drop_slot_data(target_inv: InventoryData, origin_index: int, target_index: 
 	var slot_a = self.slots[origin_index]
 	var slot_b = target_inv.slots[target_index]
 	
-	# Prüfen, ob beide Slots existieren und das gleiche Item enthalten
+	#Add item
 	if slot_a != null and slot_b != null and slot_a.item_data == slot_b.item_data:
-		# Stapeln: Die Menge von Slot A zu Slot B hinzufügen
 		slot_b.quantity += slot_a.quantity
 		
-		# Den Ursprungs-Slot leeren, da das Item komplett verschoben wurde
 		self.slots[origin_index] = null
+		
+		# Falls du eine max_stack_size in ItemData hast:
+		# var max_stack = slot_b.item_data.max_stack_size
+		# var space_left = max_stack - slot_b.quantity
+		
+		# Wenn Platz für alles ist:
+		# if slot_a.quantity <= space_left:
+		#     slot_b.quantity += slot_a.quantity
+		#     self.slots[origin_index] = null
+		# Wenn nur ein Teil reinpasst:
+		# else:
+		#     slot_b.quantity += space_left
+		#     slot_a.quantity -= space_left
+	#Swapp item
 	else:
-		# Normales Tauschen, wenn es unterschiedliche Items oder ein leerer Slot sind
 		self.slots[origin_index] = slot_b
 		target_inv.slots[target_index] = slot_a
 

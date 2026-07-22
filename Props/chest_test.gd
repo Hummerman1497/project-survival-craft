@@ -2,7 +2,9 @@ extends Node2D
 
 const CHEST_UI = preload("uid://iocvt1802bs0")
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_closed: Sprite2D = $Sprite_closed
+@onready var sprite_open: Sprite2D = $Sprite_open
+
 
 @export var chest_inv_data: InventoryData
 @export var is_loot_chest: bool = false
@@ -19,16 +21,23 @@ func _ready() -> void:
 		chest_inv_data = chest_inv_data.duplicate(true)	
 	if is_loot_chest:
 		_fill_chest_with_loot()
+		
+	sprite_closed.visible = true
+	sprite_open.visible = false
 
 func interact() -> void:
 	var inter_container = Inventory.interactable_container
 	
 	if chest_open:
+		sprite_closed.visible = true
+		sprite_open.visible = false
 		inter_container.clear_inter_container()
 		inter_container.visible = false
 		chest_open = false
 		Inventory.inventory_open_close()
 	else:
+		sprite_closed.visible = false
+		sprite_open.visible = true
 		inter_container.clear_inter_container()
 		var new_chest_ui = CHEST_UI.instantiate()
 		new_chest_ui.inv_data = chest_inv_data
