@@ -20,17 +20,30 @@ chest_inv_data = ExtResource("2_vvwdj")
 is_loot_chest = true
 loot_table = Array[ExtResource("6_71kcb")]([ExtResource("5_5f661"), ExtResource("4_qmjcs"), ExtResource("6_5f661"), ExtResource("7_71kcb")])
 
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2004974996]
+position = Vector2(-6.000004, 2.9999962)
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1417656975]
+position = Vector2(-8.69375, 0)
+scale = Vector2(7.6875, 1)
+polygon = PackedVector2Array(2.4317074, 10.999999, 4.2528453, 4.9999995, 1.7813008, -2.9999998, -0.03983736, 3.9999998)
+
 [node name="Sprite_closed" type="Sprite2D" parent="." unique_id=2126345985]
+position = Vector2(-6.0000033, 2.999996)
 scale = Vector2(0.026367184, 0.026367184)
 texture = ExtResource("1_0rkuw")
 
 [node name="Sprite_open" type="Sprite2D" parent="." unique_id=1389698616]
+position = Vector2(-6.000005, 2.9999964)
 scale = Vector2(0.026, 0.026)
 texture = ExtResource("9_71kcb")
 
 [node name="Interactable" parent="." unique_id=921260085 instance=ExtResource("2_j3hek")]
 
 [node name="CollisionShape2D" parent="Interactable/Area2D" parent_id_path=PackedInt32Array(921260085, 476606777) index="0" unique_id=739419222]
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_vvwdj")
 
 [node name="TextureRect" parent="Interactable" index="1" unique_id=2026987613]

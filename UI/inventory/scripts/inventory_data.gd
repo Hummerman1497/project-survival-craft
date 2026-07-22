@@ -62,6 +62,9 @@ func swap_inventory(inv_a: InventoryData, inv_b: InventoryData, index_a: int, in
 
 
 func drop_slot_data(target_inv: InventoryData, origin_index: int, target_index: int) -> void:
+	if self == target_inv and origin_index == target_index:
+		return
+		
 	var slot_a = self.slots[origin_index]
 	var slot_b = target_inv.slots[target_index]
 	
