@@ -49,27 +49,29 @@ func _get_drag_data(at_position: Vector2) -> Variant: # wird im Quellen-Slot auf
 	set_drag_preview(preview_control)
 
 	# Wir übergeben den aktuellen Slot-Index als Daten
-	return slot_index
+	return {
+	"inventory": get_parent().inv_data, # Das Quell-Inventar
+	"index": slot_index                 # Der Quell-Index
+	}
 
 
 # 2. Prüft, ob man hier ablegen darf
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool: # wird im potentiellen Ziel-slot (Mause hover drüber) bei jeder maus bewegung ausgeführt 
 	# Akzeptieren, wenn die Daten eine Zahl (der Slot-Index) sind
-	print("[can drop data] ", data)
-	return typeof(data) == TYPE_INT
+	return typeof(data) == TYPE_DICTIONARY and data.has("inventory")
 
 
 # 3. Führt das Ablegen / Tauschen aus
-func _drop_data(at_position: Vector2, data: Variant) -> void: # wird im Ziel-slot ausgeführt
-	var origin_index = data as int
-	var target_index = slot_index # wird in inventory/chest_ui.update_inventory() gesetzt
-	print("[drop data] data: ", data, ", target: ", target_index)
-	
-	if origin_index == target_index:
-		return
+func _drop_data(at_position: Vector2, data: Variant) -> void:
+	# 1. Wir holen das Ziel-Inventar (wohin gedraggt wurde)
+	var target_inventory = get_parent().inv_data
+	var target_index = slot_index
 
-	# Holen der InventoryData über den Parent (GridContainer -> Panel -> UI)
-	# Alternativ: Wenn dein UI die Daten hält, suchen wir den InventoryUI Node
-	var inventory_ui = get_parent()
-	if inventory_ui and inventory_ui.inv_data:
-		inventory_ui.inv_data.swap_slots(origin_index, target_index)
+	# 2. Wir lesen das Quell-Inventar und den Quell-Index aus den übergebenen Daten
+	var origin_inventory = data["inventory"]
+	var origin_index = data["index"]
+
+	# 3. Jetzt rufen wir die swap_inventory-Funktion auf!
+	# (Da es eine globale/statische Funktion sein kann oder auf einer der Ressourcen liegt):
+	#origin_inventory.swap_inventory(origin_inventory, target_inventory, origin_index, target_index)
+	origin_inventory.swap_with(target_inventory, origin_index, target_index)

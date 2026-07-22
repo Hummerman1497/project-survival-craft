@@ -58,3 +58,15 @@ func swap_inventory(inv_a: InventoryData, inv_b: InventoryData, index_a: int, in
 	# Nur emitten, wenn es wirklich zwei verschiedene Inventar-Ressourcen sind
 	if inv_a != inv_b:
 		inv_b.inventory_updated.emit()
+
+
+func swap_with(target_inv: InventoryData, origin_index: int, target_index: int) -> void:
+	var slot_a = self.slots[origin_index]
+	var slot_b = target_inv.slots[target_index]
+
+	self.slots[origin_index] = slot_b
+	target_inv.slots[target_index] = slot_a
+
+	self.inventory_updated.emit()
+	if self != target_inv:
+		target_inv.inventory_updated.emit()
