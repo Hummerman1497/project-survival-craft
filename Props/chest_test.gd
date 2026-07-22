@@ -10,6 +10,8 @@ const CHEST_UI = preload("uid://iocvt1802bs0")
 @export var loot_max: int = 10
 @export var loot_min: int = 1
 
+var chest_open: bool = false
+
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -20,22 +22,26 @@ func _ready() -> void:
 
 func interact() -> void:
 	var inter_container = Inventory.interactable_container
-	var new_chest_ui = CHEST_UI.instantiate()
-	new_chest_ui.inv_data = chest_inv_data
-	inter_container.clear_inter_container()
-	inter_container.add_child(new_chest_ui)
-	Inventory.inventory_open_close()
-	print(chest_inv_data.slots)
 	
-	if sprite_2d.visible == true:
-		sprite_2d.visible = false
+	if chest_open:
+		inter_container.clear_inter_container()
+		inter_container.visible = false
+		chest_open = false
+		Inventory.inventory_open_close()
 	else:
-		sprite_2d.visible = true
-
+		inter_container.clear_inter_container()
+		var new_chest_ui = CHEST_UI.instantiate()
+		new_chest_ui.inv_data = chest_inv_data
+		inter_container.add_child(new_chest_ui)
+		inter_container.visible = true
+		chest_open = true
+		Inventory.inventory_open_close()
+	
+	
+	
 func _fill_chest_with_loot():
-	loot_table.shuffle()
 	for s in loot_table:
 		if s:
 			var quantity = randi_range(loot_min,loot_max)
 			chest_inv_data.add_item(s,quantity)
-	
+	chest_inv_data.slots.shuffle()

@@ -15,6 +15,9 @@ func _ready() -> void:
 
 	# Am Anfang einmal leeren, um sicherzugehen
 	clear_inventory()
+	
+	if inv_data:
+		update_inventory()
 
 
 func clear_inventory() -> void:
@@ -31,7 +34,7 @@ func update_inventory() -> void:
 	if existing_slots.size() != inv_data.slots.size() - Inventory.hot_bar_size:
 		clear_inventory()
 		# Fall 1: Neu erstellen, aber über range iterieren um 'i' zu haben
-		for i in range(Inventory.hot_bar_size, inv_data.slots.size()):
+		for i in inv_data.slots.size():
 			var new_slot = INVENTORY_SLOT.instantiate()
 			add_child(new_slot)
 			new_slot.slot_index = i # <-- NEU: Echten Index übergeben
@@ -39,7 +42,7 @@ func update_inventory() -> void:
 
 	else:
 		# Fall 2: Updaten
-		for i in range(Inventory.hot_bar_size, inv_data.slots.size()):
+		for i in inv_data.slots.size():
 			var ui_slot = existing_slots[i - Inventory.hot_bar_size]
 			ui_slot.slot_index = i # <-- NEU: Index sicherheitshalber setzen
 			ui_slot.slot_data = inv_data.slots[i]
