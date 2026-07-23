@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://djj44rnh3wv6e" path="res://Enteties/Items/scripts/item_pickup.gd" id="1_6fqwa"]
 [ext_resource type="AudioStream" uid="uid://bis56l20bvd35" path="res://Assets/Audio/minecraft pick up sound.mp3" id="2_rnxmo"]
-[ext_resource type="Resource" uid="uid://ckyyvhdj8hxt6" path="res://Enteties/Items/item_slimeball.tres" id="3_bx2hg"]
+[ext_resource type="Resource" uid="uid://ckyyvhdj8hxt6" path="res://Enteties/Items/Item Resources/item_slimeball.tres" id="3_bx2hg"]
 [ext_resource type="Texture2D" uid="uid://4c6wgqedbd27" path="res://Assets/items.png" id="4_bx2hg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ng57f"]

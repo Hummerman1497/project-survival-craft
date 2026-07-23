@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://blps8jjhggkw2" path="res://Assets/Enemys/Slime/DestroySmoke.png" id="11_hawwb"]
 [ext_resource type="Script" uid="uid://c3cwjbawnw51a" path="res://Enteties/Enemy/Scripts/states/enemy_state_destroy.gd" id="12_t56pm"]
 [ext_resource type="Script" uid="uid://dbx20umg772m4" path="res://Enteties/ItemSpawner/item_spawner.gd" id="14_hawwb"]
-[ext_resource type="PackedScene" uid="uid://cocrw058u7diq" path="res://Enteties/Items/Slime Ball/item_slime_ball.tscn" id="15_uslvh"]
+[ext_resource type="PackedScene" uid="uid://cocrw058u7diq" path="res://Enteties/Items/Item Scenes/item_slime_ball.tscn" id="15_uslvh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 13.038404

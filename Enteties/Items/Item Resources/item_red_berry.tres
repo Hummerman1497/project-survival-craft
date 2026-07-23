@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bo2xu4s1tup4l"]
+
+[ext_resource type="Script" uid="uid://ffbdvn77h0e" path="res://Enteties/Items/scripts/item_data.gd" id="1_eypj7"]
+[ext_resource type="Texture2D" uid="uid://uf5t4k5turi" path="res://Assets/Icon set/Icon Set16x16.png" id="2_d8ash"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8ash"]
+atlas = ExtResource("2_d8ash")
+region = Rect2(32, 432, 16, 16)
+
+[resource]
+script = ExtResource("1_eypj7")
+name = "Red Berry"
+description = "a delicous red berry"
+texture = SubResource("AtlasTexture_d8ash")
+metadata/_custom_type_script = "uid://ffbdvn77h0e"

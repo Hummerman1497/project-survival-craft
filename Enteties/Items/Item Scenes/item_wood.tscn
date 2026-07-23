@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://djj44rnh3wv6e" path="res://Enteties/Items/scripts/item_pickup.gd" id="1_nt767"]
 [ext_resource type="AudioStream" uid="uid://bis56l20bvd35" path="res://Assets/Audio/minecraft pick up sound.mp3" id="2_nt767"]
 [ext_resource type="Texture2D" uid="uid://depaujyouacjg" path="res://Assets/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Wood Resource/Wood Resource.png" id="2_utkwb"]
-[ext_resource type="Resource" uid="uid://kmswasfh6s6j" path="res://Enteties/Items/item_wood.tres" id="3_sfksd"]
+[ext_resource type="Resource" uid="uid://kmswasfh6s6j" path="res://Enteties/Items/Item Resources/item_wood.tres" id="3_sfksd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_glbdv"]
 radius = 24.0

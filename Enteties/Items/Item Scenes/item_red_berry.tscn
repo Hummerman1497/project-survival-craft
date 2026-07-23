@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bh65n7v3w6g47"]
+
+[ext_resource type="Script" uid="uid://djj44rnh3wv6e" path="res://Enteties/Items/scripts/item_pickup.gd" id="1_ukj45"]
+[ext_resource type="AudioStream" uid="uid://bis56l20bvd35" path="res://Assets/Audio/minecraft pick up sound.mp3" id="2_jwd5d"]
+[ext_resource type="Resource" uid="uid://bo2xu4s1tup4l" path="res://Enteties/Items/Item Resources/item_red_berry.tres" id="3_ukj45"]
+[ext_resource type="Texture2D" uid="uid://uf5t4k5turi" path="res://Assets/Icon set/Icon Set16x16.png" id="4_ukj45"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pi42a"]
+atlas = ExtResource("4_ukj45")
+region = Rect2(32, 432, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_glbdv"]
+radius = 24.0
+
+[node name="item_red_berry" type="Node2D" unique_id=248599883]
+script = ExtResource("1_ukj45")
+audio_pick_up = Array[AudioStream]([ExtResource("2_jwd5d")])
+item_data = ExtResource("3_ukj45")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1149355465]
+scale = Vector2(0.6, 0.6)
+texture = SubResource("AtlasTexture_pi42a")
+
+[node name="PickUpArea" type="Area2D" parent="." unique_id=1073299291]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUpArea" unique_id=143248957]
+shape = SubResource("CircleShape2D_glbdv")
+debug_color = Color(0, 0.22205596, 0.09755392, 0.20392157)

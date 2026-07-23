@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bnux30y44ru2m"]
 
 [ext_resource type="Texture2D" uid="uid://bcb0ludv8nesn" path="res://Assets/grid 45° 100px-export.png" id="1_1u88c"]
-[ext_resource type="Script" uid="uid://j1xmolvhsmn5" path="res://Props/workbench.gd" id="1_3jfb8"]
+[ext_resource type="Script" uid="uid://j1xmolvhsmn5" path="res://Props/Scripts/workbench.gd" id="1_3jfb8"]
 [ext_resource type="PackedScene" uid="uid://cekjugbssky3f" path="res://Enteties/interactable.tscn" id="3_wm8p0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wm8p0"]

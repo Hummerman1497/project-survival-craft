@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://boas6gbwjj5o1" path="res://Assets/Audio/Pickaxe/Pickaxe strike 3.ogg" id="6_suvgh"]
 [ext_resource type="AudioStream" uid="uid://m5rlr4ibjnl6" path="res://Assets/Audio/Pickaxe/Pickaxe strike 4.ogg" id="7_4hcpj"]
 [ext_resource type="PackedScene" uid="uid://cipfdk5sb4ssr" path="res://Enteties/ItemSpawner/item_spawner.tscn" id="8_suvgh"]
-[ext_resource type="PackedScene" uid="uid://bxwiavx3nt536" path="res://Enteties/Items/Rock/item_rock.tscn" id="9_4hcpj"]
+[ext_resource type="PackedScene" uid="uid://bxwiavx3nt536" path="res://Enteties/Items/Item Scenes/item_rock.tscn" id="9_4hcpj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ynsuh"]
 radius = 11.0

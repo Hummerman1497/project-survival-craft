@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://djj44rnh3wv6e" path="res://Enteties/Items/scripts/item_pickup.gd" id="1_rnxs5"]
 [ext_resource type="AudioStream" uid="uid://bis56l20bvd35" path="res://Assets/Audio/minecraft pick up sound.mp3" id="2_gaq40"]
 [ext_resource type="Texture2D" uid="uid://m55boqiyduf3" path="res://Assets/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Resource/Rock_Resource.png" id="2_rnxs5"]
-[ext_resource type="Resource" uid="uid://e07alx7ewyw2" path="res://Enteties/Items/item_gold.tres" id="3_5hyoj"]
+[ext_resource type="Resource" uid="uid://e07alx7ewyw2" path="res://Enteties/Items/Item Resources/item_gold.tres" id="3_5hyoj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_glbdv"]
 radius = 24.0

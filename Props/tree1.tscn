@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b3suwmlq15frx" path="res://Enteties/HitBox/hit_box.tscn" id="1_witdd"]
 [ext_resource type="AudioStream" uid="uid://buvpkxj1mdvmn" path="res://Assets/Audio/Axe/Axe Chop 1.ogg" id="4_htqbb"]
 [ext_resource type="PackedScene" uid="uid://cipfdk5sb4ssr" path="res://Enteties/ItemSpawner/item_spawner.tscn" id="4_w46cf"]
-[ext_resource type="PackedScene" uid="uid://nu8qd2p41bvr" path="res://Enteties/Items/Wood/item_wood.tscn" id="5_01trl"]
+[ext_resource type="PackedScene" uid="uid://nu8qd2p41bvr" path="res://Enteties/Items/Item Scenes/item_wood.tscn" id="5_01trl"]
 [ext_resource type="AudioStream" uid="uid://u6mee0xdhkkq" path="res://Assets/Audio/Axe/Axe Chop 2.ogg" id="5_mw4ad"]
 [ext_resource type="AudioStream" uid="uid://dcv3qslvxl4it" path="res://Assets/Audio/Axe/Axe Chop 3.ogg" id="6_g0c5d"]
 [ext_resource type="AudioStream" uid="uid://c5n4a1vk7yo1p" path="res://Assets/Audio/Axe/Axe Chop 4.ogg" id="7_76ip5"]
