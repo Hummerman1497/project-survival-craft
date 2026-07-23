@@ -1,6 +1,9 @@
 class_name Interactable
 extends Node2D
 
+signal focus_entered
+signal focus_exited
+
 @onready var area_2d: Area2D = $Area2D
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var collision_shape: CollisionShape2D = $Area2D/CollisionShape2D
@@ -17,7 +20,7 @@ func _ready() -> void:
 
 func interact():
 	if is_target:
-		print("[Interactable] mit mir wurde E gedrückt: ", self.get_parent().name)
+		#print("[Interactable] mit mir wurde E gedrückt: ", self.get_parent().name)
 		var parent = self.get_parent()
 		if parent.has_method("interact"):
 			parent.interact()
@@ -28,9 +31,11 @@ func _set_interactable(target):
 		if not is_target:
 			is_target = true
 			texture_rect.visible = true
-			print("[Interactable] Fokus erhalten: ", self.get_parent().name)
+			#print("[Interactable] Fokus erhalten: ", self.get_parent().name)
+			focus_entered.emit()
 	else:
 		if is_target: # Verhindert Ausführung bei Objekten, die den Fokus ohnehin nicht hatten
 			is_target = false
 			texture_rect.visible = false
-			print("[Interactable] Fokus verloren: ", self.get_parent().name)
+			#print("[Interactable] Fokus verloren: ", self.get_parent().name)
+			focus_exited.emit()

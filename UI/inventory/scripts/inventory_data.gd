@@ -25,42 +25,6 @@ func add_item(item: ItemData, count: int = 1) -> bool:
 	print("[InvData] Inventory was full")
 	return false
 
-#wird nicht mehr benötigt
-func swap_slots(index_a: int, index_b: int) -> void:
-	# Wenn man ein Item auf den eigenen Slot fallen lässt, nichts tun
-	if index_a == index_b:
-		return
-
-	# WICHTIG: Tauschen mit Zwischenspeicher, damit nichts überschrieben/verdoppelt wird!
-	var temp = slots[index_a]
-	slots[index_a] = slots[index_b]
-	slots[index_b] = temp
-
-	# Signal an die UI senden, dass sich die Daten geändert haben
-	inventory_updated.emit()
-
-#wird nicht mehr benötigt
-func swap_inventory(inv_a: InventoryData, inv_b: InventoryData, index_a: int, index_b: int) -> void:
-	# 1. Abbruch, wenn es exakt derselbe Slot im selben Inventar ist
-	if inv_a == inv_b and index_a == index_b:
-		return
-
-	# 2. Wir holen uns die beiden Slots über die Parameter (nicht über 'slots')
-	var slot_a = inv_a.slots[index_a]
-	var slot_b = inv_b.slots[index_b]
-
-	# 3. Tauschen ausführen
-	inv_a.slots[index_a] = slot_b
-	inv_b.slots[index_b] = slot_a
-
-	# 4. BEIDE Inventare müssen ihre UI benachrichtigen!
-	inv_a.inventory_updated.emit()
-	
-	# Nur emitten, wenn es wirklich zwei verschiedene Inventar-Ressourcen sind
-	if inv_a != inv_b:
-		inv_b.inventory_updated.emit()
-
-
 func drop_slot_data(target_inv: InventoryData, origin_index: int, target_index: int) -> void:
 	if self == target_inv and origin_index == target_index:
 		return

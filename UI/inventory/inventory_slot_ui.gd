@@ -43,7 +43,7 @@ func _on_slot_double_clicked() -> void:
 		_pull_items_from_inv(Inventory.player_inv_data, origin_inv)
 			
 						
-	if Inventory.player_inv_data.slots and Inventory.inter_con_inv.slots:
+	if Inventory.player_inv_data.slots and Inventory.inter_con_inv and Inventory.inter_con_inv.slots:
 		_pull_items_from_inv(Inventory.inter_con_inv, origin_inv )
 		
 			
