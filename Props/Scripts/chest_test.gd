@@ -19,7 +19,7 @@ var inter_container: PanelContainer
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	interactable.focus_exited.connect(_focus_exited)
+	interactable.focus_lost.connect(_focus_exited)
 	inter_container = Inventory.interactable_container
 	if chest_inv_data:
 		chest_inv_data = chest_inv_data.duplicate(true)	

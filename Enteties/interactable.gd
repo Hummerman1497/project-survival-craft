@@ -2,7 +2,7 @@ class_name Interactable
 extends Node2D
 
 signal focus_entered
-signal focus_exited
+signal focus_lost
 
 @onready var area_2d: Area2D = $Area2D
 @onready var texture_rect: TextureRect = $TextureRect
@@ -38,4 +38,4 @@ func _set_interactable(target):
 			is_target = false
 			texture_rect.visible = false
 			#print("[Interactable] Fokus verloren: ", self.get_parent().name)
-			focus_exited.emit()
+			focus_lost.emit()
