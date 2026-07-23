@@ -35,28 +35,32 @@ func _gui_input(event: InputEvent) -> void:
 
 
 func _on_slot_double_clicked() -> void:
-	if slot_data != null:
-		print("Slot ", slot_index, " wurde doppelgeklickt! Item: ", slot_data.item_data.name)
+	if slot_data == null:
+		return
+	var origin_inv = get_parent().inv_data
+				
+	if Inventory.player_inv_data.slots:
+		_pull_items_from_inv(Inventory.player_inv_data, origin_inv)
+			
+						
+	if Inventory.player_inv_data.slots and Inventory.inter_con_inv.slots:
+		_pull_items_from_inv(Inventory.inter_con_inv, origin_inv )
 		
-		if get_parent().inv_data.slots:
-			var slots = get_parent().inv_data.slots			
-			for e in range(slots.size()):
-				var current_slot = slots[e]
+			
+func _pull_items_from_inv(target_inv: InventoryData, origin_inv: InventoryData):
+	var slots = target_inv.slots
+	for e in range(slots.size()):
+		var current_slot = slots[e]
 				
-				if current_slot != null:			
-					print("Slot ",e, ": ", current_slot.item_data.name, " - Menge: ", current_slot.quantity)
-				else:
-					print("Slot ", e, ": Leer")
-				
-				if current_slot == slot_data:
-					continue
+		if current_slot == slot_data: #bei eigenem slot einfach ignorieren und weiter machen
+			continue
 						
-				if current_slot != null:
-					if current_slot.item_data == slot_data.item_data:						
-						slot_data.quantity += current_slot.quantity
-						slots[e] = null
-						get_parent().inv_data.inventory_updated.emit()
-						
+		if current_slot and current_slot.item_data == slot_data.item_data:
+			slot_data.quantity += current_slot.quantity
+			slots[e] = null
+			target_inv.inventory_updated.emit()
+			if target_inv != origin_inv:
+				origin_inv.inventory_updated.emit()
 
 func set_slot_data(value: SlotData) -> void:
 	slot_data = value

@@ -22,6 +22,7 @@ func _ready() -> void:
 		return
 	Inventory.shown.connect(update_inventory)
 	Inventory.hidden.connect(clear_inventory)
+	Inventory.player_inv_data = inv_data
 
 	if inv_data:
 		inv_data.inventory_updated.connect(update_inventory)

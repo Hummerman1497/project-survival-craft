@@ -12,6 +12,7 @@ const CHEST_UI = preload("uid://iocvt1802bs0")
 @export var loot_max: int = 10
 @export var loot_min: int = 1
 
+
 var chest_open: bool = false
 
 
@@ -28,19 +29,24 @@ func _ready() -> void:
 func interact() -> void:
 	var inter_container = Inventory.interactable_container
 	
-	if chest_open:
+	#Zumachen
+	if chest_open: 
 		sprite_closed.visible = true
 		sprite_open.visible = false
 		inter_container.clear_inter_container()
+		Inventory.inter_con_inv = null
 		inter_container.visible = false
 		chest_open = false
 		Inventory.inventory_open_close()
+		
+	#Aufmachen	
 	else:
 		sprite_closed.visible = false
 		sprite_open.visible = true
 		inter_container.clear_inter_container()
 		var new_chest_ui = CHEST_UI.instantiate()
 		new_chest_ui.inv_data = chest_inv_data
+		Inventory.inter_con_inv = chest_inv_data
 		inter_container.add_child(new_chest_ui)
 		inter_container.visible = true
 		chest_open = true
