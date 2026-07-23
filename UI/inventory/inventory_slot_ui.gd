@@ -10,9 +10,34 @@ var slot_data: SlotData:
 
 
 func _ready() -> void:
+	texture_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	texture_rect.texture = null
 	label.text = ""
 
+
+# Überschreibt die native Eingabefunktion des Buttons
+var last_click_time: int = 0
+var double_click_threshold: int = 400 # Zeit in Millisekunden
+
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			var current_time = Time.get_ticks_msec()
+			
+			if current_time - last_click_time < double_click_threshold:
+				# DOPPELKLICK ERKANNT!
+				_on_slot_double_clicked()
+				accept_event() # Blockiert alles andere
+			else:
+				# ERSTER KLICK
+				last_click_time = current_time
+
+
+func _on_slot_double_clicked() -> void:
+	if slot_data != null:
+		print("Slot ", slot_index, " wurde doppelgeklickt! Item: ", slot_data.item_data.name)
+		# Hier deine Logik zum Benutzen/Ausrüsten/Schnell-Moven einfügen
 
 func set_slot_data(value: SlotData) -> void:
 	slot_data = value
