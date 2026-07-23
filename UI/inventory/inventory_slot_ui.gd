@@ -29,7 +29,7 @@ func set_slot_data(value: SlotData) -> void:
 
 
 # 1. Startet den Drag-Vorgang
-func _get_drag_data(at_position: Vector2) -> Variant: # wird im Quellen-Slot aufgerufen und übergibt daten die mit gedraged werden sollen
+func _get_drag_data(_at_position: Vector2) -> Variant: # wird im Quellen-Slot aufgerufen und übergibt daten die mit gedraged werden sollen
 	if slot_data == null:
 		return null # Leere Slots kann man nicht ziehen
 
@@ -56,13 +56,13 @@ func _get_drag_data(at_position: Vector2) -> Variant: # wird im Quellen-Slot auf
 
 
 # 2. Prüft, ob man hier ablegen darf
-func _can_drop_data(at_position: Vector2, data: Variant) -> bool: # wird im potentiellen Ziel-slot (Mause hover drüber) bei jeder maus bewegung ausgeführt 
+func _can_drop_data(_at_position: Vector2, data: Variant) -> bool: # wird im potentiellen Ziel-slot (Mause hover drüber) bei jeder maus bewegung ausgeführt 
 	# Akzeptieren, wenn die Daten eine Zahl (der Slot-Index) sind
 	return typeof(data) == TYPE_DICTIONARY and data.has("inventory")
 
 
 # 3. Führt das Ablegen / Tauschen / Stapeln aus
-func _drop_data(at_position: Vector2, data: Variant) -> void:
+func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	# 1. Wir holen das Ziel-Inventar (wohin gedraggt wurde)
 	var target_inventory = get_parent().inv_data
 	var target_index = slot_index

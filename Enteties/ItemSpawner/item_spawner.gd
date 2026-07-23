@@ -2,6 +2,7 @@
 extends Node2D
 
 class_name ItemSpawner
+@export var delete_after_spawn: bool = false
 
 @export var item_scene: PackedScene:
 	set(value):
@@ -29,6 +30,8 @@ func spawn_item(amount: int, rand_deviation: int = 0, radius: float = 30.0) -> v
 	if rand_amount > 0:
 		for i in rand_amount:
 			var instance = item_scene.instantiate()
+			instance.spawner = self
+			instance.can_be_picked_up = false
 
 			# Start- und Zielposition berechnen
 			var start_pos = self.global_position
@@ -55,3 +58,6 @@ func spawn_item(amount: int, rand_deviation: int = 0, radius: float = 30.0) -> v
 			# 2. Hälfte: Runter zum Ziel (Ease In lässt es nach unten schneller fallen)
 			tween_y.tween_property(instance, "global_position:y", target_pos.y, jump_duration / 2.0) \
 					.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+			tween_y.tween_callback(instance.can_pick_up)
+			if delete_after_spawn:
+				get_parent().queue_free()

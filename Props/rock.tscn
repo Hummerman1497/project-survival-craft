@@ -42,4 +42,5 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_ynsuh")
 
 [node name="ItemSpawner" parent="." unique_id=1316549970 instance=ExtResource("8_suvgh")]
+delete_after_spawn = true
 item_scene = ExtResource("9_4hcpj")

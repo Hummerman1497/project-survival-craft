@@ -1,6 +1,7 @@
 class_name State
 extends Node
 
+@warning_ignore("unused_signal")
 signal cooldown_finished
 signal cooldown_started
 ## Stores a reference to the player that this State belongs to

@@ -125,7 +125,7 @@ func getSnappedDirectionToMouse() -> void:
 	DirectionChanged.emit(cardinal_direction)
 
 
-func pick_up_item(item_stats: ItemData, audio_pick_up: Array):
+func pick_up_item(_item_stats: ItemData, audio_pick_up: Array):
 	#print("[P] Picked Up: ", item_stats.name)
 	if not audio_pick_up.is_empty(): # PickUp Audio ist in eineem Array im Item hinterlegt
 		audio_player.stream = audio_pick_up.pick_random()

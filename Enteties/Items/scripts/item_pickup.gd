@@ -7,6 +7,8 @@ extends Node2D
 @onready var pick_up_area: Area2D = $PickUpArea
 var target: CharacterBody2D = null
 var fly_speed: float = 150.0
+var spawner: Node2D
+var can_be_picked_up: bool = true
 @export var stats: Array = []
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
@@ -23,7 +25,7 @@ func fly_to_player(body):
 
 func _physics_process(delta: float) -> void:
 	# Prüft, ob das Ziel gesetzt wurde UND noch im Spiel existiert
-	if is_instance_valid(target):
+	if is_instance_valid(target) and can_be_picked_up:
 		global_position = global_position.move_toward(target.global_position, fly_speed * delta)
 
 		if global_position.distance_to(target.global_position) < 5.0:
@@ -51,3 +53,5 @@ func _update_texture() -> void:
 		sprite_2d.texture = item_data.texture
 
 	pass
+func can_pick_up(): 
+	can_be_picked_up = true

@@ -75,6 +75,7 @@ position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_pisgm")
 
 [node name="ItemSpawner" parent="." unique_id=1316549970 instance=ExtResource("10_gioli")]
+delete_after_spawn = true
 item_scene = ExtResource("11_2605l")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=891029008]
