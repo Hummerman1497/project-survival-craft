@@ -20,6 +20,8 @@ func _get_configuration_warnings() -> PackedStringArray:
 
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
 	progress_bar.step = 0.01
 	if dodge:
 		dodge.cooldown_started.connect(progress_bar_cooldown)

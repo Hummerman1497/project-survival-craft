@@ -7,6 +7,8 @@ const INVENTORY_SLOT = preload("uid://cgr0juhq374uj") #Button der die SlotData v
 @export var inv_data: InventoryData
 	
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
 	Inventory.shown.connect(update_inventory)
 	Inventory.hidden.connect(clear_inventory)
 

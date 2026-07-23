@@ -18,6 +18,8 @@ func _get_configuration_warnings() -> PackedStringArray:
 
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
 	#connected auf picked up item so das sich die hotbar jedes mal updated wenn was aufgenommen wird
 	self.columns = Inventory.hot_bar_size
 	if inv_data:
