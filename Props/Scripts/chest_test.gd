@@ -18,6 +18,7 @@ var chest_open: bool = false
 var inter_container: PanelContainer
 
 func _ready() -> void:
+	randomize()
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	interactable.focus_lost.connect(_focus_exited)
 	inter_container = Inventory.interactable_container
@@ -40,7 +41,8 @@ func _fill_chest_with_loot():
 	for s in loot_table:
 		if s:
 			var quantity = randi_range(loot_min,loot_max)
-			chest_inv_data.add_item(s,quantity)
+			if quantity >0:
+				chest_inv_data.add_item(s,quantity)
 	chest_inv_data.slots.shuffle()
 
 

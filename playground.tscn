@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bnux30y44ru2m" path="res://Props/Workbench.tscn" id="10_h1jm5"]
 [ext_resource type="PackedScene" uid="uid://w6mwl8pudg42" path="res://Props/bush_red_berry_small.tscn" id="10_pio1y"]
 [ext_resource type="PackedScene" uid="uid://c8kxnac3hnwm5" path="res://Props/tree1.tscn" id="11_pio1y"]
+[ext_resource type="PackedScene" uid="uid://4ix841iiwl7t" path="res://Props/tree2.tscn" id="11_te8jg"]
 
 [node name="Playground" type="Node2D" unique_id=2109808178]
 y_sort_enabled = true
@@ -104,3 +105,6 @@ position = Vector2(529, 159)
 [node name="BB" parent="." unique_id=1072117191 instance=ExtResource("10_pio1y")]
 position = Vector2(586, 179)
 resource_drop = 2
+
+[node name="Tree9" parent="." unique_id=1644972619 instance=ExtResource("11_te8jg")]
+position = Vector2(586, 117)
