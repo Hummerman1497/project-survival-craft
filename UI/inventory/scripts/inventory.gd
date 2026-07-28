@@ -4,8 +4,10 @@ signal shown
 signal hidden
 var inv_open: bool = false
 @export var hot_bar_size: int = 6
+@export var unlocked_recipes: Array[RecipeData]
 @onready var inv_panel_container: PanelContainer = $Inv_Panel_Container
 @onready var interactable_container: PanelContainer = $InteractableContainer
+
 
 var inter_con_inv: InventoryData
 var player_inv_data: InventoryData

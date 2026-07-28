@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cpkrvs1jfrpbq"
+path="res://.godot/imported/Bush or Tree Picking 5.ogg-b4caa00f6bf774a8f50d4aaeb21ff63f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Bush/Bush or Tree Picking 5.ogg"
+dest_files=["res://.godot/imported/Bush or Tree Picking 5.ogg-b4caa00f6bf774a8f50d4aaeb21ff63f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

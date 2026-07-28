@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cgr0juhq374uj"]
 
 [ext_resource type="Texture2D" uid="uid://8uau0i6s8kot" path="res://Assets/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Resource/Gold_Resource.png" id="1_7jbgp"]
-[ext_resource type="Script" uid="uid://iw8roepgd7pl" path="res://UI/inventory/inventory_slot_ui.gd" id="1_y6xgg"]
+[ext_resource type="Script" uid="uid://iw8roepgd7pl" path="res://UI/inventory/scripts/inventory_slot_ui.gd" id="1_y6xgg"]
 
 [node name="InventorySlot" type="Button" unique_id=70441126]
 custom_minimum_size = Vector2(32, 32)

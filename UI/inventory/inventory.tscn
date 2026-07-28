@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://fdvg5w3bgrql"]
 
-[ext_resource type="Script" uid="uid://la1fywgm1cw2" path="res://UI/inventory/inventory.gd" id="1_8ihku"]
-[ext_resource type="StyleBox" uid="uid://bn15fcotiols4" path="res://UI/inventory/invetory_Container_style.tres" id="2_aeo10"]
+[ext_resource type="Script" uid="uid://la1fywgm1cw2" path="res://UI/inventory/scripts/inventory.gd" id="1_8ihku"]
+[ext_resource type="StyleBox" uid="uid://bn15fcotiols4" path="res://UI/inventory/Resources/invetory_Container_style.tres" id="2_aeo10"]
+[ext_resource type="Script" uid="uid://dx73lytvnh8s2" path="res://UI/inventory/scripts/recipe_data.gd" id="2_gv2i1"]
 [ext_resource type="PackedScene" uid="uid://cgr0juhq374uj" path="res://UI/inventory/inventory_slot.tscn" id="3_23s18"]
 [ext_resource type="Script" uid="uid://cq2g4j1yvqrpq" path="res://UI/inventory/scripts/inventory_ui.gd" id="3_b5g1n"]
-[ext_resource type="Resource" uid="uid://cvfs2km3nf11b" path="res://UI/inventory/player_inventory.tres" id="5_aeo10"]
-[ext_resource type="Script" uid="uid://ckagu8sib0wqj" path="res://UI/inventory/interactable_container.gd" id="7_8sx6c"]
-[ext_resource type="Script" uid="uid://vwpurkm1h3v6" path="res://UI/inventory/hotbar_ui.gd" id="7_7475t"]
+[ext_resource type="Resource" uid="uid://cv58c3iuld8ps" path="res://UI/inventory/Resources/Sword.tres" id="3_dckn7"]
+[ext_resource type="Resource" uid="uid://cvfs2km3nf11b" path="res://UI/inventory/Resources/player_inventory.tres" id="5_aeo10"]
+[ext_resource type="Script" uid="uid://ckagu8sib0wqj" path="res://UI/inventory/scripts/interactable_container.gd" id="7_8sx6c"]
+[ext_resource type="Script" uid="uid://vwpurkm1h3v6" path="res://UI/inventory/scripts/hotbar_ui.gd" id="7_7475t"]
 
 [node name="Inventory" type="CanvasLayer" unique_id=2110329412]
 script = ExtResource("1_8ihku")
+unlocked_recipes = Array[ExtResource("2_gv2i1")]([ExtResource("3_dckn7")])
 
 [node name="Inv_Panel_Container" type="PanelContainer" parent="." unique_id=1007960775]
 offset_left = 61.0

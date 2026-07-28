@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://chmbiacidkerp"]
+
+[ext_resource type="PackedScene" uid="uid://cgr0juhq374uj" path="res://UI/inventory/inventory_slot.tscn" id="1_ejbln"]
+
+[node name="WorkbenchUI" type="HBoxContainer" unique_id=451082643]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=493045470]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=866947794]
+layout_mode = 2
+
+[node name="InventorySlot" parent="ScrollContainer/VBoxContainer" unique_id=70441126 instance=ExtResource("1_ejbln")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="ScrollContainer/VBoxContainer" unique_id=959052660 instance=ExtResource("1_ejbln")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="ScrollContainer/VBoxContainer" unique_id=2017644022 instance=ExtResource("1_ejbln")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="ScrollContainer/VBoxContainer" unique_id=1421344192 instance=ExtResource("1_ejbln")]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1127187152]
+layout_mode = 2

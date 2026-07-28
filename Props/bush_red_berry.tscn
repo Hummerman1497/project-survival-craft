@@ -3,13 +3,12 @@
 [ext_resource type="Script" uid="uid://c5epbg1hyc74t" path="res://Props/Scripts/bush_red_berry.gd" id="1_wtpop"]
 [ext_resource type="Texture2D" uid="uid://q36p0rpr0qvd" path="res://Assets/Tiny Swords (Free Pack)/Terrain/Decorations/Bushes/Bushe3.png" id="2_wtpop"]
 [ext_resource type="PackedScene" uid="uid://b3suwmlq15frx" path="res://Enteties/HitBox/hit_box.tscn" id="3_2e2af"]
-[ext_resource type="AudioStream" uid="uid://buvpkxj1mdvmn" path="res://Assets/Audio/Axe/Axe Chop 1.ogg" id="5_l6mx2"]
-[ext_resource type="AudioStream" uid="uid://u6mee0xdhkkq" path="res://Assets/Audio/Axe/Axe Chop 2.ogg" id="6_fh0aj"]
-[ext_resource type="AudioStream" uid="uid://dcv3qslvxl4it" path="res://Assets/Audio/Axe/Axe Chop 3.ogg" id="7_r20rq"]
+[ext_resource type="AudioStream" uid="uid://cxun6vatjerk2" path="res://Assets/Audio/Bush/Bush or Tree Picking 1.ogg" id="4_nv4np"]
+[ext_resource type="AudioStream" uid="uid://2sek2hvroo2" path="res://Assets/Audio/Bush/Bush or Tree Picking 3.ogg" id="5_2e2af"]
+[ext_resource type="AudioStream" uid="uid://cpkrvs1jfrpbq" path="res://Assets/Audio/Bush/Bush or Tree Picking 5.ogg" id="6_wtpop"]
+[ext_resource type="AudioStream" uid="uid://22k42wihb0o2" path="res://Assets/Audio/Bush/Bush or Tree Picking 4.ogg" id="7_a2axu"]
 [ext_resource type="PackedScene" uid="uid://cipfdk5sb4ssr" path="res://Enteties/ItemSpawner/item_spawner.tscn" id="8_fh0aj"]
-[ext_resource type="AudioStream" uid="uid://c5n4a1vk7yo1p" path="res://Assets/Audio/Axe/Axe Chop 4.ogg" id="8_v5o7p"]
-[ext_resource type="AudioStream" uid="uid://dyvfxjbwrhh3w" path="res://Assets/Audio/Axe/Axe Chop 5.ogg" id="9_qfwex"]
-[ext_resource type="AudioStream" uid="uid://dgqy15u32p8mu" path="res://Assets/Audio/Axe/Axe Chop 6.ogg" id="10_2sodi"]
+[ext_resource type="AudioStream" uid="uid://b25ljw6i1p4yx" path="res://Assets/Audio/Bush/Bush or Tree Picking 2.ogg" id="8_hjhfx"]
 [ext_resource type="PackedScene" uid="uid://bh65n7v3w6g47" path="res://Enteties/Items/Item Scenes/item_red_berry.tscn" id="11_2e2af"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a2axu"]
@@ -69,7 +68,7 @@ hframes = 8
 frame = 1
 
 [node name="HitBox" parent="." unique_id=1960128030 instance=ExtResource("3_2e2af")]
-hit_sounds = Array[AudioStream]([ExtResource("5_l6mx2"), ExtResource("6_fh0aj"), ExtResource("7_r20rq"), ExtResource("8_v5o7p"), ExtResource("9_qfwex"), ExtResource("10_2sodi")])
+hit_sounds = Array[AudioStream]([ExtResource("4_nv4np"), ExtResource("5_2e2af"), ExtResource("6_wtpop"), ExtResource("7_a2axu"), ExtResource("8_hjhfx")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1838824233]
 position = Vector2(0, -8)
