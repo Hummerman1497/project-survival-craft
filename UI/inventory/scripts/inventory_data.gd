@@ -5,9 +5,13 @@ signal inventory_updated # Signal für UI-Updates
 
 @export var slots: Array[SlotData]
 
+#TODO: 
+# - stack sizes hinzufügen
+# - dann erst checken wenn das item ranfliegen soll vom boden ob es überhaupt aufgenommen werden kann wenn nicht soll es garnicht zum player fliegen
+
 
 func add_item(item: ItemData, count: int = 1) -> bool:
-	for s in slots: # checks if item is already in invetory and adds it
+	for s in slots: # checks if item is already in inventory and adds it
 		if s:
 			if s.item_data == item:
 				s.quantity += count
