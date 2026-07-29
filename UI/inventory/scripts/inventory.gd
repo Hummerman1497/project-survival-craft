@@ -41,5 +41,6 @@ func hide_inventory() -> void:
 	#get_tree().paused = false #nimmt den ganzen tree und resumed ihn
 	inv_panel_container.visible = false
 	interactable_container.visible = false
+	inter_con_inv = null
 	inv_open = false
 	hidden.emit()

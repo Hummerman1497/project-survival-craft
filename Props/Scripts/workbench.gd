@@ -41,7 +41,6 @@ func _close_workbench():
 	workbench_open = false
 	inter_container.visible = false
 	inter_container.clear_inter_container()
-	Inventory.inter_con_inv = null
 	Inventory.inventory_open_close()
 	print("[WB] closed now")
 

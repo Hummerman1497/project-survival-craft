@@ -55,7 +55,6 @@ func _close_chest() -> void:
 	sprite_closed.visible = true
 	sprite_open.visible = false
 	inter_container.clear_inter_container()
-	Inventory.inter_con_inv = null
 	inter_container.visible = false
 	chest_open = false
 	Inventory.inventory_open_close()
