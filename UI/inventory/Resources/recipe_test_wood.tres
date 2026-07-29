@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://hnk40dhc4j2l"]
+
+[ext_resource type="Script" uid="uid://baxt8yen8fn6y" path="res://UI/inventory/scripts/slot_data.gd" id="1_gg4vp"]
+[ext_resource type="Resource" uid="uid://kmswasfh6s6j" path="res://Enteties/Items/Item Resources/item_wood.tres" id="2_77rrt"]
+[ext_resource type="Script" uid="uid://dx73lytvnh8s2" path="res://UI/inventory/scripts/recipe_data.gd" id="3_58lcg"]
+
+[sub_resource type="Resource" id="Resource_8n2es"]
+script = ExtResource("1_gg4vp")
+item_data = ExtResource("2_77rrt")
+quantity = 3
+metadata/_custom_type_script = "uid://baxt8yen8fn6y"
+
+[sub_resource type="Resource" id="Resource_5ckyr"]
+script = ExtResource("1_gg4vp")
+item_data = ExtResource("2_77rrt")
+quantity = 1
+metadata/_custom_type_script = "uid://baxt8yen8fn6y"
+
+[resource]
+script = ExtResource("3_58lcg")
+description = "A Nice Wood"
+input = Array[ExtResource("1_gg4vp")]([SubResource("Resource_8n2es")])
+output = Array[ExtResource("1_gg4vp")]([SubResource("Resource_5ckyr")])
+metadata/_custom_type_script = "uid://dx73lytvnh8s2"

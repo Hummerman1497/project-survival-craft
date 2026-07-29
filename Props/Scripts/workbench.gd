@@ -53,9 +53,8 @@ func _open_workbench():
 	inter_container.clear_inter_container()
 
 	new_workbench_ui = WORKBENCH_UI.instantiate()
-	inter_container.add_child(new_workbench_ui)
-
 	new_workbench_ui.get_node("Chest_UI").inv_data = workbench_inv_data
+	inter_container.add_child(new_workbench_ui)
 
 	_update_recipe_ui_list()
 
