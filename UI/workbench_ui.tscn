@@ -1,26 +1,71 @@
 [gd_scene format=3 uid="uid://chmbiacidkerp"]
 
 [ext_resource type="PackedScene" uid="uid://cgr0juhq374uj" path="res://UI/inventory/inventory_slot.tscn" id="1_ejbln"]
+[ext_resource type="Script" uid="uid://dlovrkwskof83" path="res://UI/workbench_ui.gd" id="1_xhljo"]
+[ext_resource type="PackedScene" uid="uid://iocvt1802bs0" path="res://UI/chest_ui.tscn" id="2_ejbln"]
+[ext_resource type="PackedScene" uid="uid://c55dban425dlu" path="res://UI/workbench_recipe_button.tscn" id="2_l4ya8"]
+[ext_resource type="Texture2D" uid="uid://8uau0i6s8kot" path="res://Assets/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Resource/Gold_Resource.png" id="3_xg41x"]
 
-[node name="WorkbenchUI" type="HBoxContainer" unique_id=451082643]
+[node name="WorkbenchUI" type="VBoxContainer" unique_id=658918650]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -445.0
+offset_bottom = -147.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_xhljo")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=493045470]
+[node name="Label" type="Label" parent="." unique_id=442378698]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Workbench"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=451082643]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer" unique_id=493045470]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Recipe_List" type="VBoxContainer" parent="HBoxContainer/ScrollContainer" unique_id=866947794]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Worbench_recipe" parent="HBoxContainer/ScrollContainer/Recipe_List" unique_id=1182088506 instance=ExtResource("2_l4ya8")]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=866947794]
+[node name="Worbench_recipe2" parent="HBoxContainer/ScrollContainer/Recipe_List" unique_id=1416004495 instance=ExtResource("2_l4ya8")]
 layout_mode = 2
 
-[node name="InventorySlot" parent="ScrollContainer/VBoxContainer" unique_id=70441126 instance=ExtResource("1_ejbln")]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=982077572]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer" unique_id=542227628]
 layout_mode = 2
 
-[node name="InventorySlot2" parent="ScrollContainer/VBoxContainer" unique_id=959052660 instance=ExtResource("1_ejbln")]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=1265746415]
 layout_mode = 2
 
-[node name="InventorySlot3" parent="ScrollContainer/VBoxContainer" unique_id=2017644022 instance=ExtResource("1_ejbln")]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PanelContainer/VBoxContainer/MarginContainer" unique_id=2005587577]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_xg41x")
+stretch_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=1427825913]
 layout_mode = 2
 
-[node name="InventorySlot4" parent="ScrollContainer/VBoxContainer" unique_id=1421344192 instance=ExtResource("1_ejbln")]
+[node name="Chest_UI" parent="." unique_id=1901302662 instance=ExtResource("2_ejbln")]
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="." unique_id=1127187152]
+[node name="InventorySlot4" parent="Chest_UI" unique_id=1421344192 instance=ExtResource("1_ejbln")]
 layout_mode = 2

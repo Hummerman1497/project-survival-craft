@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c55dban425dlu"]
+
+[ext_resource type="Texture2D" uid="uid://8uau0i6s8kot" path="res://Assets/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Resource/Gold_Resource.png" id="1_pn570"]
+[ext_resource type="Script" uid="uid://bb0hxkoaenjf" path="res://UI/workbench_recipe_button.gd" id="1_u5rax"]
+
+[node name="Worbench_recipe" type="Button" unique_id=1182088506]
+custom_minimum_size = Vector2(32, 32)
+script = ExtResource("1_u5rax")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1984839930]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=9185974]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("1_pn570")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1832674845]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Text ist jetzt länger"
+vertical_alignment = 1
+text_overrun_behavior = 5

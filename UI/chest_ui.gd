@@ -1,11 +1,11 @@
-@tool
 class_name ChestUI
 extends Node
 
 const INVENTORY_SLOT = preload("uid://cgr0juhq374uj") #Button der die SlotData visualisiert, mit Texture und Label
 
 var inv_data: InventoryData #wird von der Chest gesetzt in _ready()
-	
+
+
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
@@ -17,7 +17,7 @@ func _ready() -> void:
 
 	# Am Anfang einmal leeren, um sicherzugehen
 	clear_inventory()
-	
+
 	if inv_data:
 		update_inventory()
 

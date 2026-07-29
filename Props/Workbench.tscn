@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bcb0ludv8nesn" path="res://Assets/grid 45° 100px-export.png" id="1_1u88c"]
 [ext_resource type="Script" uid="uid://j1xmolvhsmn5" path="res://Props/Scripts/workbench.gd" id="1_3jfb8"]
+[ext_resource type="Resource" uid="uid://d20kxlufjcogl" path="res://UI/inventory/Resources/chest_inventory.tres" id="2_fowrc"]
 [ext_resource type="PackedScene" uid="uid://cekjugbssky3f" path="res://Enteties/interactable.tscn" id="3_wm8p0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wm8p0"]
@@ -9,6 +10,7 @@ radius = 34.0
 
 [node name="WorkBench" type="Node2D" unique_id=11319435]
 script = ExtResource("1_3jfb8")
+workbench_inv_data = ExtResource("2_fowrc")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1568771294]
 y_sort_enabled = true

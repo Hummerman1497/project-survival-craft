@@ -15,34 +15,43 @@ script = ExtResource("1_8ihku")
 unlocked_recipes = Array[ExtResource("2_gv2i1")]([ExtResource("3_dckn7")])
 
 [node name="Inv_Panel_Container" type="PanelContainer" parent="." unique_id=1007960775]
-offset_left = 61.0
+offset_left = 60.0
 offset_top = 25.0
-offset_right = 89.0
-offset_bottom = 53.0
+offset_right = 292.0
+offset_bottom = 95.0
 theme_override_styles/panel = ExtResource("2_aeo10")
 
-[node name="Inv_UI" type="GridContainer" parent="Inv_Panel_Container" unique_id=1579163017]
+[node name="VBoxContainer" type="VBoxContainer" parent="Inv_Panel_Container" unique_id=1008339874]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Inv_Panel_Container/VBoxContainer" unique_id=2054041344]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Inventory"
+horizontal_alignment = 1
+
+[node name="Inv_UI" type="GridContainer" parent="Inv_Panel_Container/VBoxContainer" unique_id=1579163017]
 layout_mode = 2
 columns = 6
 script = ExtResource("3_b5g1n")
 inv_data = ExtResource("5_aeo10")
 
-[node name="InventorySlot" parent="Inv_Panel_Container/Inv_UI" unique_id=70441126 instance=ExtResource("3_23s18")]
+[node name="InventorySlot" parent="Inv_Panel_Container/VBoxContainer/Inv_UI" unique_id=70441126 instance=ExtResource("3_23s18")]
 layout_mode = 2
 
-[node name="InventorySlot2" parent="Inv_Panel_Container/Inv_UI" unique_id=1690580623 instance=ExtResource("3_23s18")]
+[node name="InventorySlot2" parent="Inv_Panel_Container/VBoxContainer/Inv_UI" unique_id=1690580623 instance=ExtResource("3_23s18")]
 layout_mode = 2
 
-[node name="InventorySlot6" parent="Inv_Panel_Container/Inv_UI" unique_id=513688106 instance=ExtResource("3_23s18")]
+[node name="InventorySlot6" parent="Inv_Panel_Container/VBoxContainer/Inv_UI" unique_id=513688106 instance=ExtResource("3_23s18")]
 layout_mode = 2
 
-[node name="InventorySlot3" parent="Inv_Panel_Container/Inv_UI" unique_id=129928984 instance=ExtResource("3_23s18")]
+[node name="InventorySlot3" parent="Inv_Panel_Container/VBoxContainer/Inv_UI" unique_id=129928984 instance=ExtResource("3_23s18")]
 layout_mode = 2
 
-[node name="InventorySlot4" parent="Inv_Panel_Container/Inv_UI" unique_id=1048587570 instance=ExtResource("3_23s18")]
+[node name="InventorySlot4" parent="Inv_Panel_Container/VBoxContainer/Inv_UI" unique_id=1048587570 instance=ExtResource("3_23s18")]
 layout_mode = 2
 
-[node name="InventorySlot5" parent="Inv_Panel_Container/Inv_UI" unique_id=234165447 instance=ExtResource("3_23s18")]
+[node name="InventorySlot5" parent="Inv_Panel_Container/VBoxContainer/Inv_UI" unique_id=234165447 instance=ExtResource("3_23s18")]
 layout_mode = 2
 
 [node name="HotBarContainer" type="PanelContainer" parent="." unique_id=1324760762]
@@ -84,9 +93,15 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="InteractableContainer" type="PanelContainer" parent="." unique_id=711972490]
-offset_left = 356.0
-offset_top = 31.0
-offset_right = 396.0
-offset_bottom = 71.0
+anchors_preset = -1
+anchor_left = 0.5796875
+anchor_top = 0.15833333
+anchor_right = 0.6109375
+anchor_bottom = 0.21388888
+offset_left = -10.0
+offset_top = -32.0
+offset_right = -10.0
+offset_bottom = -32.0
 theme_override_styles/panel = ExtResource("2_aeo10")
 script = ExtResource("7_8sx6c")
+metadata/_edit_use_anchors_ = true
