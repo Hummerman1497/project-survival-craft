@@ -26,6 +26,7 @@ metadata/_custom_type_script = "uid://baxt8yen8fn6y"
 
 [resource]
 script = ExtResource("2_p5446")
+description = "a slime from gold and beeren"
 input = Array[ExtResource("1_vri2b")]([SubResource("Resource_gg4vp"), SubResource("Resource_77rrt")])
 output = Array[ExtResource("1_vri2b")]([SubResource("Resource_58lcg")])
 metadata/_custom_type_script = "uid://dx73lytvnh8s2"

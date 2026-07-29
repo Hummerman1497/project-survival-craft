@@ -25,23 +25,24 @@ func add_item(item: ItemData, count: int = 1) -> bool:
 	print("[InvData] Inventory was full")
 	return false
 
+
 func drop_slot_data(target_inv: InventoryData, origin_index: int, target_index: int) -> void:
 	if self == target_inv and origin_index == target_index:
 		return
-		
+
 	var slot_a = self.slots[origin_index]
 	var slot_b = target_inv.slots[target_index]
-	
+
 	#Add item
 	if slot_a != null and slot_b != null and slot_a.item_data == slot_b.item_data:
 		slot_b.quantity += slot_a.quantity
-		
+
 		self.slots[origin_index] = null
-		
+
 		# Falls du eine max_stack_size in ItemData hast:
 		# var max_stack = slot_b.item_data.max_stack_size
 		# var space_left = max_stack - slot_b.quantity
-		
+
 		# Wenn Platz für alles ist:
 		# if slot_a.quantity <= space_left:
 		#     slot_b.quantity += slot_a.quantity

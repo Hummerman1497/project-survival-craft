@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://baxt8yen8fn6y"
 
 [resource]
 script = ExtResource("3_58lcg")
-description = "A Nice Wood"
+description = "A Nice Wood from wood"
 input = Array[ExtResource("1_gg4vp")]([SubResource("Resource_8n2es")])
 output = Array[ExtResource("1_gg4vp")]([SubResource("Resource_5ckyr")])
 metadata/_custom_type_script = "uid://dx73lytvnh8s2"

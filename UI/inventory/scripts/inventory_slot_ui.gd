@@ -1,7 +1,7 @@
 class_name InventorySlotUI
 extends Button
 
-var slot_index: int 
+var slot_index: int
 var slot_data: SlotData:
 	set = set_slot_data
 
@@ -15,16 +15,16 @@ func _ready() -> void:
 	texture_rect.texture = null
 	label.text = ""
 
-
 # Überschreibt die native Eingabefunktion des Buttons
 var last_click_time: int = 0
 var double_click_threshold: int = 400 # Zeit in Millisekunden
+
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			var current_time = Time.get_ticks_msec()
-			
+
 			if current_time - last_click_time < double_click_threshold:
 				# DOPPELKLICK ERKANNT!
 				_on_slot_double_clicked()
@@ -38,29 +38,29 @@ func _on_slot_double_clicked() -> void:
 	if slot_data == null:
 		return
 	var origin_inv = get_parent().inv_data
-				
+
 	if Inventory.player_inv_data.slots:
 		_pull_items_from_inv(Inventory.player_inv_data, origin_inv)
-			
-						
+
 	if Inventory.player_inv_data.slots and Inventory.inter_con_inv and Inventory.inter_con_inv.slots:
-		_pull_items_from_inv(Inventory.inter_con_inv, origin_inv )
-		
-			
+		_pull_items_from_inv(Inventory.inter_con_inv, origin_inv)
+
+
 func _pull_items_from_inv(target_inv: InventoryData, origin_inv: InventoryData):
 	var slots = target_inv.slots
 	for e in range(slots.size()):
 		var current_slot = slots[e]
-				
+
 		if current_slot == slot_data: #bei eigenem slot einfach ignorieren und weiter machen
 			continue
-						
+
 		if current_slot and current_slot.item_data == slot_data.item_data:
 			slot_data.quantity += current_slot.quantity
 			slots[e] = null
 			target_inv.inventory_updated.emit()
 			if target_inv != origin_inv:
 				origin_inv.inventory_updated.emit()
+
 
 func set_slot_data(value: SlotData) -> void:
 	slot_data = value
@@ -98,8 +98,8 @@ func _get_drag_data(_at_position: Vector2) -> Variant: # wird im Quellen-Slot au
 
 	# Wir übergeben den aktuellen Slot-Index als Daten
 	return {
-	"inventory": get_parent().inv_data, # Das Quell-Inventar
-	"index": slot_index                 # Der Quell-Index
+		"inventory": get_parent().inv_data, # Das Quell-Inventar
+		"index": slot_index, # Der Quell-Index
 	}
 
 

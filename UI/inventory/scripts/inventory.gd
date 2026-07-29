@@ -8,9 +8,9 @@ var inv_open: bool = false
 @onready var inv_panel_container: PanelContainer = $Inv_Panel_Container
 @onready var interactable_container: PanelContainer = $InteractableContainer
 
-
 var inter_con_inv: InventoryData
 var player_inv_data: InventoryData
+
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -21,12 +21,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("inventory"):
 		inventory_open_close()
 
+
 func inventory_open_close():
 	if inv_open:
 		hide_inventory()
 	else:
 		show_inventory()
 	get_viewport().set_input_as_handled()
+
 
 func show_inventory() -> void:
 	#get_tree().paused = true #nimmt den ganzen tree und pausiert ihn

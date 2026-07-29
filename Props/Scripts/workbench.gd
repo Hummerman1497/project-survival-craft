@@ -81,3 +81,5 @@ func _update_recipe_ui_list():
 		var recipe_texture = new_recipe_button.get_node("HBoxContainer/TextureRect")
 		recipe_label.text = recipe.recipe_name
 		recipe_texture.texture = recipe.recipe_texture
+		new_recipe_button.rich_description = recipe.description
+		new_recipe_button.recipe = recipe
