@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Registry" format=3 uid="uid://bgaqd3ag4j1ml"]
+
+[ext_resource type="Script" uid="uid://dqtv77mng5dyh" path="res://addons/yard/registry.gd" id="1_jexkx"]
+
+[resource]
+script = ExtResource("1_jexkx")
+_version = 2
+_scan_rulesets = Array[Dictionary]([{
+&"allowed_file_extensions": Array[String]([]),
+&"class_restrictions": Array[StringName]([&"\"res://Enteties/Items/scripts/item_data.gd\""]),
+&"recursive_scan": false,
+&"scan_directories": Array[String](["res://Enteties/Items/Item Resources"]),
+&"scan_regex_exclude": "",
+&"scan_regex_include": ""
+}])
+_uids_to_string_ids = Dictionary[StringName, StringName]({
+&"uid://bo2xu4s1tup4l": &"item_red_berry",
+&"uid://ckyyvhdj8hxt6": &"item_slimeball",
+&"uid://dk7kovc4vjf50": &"item_meat",
+&"uid://e07alx7ewyw2": &"item_gold",
+&"uid://kmswasfh6s6j": &"item_wood",
+&"uid://kne1yubkqr1p": &"item_sword"
+})
+_string_ids_to_uids = Dictionary[StringName, StringName]({
+&"item_gold": &"uid://e07alx7ewyw2",
+&"item_meat": &"uid://dk7kovc4vjf50",
+&"item_red_berry": &"uid://bo2xu4s1tup4l",
+&"item_slimeball": &"uid://ckyyvhdj8hxt6",
+&"item_sword": &"uid://kne1yubkqr1p",
+&"item_wood": &"uid://kmswasfh6s6j"
+})
