@@ -204,6 +204,8 @@ func _on_confirm_split_pressed() -> void:
 
 
 func setup_popup_panel() -> void:
+	if get_parent().inv_data.inv_type == "Player" and slot_index < Inventory.hot_bar_size:
+		return
 	if slot_data and slot_data.quantity > 1:
 		split_slider.min_value = 1
 		split_slider.max_value = slot_data.quantity - 1
