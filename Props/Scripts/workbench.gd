@@ -39,7 +39,6 @@ func _focus_exited() -> void:
 
 
 func _close_workbench():
-	audio_stream_player_2d.play()
 	workbench_open = false
 	inter_container.visible = false
 	inter_container.clear_inter_container()
@@ -48,7 +47,6 @@ func _close_workbench():
 
 
 func _open_workbench():
-	audio_stream_player_2d.play()
 	workbench_open = true
 	recipes = Inventory.unlocked_recipes
 	Inventory.inter_con_inv = workbench_inv_data

@@ -72,6 +72,7 @@ func _on_button_down():
 		_remove_requiret_items_from_inventory()
 		for output in recipe.output:
 			Inventory.inter_con_inv.add_item(output.item_data, output.quantity)
+			PlayerManager.player.audio_player.play()
 
 
 func _remove_requiret_items_from_inventory():

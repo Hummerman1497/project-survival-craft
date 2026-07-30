@@ -13,6 +13,8 @@ var mouse_position: Vector2 = Vector2.ZERO
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var audio_player: AudioStreamPlayer2D = $Audio/Swing_Whosh
 
+#BUG -wenn man abbaut und gleichzeitig was anderes hittet zb eine enemy wird nur ein sound abgespielt. 
+
 
 func _ready():
 	PlayerManager.player = self
@@ -123,6 +125,7 @@ func getSnappedDirectionToMouse() -> void:
 	# Vektor-Werte runden, um ungenaue Kommastellen (wie 0.7071) exakt auf 1 oder -1 zu bringen
 	cardinal_direction = new_dir.round()
 	DirectionChanged.emit(cardinal_direction)
+
 
 ##Bis jetzt nur random pick des Audio pickup sounds
 func pick_up_item(_item_stats: ItemData, audio_pick_up: Array):
