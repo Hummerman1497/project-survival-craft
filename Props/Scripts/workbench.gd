@@ -11,6 +11,7 @@ var inter_container: PanelContainer
 var workbench_open: bool
 var new_workbench_ui: Control
 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var interactable: Interactable = $Interactable
 @onready var grid_45_100_px: Sprite2D = $"StaticBody2D/Grid45°100Px"
 
@@ -38,6 +39,7 @@ func _focus_exited() -> void:
 
 
 func _close_workbench():
+	audio_stream_player_2d.play()
 	workbench_open = false
 	inter_container.visible = false
 	inter_container.clear_inter_container()
@@ -46,6 +48,7 @@ func _close_workbench():
 
 
 func _open_workbench():
+	audio_stream_player_2d.play()
 	workbench_open = true
 	recipes = Inventory.unlocked_recipes
 	Inventory.inter_con_inv = workbench_inv_data

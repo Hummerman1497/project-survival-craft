@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://j1xmolvhsmn5" path="res://Props/Scripts/workbench.gd" id="1_3jfb8"]
 [ext_resource type="Resource" uid="uid://d20kxlufjcogl" path="res://UI/inventory/Resources/chest_inventory.tres" id="2_fowrc"]
 [ext_resource type="PackedScene" uid="uid://cekjugbssky3f" path="res://Enteties/interactable.tscn" id="3_wm8p0"]
+[ext_resource type="AudioStream" uid="uid://cn7iyq8pg0yr8" path="res://Assets/Audio/Crafting/Workbench open-close.mp3" id="5_te5ha"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wm8p0"]
 radius = 34.0
@@ -30,5 +31,9 @@ texture = ExtResource("1_1u88c")
 
 [node name="CollisionShape2D" parent="Interactable/Area2D" parent_id_path=PackedInt32Array(921260085, 476606777) index="0" unique_id=739419222]
 shape = SubResource("CircleShape2D_wm8p0")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=456107824]
+stream = ExtResource("5_te5ha")
+volume_db = -5.0
 
 [editable path="Interactable"]

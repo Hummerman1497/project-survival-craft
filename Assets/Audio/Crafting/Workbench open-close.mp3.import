@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cn7iyq8pg0yr8"
+path="res://.godot/imported/Workbench open-close.mp3-70dd7c50fa46e2608a28951bbfce0a89.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Crafting/Workbench open-close.mp3"
+dest_files=["res://.godot/imported/Workbench open-close.mp3-70dd7c50fa46e2608a28951bbfce0a89.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
