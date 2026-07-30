@@ -11,7 +11,7 @@ const WORKBENCH_OPEN_CLOSE = preload("uid://cn7iyq8pg0yr8")
 @onready var requirements_slots: HBoxContainer = $"../../../PanelContainer/Details/Requirements_Slots"
 
 var rich_description: String
-var recipe: RecipeData:
+var recipe: RecipeData: #wird in Workench.gd gesetzt
 	set(value):
 		recipe = value
 		_update_transparency()
