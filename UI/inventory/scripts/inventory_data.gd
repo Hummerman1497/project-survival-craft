@@ -3,6 +3,7 @@ extends Resource
 
 signal inventory_updated # Signal für UI-Updates
 
+@export var inv_type: String
 @export var slots: Array[SlotData]
 
 #TODO: 

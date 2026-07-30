@@ -23,6 +23,12 @@ var double_click_threshold: int = 400 # Zeit in Millisekunden
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			#Mausklick + Shift
+			if event.shift_pressed:
+				_on_slot_shift_clicked()
+				accept_event()
+				return
+
 			var current_time = Time.get_ticks_msec()
 
 			if current_time - last_click_time < double_click_threshold:
@@ -32,6 +38,51 @@ func _gui_input(event: InputEvent) -> void:
 			else:
 				# ERSTER KLICK
 				last_click_time = current_time
+
+
+func _on_slot_shift_clicked() -> void:
+	if slot_data == null:
+		return
+	var target_index: int
+	var my_origin_inv_type = get_parent().inv_data.inv_type
+	var my_origin_inv = get_parent().inv_data
+
+	# Hotbar in Player Inventory
+	print("Origin Inventory: ", my_origin_inv_type, " | Index: ", slot_index)
+	if my_origin_inv_type == "Player" and slot_index < Inventory.hot_bar_size and Inventory.inter_con_inv == null and Inventory.inv_open:
+		target_index = get_first_free_slot(Inventory.player_inv_data, Inventory.hot_bar_size)
+		if target_index != -1:
+			print("Erster freie slot: ", target_index)
+			my_origin_inv.drop_slot_data(my_origin_inv, slot_index, target_index)
+		# Inventar ist voll -> abbruch
+		else:
+			return
+	# Player Inv zu Hotbar wenn kein anderes Inv offen ist
+	if my_origin_inv_type == "Player" and slot_index >= Inventory.hot_bar_size and Inventory.inter_con_inv == null and Inventory.inv_open:
+		target_index = get_first_free_slot(Inventory.player_inv_data, 0, Inventory.hot_bar_size - 1)
+		if target_index != -1:
+			print("Hotbar: ", target_index)
+			my_origin_inv.drop_slot_data(my_origin_inv, slot_index, target_index)
+		else:
+			return
+
+	# Player Inv zu Interactabel Inv
+	if my_origin_inv_type == "Chest" and Inventory.inter_con_inv and Inventory.inv_open:
+		target_index = get_first_free_slot(Inventory.player_inv_data, 0)
+		if target_index >= 0:
+			Inventory.player_inv_data.add_item(slot_data.item_data, slot_data.quantity)
+			my_origin_inv.slots[slot_index] = null
+			my_origin_inv.inventory_updated.emit()
+		else:
+			return
+
+	# Interactable Ivn zu Player Inv
+	if my_origin_inv_type == "Player" and Inventory.inter_con_inv and Inventory.inv_open:
+		target_index = get_first_free_slot(Inventory.inter_con_inv, 0)
+		if target_index != -1:
+			Inventory.inter_con_inv.add_item(slot_data.item_data, slot_data.quantity)
+			my_origin_inv.slots[slot_index] = null
+			my_origin_inv.inventory_updated.emit()
 
 
 func _on_slot_double_clicked() -> void:
@@ -121,3 +172,11 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 
 	# 3. Wir rufen die neue drop_slot_data-Funktion auf, die das Stapeln übernimmt
 	origin_inventory.drop_slot_data(target_inventory, origin_index, target_index)
+
+
+func get_first_free_slot(inventory: InventoryData, start_index: int, end_index: int = 200) -> int:
+	# range() geht von start_index bis end_index - 1
+	for i in range(start_index, end_index):
+		if inventory.slots[i] == null:
+			return i
+	return -1

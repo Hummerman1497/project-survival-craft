@@ -5,5 +5,6 @@
 
 [resource]
 script = ExtResource("1_b8ppl")
+inv_type = "Chest"
 slots = Array[ExtResource("2_euuah")]([null, null, null, null, null, null, null, null, null, null, null, null])
 metadata/_custom_type_script = "uid://bxv48thkie362"

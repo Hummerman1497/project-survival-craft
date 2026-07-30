@@ -11,6 +11,8 @@ var inv_open: bool = false
 var inter_con_inv: InventoryData
 var player_inv_data: InventoryData
 
+#BUG wenn man im interactble bereich offe ist und dann I drückt und weg geht öffnet sich das inv wieder
+
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
