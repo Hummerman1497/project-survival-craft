@@ -1,19 +1,19 @@
 class_name InventorySlotUI
 extends Button
 
-enum PopupID {
-	SHOW_LAST_MOUSE_POSITION = 100,
-	SPLIT,
-}
-
 var slot_index: int
 var slot_data: SlotData:
 	set = set_slot_data
 var _last_mouse_position: Vector2
+var my_origin_inv: InventoryData
 
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var label: Label = $Label
-@onready var pm: PopupMenu = $PopupMenu
+
+@onready var popup_panel: PopupPanel = $PopupPanel
+@onready var split_slider: HSlider = $PopupPanel/VBoxContainer/HSlider
+@onready var percent_label: Label = $PopupPanel/VBoxContainer/Label
+@onready var split_button: Button = $PopupPanel/VBoxContainer/Button
 
 
 func _ready() -> void:
@@ -22,9 +22,10 @@ func _ready() -> void:
 	texture_rect.texture = null
 	label.text = ""
 
-	pm.add_item("Split", PopupID.SPLIT)
-	pm.add_item("show last mouse position", PopupID.SHOW_LAST_MOUSE_POSITION)
-	pm.id_pressed.connect(_on_popup_id_pressed)
+	my_origin_inv = get_parent().inv_data
+
+	split_slider.value_changed.connect(_on_slider_value_changed)
+	split_button.pressed.connect(_on_confirm_split_pressed)
 
 # Überschreibt die native Eingabefunktion des Buttons
 var last_click_time: int = 0
@@ -51,7 +52,7 @@ func _gui_input(event: InputEvent) -> void:
 				last_click_time = current_time
 		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed and slot_data:
 			_last_mouse_position = get_global_mouse_position()
-			pm.popup(Rect2(_last_mouse_position.x, _last_mouse_position.y, pm.size.x, pm.size.y))
+			setup_popup_panel()
 
 
 func _on_slot_shift_clicked() -> void:
@@ -59,7 +60,6 @@ func _on_slot_shift_clicked() -> void:
 		return
 	var target_index: int
 	var my_origin_inv_type = get_parent().inv_data.inv_type
-	var my_origin_inv = get_parent().inv_data
 
 	# Hotbar in Player Inventory
 	#print("Origin Inventory: ", my_origin_inv_type, " | Index: ", slot_index)
@@ -195,9 +195,21 @@ func get_first_free_slot(inventory: InventoryData, start_index: int, end_index: 
 	return -1
 
 
-func _on_popup_id_pressed(id):
-	match id:
-		PopupID.SPLIT:
-			print("Item ", slot_data.item_data.name, ", Index: ", slot_index, ", wird gesplitet.")
-		PopupID.SHOW_LAST_MOUSE_POSITION:
-			print(_last_mouse_position)
+func _on_slider_value_changed(value: float) -> void:
+	percent_label.text = str(int(value))
+
+
+func _on_confirm_split_pressed() -> void:
+	my_origin_inv.split_item(slot_index, int(split_slider.value))
+	popup_panel.hide()
+
+
+func setup_popup_panel() -> void:
+	if slot_data and slot_data.quantity > 1:
+		split_slider.min_value = 1
+		split_slider.max_value = slot_data.quantity - 1
+		@warning_ignore("integer_division")
+		split_slider.value = slot_data.quantity / 2
+		@warning_ignore("integer_division")
+		percent_label.text = str(slot_data.quantity / 2)
+		popup_panel.popup(Rect2(_last_mouse_position, Vector2(80, 0)))

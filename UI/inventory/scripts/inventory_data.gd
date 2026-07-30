@@ -65,3 +65,35 @@ func drop_slot_data(target_inv: InventoryData, origin_index: int, target_index: 
 	self.inventory_updated.emit()
 	if self != target_inv:
 		target_inv.inventory_updated.emit()
+
+
+func split_item(origin_index: int, splited_quantity: int) -> void:
+	var current_item = slots[origin_index]
+	if not current_item or current_item.quantity <= 1:
+		return
+
+	var target_index = find_closest_free_slot(origin_index)
+	if target_index == -1:
+		return # Inventar voll, Abbruch
+
+	var splited_item = current_item.duplicate()
+	splited_item.quantity = splited_quantity
+
+	slots[target_index] = splited_item
+	slots[origin_index].quantity -= splited_quantity
+	inventory_updated.emit()
+
+
+func find_closest_free_slot(origin_index: int) -> int:
+	var max_distance = max(origin_index, slots.size() - 1 - origin_index)
+
+	for distance in range(1, max_distance + 1):
+		var right = origin_index + distance
+		if right < slots.size() and slots[right] == null:
+			return right
+
+		var left = origin_index - distance
+		if left >= 0 and slots[left] == null:
+			return left
+
+	return -1
