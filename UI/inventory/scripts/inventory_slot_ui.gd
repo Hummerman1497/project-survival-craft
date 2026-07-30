@@ -48,11 +48,10 @@ func _on_slot_shift_clicked() -> void:
 	var my_origin_inv = get_parent().inv_data
 
 	# Hotbar in Player Inventory
-	print("Origin Inventory: ", my_origin_inv_type, " | Index: ", slot_index)
+	#print("Origin Inventory: ", my_origin_inv_type, " | Index: ", slot_index)
 	if my_origin_inv_type == "Player" and slot_index < Inventory.hot_bar_size and Inventory.inter_con_inv == null and Inventory.inv_open:
 		target_index = get_first_free_slot(Inventory.player_inv_data, Inventory.hot_bar_size)
 		if target_index != -1:
-			print("Erster freie slot: ", target_index)
 			my_origin_inv.drop_slot_data(my_origin_inv, slot_index, target_index)
 		# Inventar ist voll -> abbruch
 		else:
@@ -61,7 +60,7 @@ func _on_slot_shift_clicked() -> void:
 	if my_origin_inv_type == "Player" and slot_index >= Inventory.hot_bar_size and Inventory.inter_con_inv == null and Inventory.inv_open:
 		target_index = get_first_free_slot(Inventory.player_inv_data, 0, Inventory.hot_bar_size - 1)
 		if target_index != -1:
-			print("Hotbar: ", target_index)
+			#print("Hotbar: ", target_index)
 			my_origin_inv.drop_slot_data(my_origin_inv, slot_index, target_index)
 		else:
 			return
