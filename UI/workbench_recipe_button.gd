@@ -11,12 +11,29 @@ const WORKBENCH_OPEN_CLOSE = preload("uid://cn7iyq8pg0yr8")
 @onready var requirements_slots: HBoxContainer = $"../../../PanelContainer/Details/Requirements_Slots"
 
 var rich_description: String
-var recipe: RecipeData
+var recipe: RecipeData:
+	set(value):
+		recipe = value
+		_update_transparency()
 
 
 func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)
 	button_down.connect(_on_button_down)
+	Inventory.player_inv_data.inventory_updated.connect(_update_transparency)
+	Inventory.inter_con_inv.inventory_updated.connect(_update_transparency)
+
+
+func _update_transparency() -> void:
+	if not recipe:
+		return
+
+	if not can_craft():
+		texture_rect.modulate.a = 0.3
+		disabled = true
+	else:
+		texture_rect.modulate.a = 1.0 # Falls es später wieder craftbar wird
+		disabled = false
 
 
 func get_item_count(item_name: String) -> int:

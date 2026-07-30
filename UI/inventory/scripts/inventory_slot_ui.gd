@@ -5,7 +5,6 @@ var slot_index: int
 var slot_data: SlotData:
 	set = set_slot_data
 var _last_mouse_position: Vector2
-var my_origin_inv: InventoryData
 
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var label: Label = $Label
@@ -21,8 +20,6 @@ func _ready() -> void:
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	texture_rect.texture = null
 	label.text = ""
-
-	my_origin_inv = get_parent().inv_data
 
 	split_slider.value_changed.connect(_on_slider_value_changed)
 	split_button.pressed.connect(_on_confirm_split_pressed)
@@ -60,6 +57,7 @@ func _on_slot_shift_clicked() -> void:
 		return
 	var target_index: int
 	var my_origin_inv_type = get_parent().inv_data.inv_type
+	var my_origin_inv = get_parent().inv_data
 
 	# Hotbar in Player Inventory
 	#print("Origin Inventory: ", my_origin_inv_type, " | Index: ", slot_index)
@@ -200,6 +198,7 @@ func _on_slider_value_changed(value: float) -> void:
 
 
 func _on_confirm_split_pressed() -> void:
+	var my_origin_inv = get_parent().inv_data
 	my_origin_inv.split_item(slot_index, int(split_slider.value))
 	popup_panel.hide()
 
