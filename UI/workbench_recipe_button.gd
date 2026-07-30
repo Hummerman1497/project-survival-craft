@@ -1,6 +1,7 @@
 extends Button
 
 const INVENTORY_SLOT = preload("uid://cgr0juhq374uj")
+const WORKBENCH_OPEN_CLOSE = preload("uid://cn7iyq8pg0yr8")
 
 @onready var texture_rect: TextureRect = $HBoxContainer/TextureRect
 @onready var label: Label = $HBoxContainer/Label
@@ -72,6 +73,7 @@ func _on_button_down():
 		_remove_requiret_items_from_inventory()
 		for output in recipe.output:
 			Inventory.inter_con_inv.add_item(output.item_data, output.quantity)
+			PlayerManager.player.audio_player.stream = WORKBENCH_OPEN_CLOSE
 			PlayerManager.player.audio_player.play()
 
 

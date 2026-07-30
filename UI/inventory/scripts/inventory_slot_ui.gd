@@ -1,12 +1,19 @@
 class_name InventorySlotUI
 extends Button
 
+enum PopupID {
+	SHOW_LAST_MOUSE_POSITION = 100,
+	SPLIT,
+}
+
 var slot_index: int
 var slot_data: SlotData:
 	set = set_slot_data
+var _last_mouse_position: Vector2
 
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var label: Label = $Label
+@onready var pm: PopupMenu = $PopupMenu
 
 
 func _ready() -> void:
@@ -14,6 +21,10 @@ func _ready() -> void:
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	texture_rect.texture = null
 	label.text = ""
+
+	pm.add_item("Split", PopupID.SPLIT)
+	pm.add_item("show last mouse position", PopupID.SHOW_LAST_MOUSE_POSITION)
+	pm.id_pressed.connect(_on_popup_id_pressed)
 
 # Überschreibt die native Eingabefunktion des Buttons
 var last_click_time: int = 0
@@ -38,6 +49,9 @@ func _gui_input(event: InputEvent) -> void:
 			else:
 				# ERSTER KLICK
 				last_click_time = current_time
+		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed and slot_data:
+			_last_mouse_position = get_global_mouse_position()
+			pm.popup(Rect2(_last_mouse_position.x, _last_mouse_position.y, pm.size.x, pm.size.y))
 
 
 func _on_slot_shift_clicked() -> void:
@@ -179,3 +193,11 @@ func get_first_free_slot(inventory: InventoryData, start_index: int, end_index: 
 		if inventory.slots[i] == null:
 			return i
 	return -1
+
+
+func _on_popup_id_pressed(id):
+	match id:
+		PopupID.SPLIT:
+			print("Item ", slot_data.item_data.name, ", Index: ", slot_index, ", wird gesplitet.")
+		PopupID.SHOW_LAST_MOUSE_POSITION:
+			print(_last_mouse_position)
