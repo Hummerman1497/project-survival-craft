@@ -68,7 +68,7 @@ func set_requirements_visuals():
 		var has_item = get_item_count(slot.item_data.name) >= slot.quantity
 
 		var new_slot = INVENTORY_SLOT.instantiate()
-		var new_margin_container = MarginContainer.new()
+		var new_margin_container = CenterContainer.new()
 		requirements_slots.add_child(new_margin_container)
 		new_margin_container.size_flags_horizontal = 3
 		new_margin_container.add_child(new_slot)

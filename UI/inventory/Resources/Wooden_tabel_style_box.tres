@@ -1,0 +1,12 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://ucaknmay06an"]
+
+[ext_resource type="Texture2D" uid="uid://7ll816tos4as" path="res://Assets/Tiny Swords (Free Pack)/UI Elements/UI Elements/Wood Table/WoodTable - Kopie.png" id="1_p1w15"]
+
+[resource]
+texture = ExtResource("1_p1w15")
+texture_margin_left = 84.0
+texture_margin_top = 85.0
+texture_margin_right = 84.0
+texture_margin_bottom = 103.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2

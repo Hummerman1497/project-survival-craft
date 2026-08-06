@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://fdvg5w3bgrql"]
 
 [ext_resource type="Script" uid="uid://la1fywgm1cw2" path="res://UI/inventory/scripts/inventory.gd" id="1_8ihku"]
-[ext_resource type="StyleBox" uid="uid://bn15fcotiols4" path="res://UI/inventory/Resources/invetory_Container_style.tres" id="2_aeo10"]
 [ext_resource type="Script" uid="uid://dx73lytvnh8s2" path="res://UI/inventory/scripts/recipe_data.gd" id="2_gv2i1"]
 [ext_resource type="PackedScene" uid="uid://cgr0juhq374uj" path="res://UI/inventory/inventory_slot.tscn" id="3_23s18"]
 [ext_resource type="Script" uid="uid://cq2g4j1yvqrpq" path="res://UI/inventory/scripts/inventory_ui.gd" id="3_b5g1n"]
@@ -9,24 +8,31 @@
 [ext_resource type="Resource" uid="uid://hnk40dhc4j2l" path="res://UI/inventory/Resources/recipe_test_wood.tres" id="4_dckn7"]
 [ext_resource type="Resource" uid="uid://bbajons5x5bar" path="res://UI/inventory/Resources/recipe_test_slime.tres" id="5_7ajig"]
 [ext_resource type="Resource" uid="uid://cvfs2km3nf11b" path="res://UI/inventory/Resources/player_inventory.tres" id="5_aeo10"]
+[ext_resource type="StyleBox" uid="uid://65h3j63f8nm2" path="res://UI/inventory/Resources/Style_Box_Special_Paper.tres" id="6_am4g5"]
 [ext_resource type="Script" uid="uid://ckagu8sib0wqj" path="res://UI/inventory/scripts/interactable_container.gd" id="7_8sx6c"]
 [ext_resource type="Script" uid="uid://vwpurkm1h3v6" path="res://UI/inventory/scripts/hotbar_ui.gd" id="7_7475t"]
+[ext_resource type="StyleBox" uid="uid://ciqvnkv451l7b" path="res://UI/inventory/Resources/Style_Box_Ribbon_blue.tres" id="7_am4g5"]
+[ext_resource type="StyleBox" uid="uid://ehhpb6vbat30" path="res://UI/inventory/Resources/16px_tut_youtube_style_box.tres" id="10_am4g5"]
 
 [node name="Inventory" type="CanvasLayer" unique_id=2110329412]
 script = ExtResource("1_8ihku")
 unlocked_recipes = Array[ExtResource("2_gv2i1")]([ExtResource("3_dckn7"), ExtResource("4_dckn7"), ExtResource("5_7ajig")])
 
 [node name="Inv_Panel_Container" type="PanelContainer" parent="." unique_id=1007960775]
-offset_left = 60.0
+offset_left = 65.0
 offset_top = 25.0
-offset_right = 292.0
+offset_right = 297.0
 offset_bottom = 95.0
-theme_override_styles/panel = ExtResource("2_aeo10")
+theme_override_styles/panel = ExtResource("6_am4g5")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Inv_Panel_Container" unique_id=1008339874]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Inv_Panel_Container/VBoxContainer" unique_id=2054041344]
+[node name="PanelContainer" type="PanelContainer" parent="Inv_Panel_Container/VBoxContainer" unique_id=548966805]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("7_am4g5")
+
+[node name="Label" type="Label" parent="Inv_Panel_Container/VBoxContainer/PanelContainer" unique_id=2054041344]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "Inventory"
@@ -68,7 +74,7 @@ offset_right = 63.0
 grow_horizontal = 2
 grow_vertical = 0
 focus_behavior_recursive = 1
-theme_override_styles/panel = ExtResource("2_aeo10")
+theme_override_styles/panel = ExtResource("10_am4g5")
 
 [node name="Hotbar_UI" type="GridContainer" parent="HotBarContainer" unique_id=98733486]
 layout_mode = 2
@@ -91,10 +97,9 @@ anchor_left = 0.5796875
 anchor_top = 0.15833333
 anchor_right = 0.6109375
 anchor_bottom = 0.21388888
-offset_left = -10.0
-offset_top = -32.0
-offset_right = -10.0
-offset_bottom = -32.0
-theme_override_styles/panel = ExtResource("2_aeo10")
+offset_left = -14.0
+offset_top = -54.0
+offset_right = 11.0
+offset_bottom = -10.0
+theme_override_styles/panel = ExtResource("6_am4g5")
 script = ExtResource("7_8sx6c")
-metadata/_edit_use_anchors_ = true

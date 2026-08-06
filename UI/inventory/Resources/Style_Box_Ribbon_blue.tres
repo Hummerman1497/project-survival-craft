@@ -1,0 +1,13 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://ciqvnkv451l7b"]
+
+[ext_resource type="Texture2D" uid="uid://devntxpdgrg87" path="res://Assets/Tiny Swords (Free Pack)/UI Elements/UI Elements/Ribbons/SmallRibbons - Kopie.png" id="1_0nk05"]
+
+[resource]
+content_margin_bottom = 14.0
+texture = ExtResource("1_0nk05")
+texture_margin_left = 42.0
+texture_margin_top = 7.0
+texture_margin_right = 42.0
+texture_margin_bottom = 12.0
+axis_stretch_vertical = 1
+region_rect = Rect2(66, 513, 187, 63)

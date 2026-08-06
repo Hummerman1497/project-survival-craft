@@ -26,7 +26,7 @@ metadata/_custom_type_script = "uid://baxt8yen8fn6y"
 
 [resource]
 script = ExtResource("4_34du8")
-description = "Create a mighty sword from wood and gold"
+description = "Create a mighty sword from wood and gold as  asd asd asd asd asd asd asd asd as"
 input = Array[ExtResource("1_n2no5")]([SubResource("Resource_aqsqb"), SubResource("Resource_7d28f")])
 output = Array[ExtResource("1_n2no5")]([SubResource("Resource_f2ypn")])
 metadata/_custom_type_script = "uid://dx73lytvnh8s2"
