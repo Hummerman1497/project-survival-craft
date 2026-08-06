@@ -12,7 +12,14 @@
 [ext_resource type="Script" uid="uid://ckagu8sib0wqj" path="res://UI/inventory/scripts/interactable_container.gd" id="7_8sx6c"]
 [ext_resource type="Script" uid="uid://vwpurkm1h3v6" path="res://UI/inventory/scripts/hotbar_ui.gd" id="7_7475t"]
 [ext_resource type="StyleBox" uid="uid://ciqvnkv451l7b" path="res://UI/inventory/Resources/Style_Box_Ribbon_blue.tres" id="7_am4g5"]
-[ext_resource type="StyleBox" uid="uid://ehhpb6vbat30" path="res://UI/inventory/Resources/16px_tut_youtube_style_box.tres" id="10_am4g5"]
+[ext_resource type="Texture2D" uid="uid://bkayfbdnowh6g" path="res://Assets/Tiny Swords (Free Pack)/UI Elements/UI Elements/Banners/Banner - Kopie - Kopie.png" id="11_am4g5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rddta"]
+texture = ExtResource("11_am4g5")
+expand_margin_left = 20.0
+expand_margin_top = 5.0
+expand_margin_right = 20.0
+expand_margin_bottom = 2.0
 
 [node name="Inventory" type="CanvasLayer" unique_id=2110329412]
 script = ExtResource("1_8ihku")
@@ -69,12 +76,12 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -63.0
-offset_top = -52.0
-offset_right = 63.0
+offset_top = -48.0
+offset_right = 61.0
 grow_horizontal = 2
 grow_vertical = 0
 focus_behavior_recursive = 1
-theme_override_styles/panel = ExtResource("10_am4g5")
+theme_override_styles/panel = SubResource("StyleBoxTexture_rddta")
 
 [node name="Hotbar_UI" type="GridContainer" parent="HotBarContainer" unique_id=98733486]
 layout_mode = 2
@@ -92,14 +99,11 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="InteractableContainer" type="PanelContainer" parent="." unique_id=711972490]
-anchors_preset = -1
-anchor_left = 0.5796875
-anchor_top = 0.15833333
-anchor_right = 0.6109375
-anchor_bottom = 0.21388888
-offset_left = -14.0
-offset_top = -54.0
-offset_right = 11.0
-offset_bottom = -10.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -45.0
+offset_bottom = 64.0
+grow_horizontal = 0
 theme_override_styles/panel = ExtResource("6_am4g5")
 script = ExtResource("7_8sx6c")
