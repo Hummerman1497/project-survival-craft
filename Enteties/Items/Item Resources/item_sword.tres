@@ -8,4 +8,5 @@ script = ExtResource("1_y7kc6")
 name = "Sword"
 description = "A mighty Sword"
 texture = ExtResource("2_b7ew8")
+item_type = 1
 metadata/_custom_type_script = "uid://ffbdvn77h0e"

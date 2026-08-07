@@ -13,6 +13,8 @@
 [ext_resource type="Script" uid="uid://vwpurkm1h3v6" path="res://UI/inventory/scripts/hotbar_ui.gd" id="7_7475t"]
 [ext_resource type="StyleBox" uid="uid://ciqvnkv451l7b" path="res://UI/inventory/Resources/Style_Box_Ribbon_blue.tres" id="7_am4g5"]
 [ext_resource type="Texture2D" uid="uid://bkayfbdnowh6g" path="res://Assets/Tiny Swords (Free Pack)/UI Elements/UI Elements/Banners/Banner - Kopie - Kopie.png" id="11_am4g5"]
+[ext_resource type="Texture2D" uid="uid://cgh7bdh0oorjj" path="res://Assets/Tiny Swords (Free Pack)/UI Elements/UI Elements/Cursors/Cursor_04.png" id="14_ppogn"]
+[ext_resource type="Script" uid="uid://c61yg5nlorttc" path="res://UI/inventory/hotbar_selected_item_ui.gd" id="15_1pgyc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rddta"]
 texture = ExtResource("11_am4g5")
@@ -26,10 +28,10 @@ script = ExtResource("1_8ihku")
 unlocked_recipes = Array[ExtResource("2_gv2i1")]([ExtResource("3_dckn7"), ExtResource("4_dckn7"), ExtResource("5_7ajig")])
 
 [node name="Inv_Panel_Container" type="PanelContainer" parent="." unique_id=1007960775]
-offset_left = 65.0
-offset_top = 25.0
-offset_right = 297.0
-offset_bottom = 95.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 262.0
+offset_bottom = 140.0
 theme_override_styles/panel = ExtResource("6_am4g5")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Inv_Panel_Container" unique_id=1008339874]
@@ -102,8 +104,20 @@ layout_mode = 2
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -45.0
-offset_bottom = 64.0
+offset_left = -50.0
+offset_top = 6.0
+offset_right = -5.0
+offset_bottom = 70.0
 grow_horizontal = 0
 theme_override_styles/panel = ExtResource("6_am4g5")
 script = ExtResource("7_8sx6c")
+
+[node name="HotbarSelectedItemUI" type="TextureRect" parent="." unique_id=1474070099]
+offset_left = 252.0
+offset_top = 306.0
+offset_right = 294.0
+offset_bottom = 348.0
+texture = ExtResource("14_ppogn")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("15_1pgyc")

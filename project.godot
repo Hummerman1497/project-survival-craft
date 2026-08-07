@@ -19,6 +19,7 @@ config/icon="uid://dkp1sm18asqtu"
 
 PlayerManager="*uid://idowtwj0knhy"
 Inventory="*uid://fdvg5w3bgrql"
+ItemTypes="*uid://bhtd52qs76v13"
 
 [display]
 

@@ -8,4 +8,5 @@ script = ExtResource("1_cd22x")
 name = "Wood"
 description = "A sturdy chunk of wood"
 texture = ExtResource("2_eqojq")
+item_type = 2
 metadata/_custom_type_script = "uid://ffbdvn77h0e"

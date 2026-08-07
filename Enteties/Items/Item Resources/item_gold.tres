@@ -8,4 +8,5 @@ script = ExtResource("1_c24p4")
 name = "Gold"
 description = "A valuable peace of gold"
 texture = ExtResource("2_cks51")
+item_type = 2
 metadata/_custom_type_script = "uid://ffbdvn77h0e"
