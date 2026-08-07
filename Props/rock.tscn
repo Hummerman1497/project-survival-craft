@@ -26,6 +26,7 @@ texture = ExtResource("1_877du")
 [node name="HitBox" parent="." unique_id=1960128030 instance=ExtResource("2_7f1l5")]
 position = Vector2(0, -8)
 hit_sounds = Array[AudioStream]([ExtResource("4_y1wc0"), ExtResource("5_pilut"), ExtResource("6_suvgh"), ExtResource("7_4hcpj")])
+can_take_damage_from = Array[int]([2])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1800107169]
 position = Vector2(0, 6)

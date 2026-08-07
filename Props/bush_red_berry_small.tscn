@@ -68,6 +68,7 @@ frame = 1
 
 [node name="HitBox" parent="." unique_id=1960128030 instance=ExtResource("3_32f8c")]
 hit_sounds = Array[AudioStream]([ExtResource("4_kui0f"), ExtResource("5_oqkpm"), ExtResource("6_oi5as"), ExtResource("7_32f8c"), ExtResource("8_fpifg")])
+can_take_damage_from = Array[int]([1, 2])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1838824233]
 position = Vector2(0, -8)

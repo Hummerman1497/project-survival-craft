@@ -84,6 +84,7 @@ shape = SubResource("CircleShape2D_lfmf2")
 
 [node name="HitBox" parent="." unique_id=1960128030 instance=ExtResource("1_witdd")]
 hit_sounds = Array[AudioStream]([ExtResource("4_htqbb"), ExtResource("5_mw4ad"), ExtResource("6_g0c5d"), ExtResource("7_76ip5"), ExtResource("8_3de7o"), ExtResource("9_n2npb")])
+can_take_damage_from = Array[int]([1])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1838824233]
 position = Vector2(-0.25, 0)

@@ -47,7 +47,7 @@ func ChangeState(new_state: State) -> void:
 		return
 
 	if new_state.is_on_cooldown():
-		print("[SM]", new_state.name, " Cooldown: ", new_state.cooldown_timer)
+		#print("[SM]", new_state.name, " Cooldown: ", new_state.cooldown_timer)
 		return
 
 	if current_state:
@@ -69,4 +69,4 @@ func state_start_cooldown(state: State) -> void: # nimmt den State.Cooldown und 
 
 func state_cooldown_finished(state: State):
 	state.cooldown_finished.emit()
-	print("[SM] ", state.name, ": Cooldown finished")
+	#print("[SM] ", state.name, ": Cooldown finished")

@@ -8,9 +8,12 @@ signal damaged(hurt_box: HurtBox)
 @export var failed_hit_sounds: Array[AudioStream] = []
 const DAMAGE_NUMBER = preload("uid://ba6m4lmhoiyof")
 
+@export var can_take_damage_from: Array[ItemTypes.ItemType] = []
+
 
 func take_damage(hurt_box: HurtBox) -> void:
-	damaged.emit(hurt_box)
+	if can_take_damage():
+		damaged.emit(hurt_box)
 
 
 func play_shake(sprite: Sprite2D, duration: float = 0.2, shake_count: int = 4, max_offset: int = 6):
@@ -52,3 +55,9 @@ func init_dmg_num(amount: int):
 	dmg_num.global_position = global_position + random_offset
 
 	get_tree().current_scene.add_child(dmg_num)
+
+
+func can_take_damage() -> bool:
+	if Inventory.hb_selected_slot.item_data.item_type in can_take_damage_from:
+		return true
+	return false

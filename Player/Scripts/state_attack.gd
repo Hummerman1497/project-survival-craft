@@ -96,6 +96,6 @@ func GetRanSound() -> AudioStream:
 
 
 func _on_hurt_box_hit(hitbox: HitBox) -> void:
-	if hitbox and not hitbox.hit_sounds.is_empty():
+	if hitbox and not hitbox.hit_sounds.is_empty() and hitbox.can_take_damage():
 		audio_hit.stream = hitbox.hit_sounds.pick_random()
 		audio_hit.play()

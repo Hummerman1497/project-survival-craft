@@ -13,8 +13,6 @@ func _ready():
 
 
 func take_damage(hurt_box: HurtBox) -> void:
-	if Inventory.hb_selected_slot.item_data.item_type != ItemTypes.ItemType.TOOL:
-		return
 	health -= hurt_box.damage
 
 	if health >= 1:

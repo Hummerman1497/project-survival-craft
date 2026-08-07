@@ -694,6 +694,7 @@ debug_color = Color(0.6710483, 0.50916743, 0, 0.41960785)
 
 [node name="HitBox" parent="." unique_id=1960128030 instance=ExtResource("3_jkyd6")]
 hit_sounds = Array[AudioStream]([ExtResource("5_rxpoj")])
+can_take_damage_from = Array[int]([1])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1566028053]
 position = Vector2(0, -9)
