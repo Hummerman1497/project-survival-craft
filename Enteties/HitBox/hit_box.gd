@@ -10,6 +10,8 @@ const DAMAGE_NUMBER = preload("uid://ba6m4lmhoiyof")
 
 @export var can_take_damage_from: Array[ItemTypes.ItemType] = []
 
+#TODO umbauen der hitsound zu successfull damage und eben nicht wenn zb Schwert auf Stein  
+
 
 func take_damage(hurt_box: HurtBox) -> void:
 	if can_take_damage():
