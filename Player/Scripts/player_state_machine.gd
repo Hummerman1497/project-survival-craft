@@ -52,7 +52,7 @@ func ChangeState(new_state: State) -> void:
 
 	if current_state:
 		current_state.Exit()
-		current_state.start_cooldown() # emited ebenfalls ein singal cooldown_stated(cooldown)
+		current_state.start_cooldown() # emited ebenfalls ein signal cooldown_started(cooldown)
 		state_start_cooldown(current_state)
 
 	prev_state = current_state

@@ -36,7 +36,9 @@ func Physics(_delta: float) -> State:
 
 ## What happens with the input events in this State?	
 func HandleInput(_event: InputEvent) -> State:
-	if _event.is_action_pressed("attack"):
+	if _event.is_action("attack") \
+			and Inventory.hb_selected_slot \
+			and Inventory.hb_selected_slot.item_data.item_type in ItemTypes.usabel_item_type:
 		return attack
 	if _event.is_action_pressed("dodge"):
 		return dodge

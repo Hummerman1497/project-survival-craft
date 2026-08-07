@@ -80,6 +80,9 @@ func set_slot_data(index: int) -> void:
 			return
 		cursor_selected_data = slot_selected.slot_data
 		Inventory.hb_selected_slot = cursor_selected_data
+	else:
+		cursor_selected_data = null
+		Inventory.hb_selected_slot = null
 
 
 func updated_inv():

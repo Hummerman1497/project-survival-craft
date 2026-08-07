@@ -12,5 +12,5 @@ script = ExtResource("1_6nbbw")
 name = "Slime Ball"
 description = "A slimy ball"
 texture = SubResource("AtlasTexture_o0u64")
-item_type = 2
+item_type = 3
 metadata/_custom_type_script = "uid://ffbdvn77h0e"

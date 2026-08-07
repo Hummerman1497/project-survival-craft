@@ -13,9 +13,12 @@ func _ready():
 
 
 func take_damage(hurt_box: HurtBox) -> void:
+	if Inventory.hb_selected_slot.item_data.item_type != ItemTypes.ItemType.TOOL:
+		return
 	health -= hurt_box.damage
 
 	if health >= 1:
+		hit_box.init_dmg_num(hurt_box.damage)
 		hit_box.play_shake(sprite_2d)
 	else:
 		queue_free()
